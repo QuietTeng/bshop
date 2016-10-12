@@ -1,0 +1,69 @@
+<div class="main f_r">
+
+	<div class="uc_title m_10">
+		<label class="current"><span><a href='{url:/ucenter/account_log}'>交易记录</a></span></label>
+		<label><span><a href='{url:/ucenter/withdraw}'>提现申请</a></span></label>
+	</div>
+
+	<div class="prompt m_10">
+		<span>	账户余额：<b class="orange f14">￥{$this->memberRow['balance']}</b>
+			<a class="blue" href="/index.php?controller=ucenter&amp;action=online_recharge">立刻充值</a>
+		</span>  
+		<span style="margin-left:200px">	账户状态：
+			{if:$this->memberRow['lock_balance']}
+			已锁定  
+				<a class="blue" href="{url:/ucenter/luck_balance/id/1}">解锁</a>
+			{else:}
+			可用 
+				<a class="blue" href="{url:/ucenter/luck_balance/id/1}">锁定</a>
+			{/if}
+		</span>  
+	</div>
+		<form action='{url:/ucenter/account_log}' method='post' name='accout_history'>
+			<div class="uc_title2 m_10">
+				<span class="f_r">查询时间：
+					<select name='history_time'>
+						<option value="3">3个月之外余额记录</option>
+						<option value="default" selected=selected>近3个月余额记录</option>
+					</select>
+					<input class="sbtn" type="submit" value="查询" />
+				</span>
+				<strong>余额明细查询</strong>
+			</div>
+		</form>
+	<div>
+		<table class='list_table m_10' width='100%' cellspacing='0' cellpadding='0'>
+			<col />
+			<col width="110px" />
+			<col width="110px" />
+			<col width="110px" />
+			<col width="145px" />
+			<thead>
+				<tr>
+					<th>事件</th><th>存入金额</th><th>支出金额</th><th>当前金额</th><th>时间</th>
+				</tr>
+			</thead>
+			<tbody>
+				{set:$queryAccountLogList = apple::go('getUcenterAccoutLog',$this->user['user_id'],$this->c_datetime)}
+				{foreach:items = $queryAccountLogList->find()}
+				<tr>
+					<td style="text-align:left;">{$item['note']}</td>
+					<td>{echo:$item['amount'] > 0 ? $item['amount'].'元' : ''}</td>
+					<td>{echo:$item['amount'] < 0 ? $item['amount'].'元' : ''}</td>
+					<td><span class="red">{$item['amount_log']} 元</span></td>
+					<td>{$item['time']}</td>
+				</tr>
+				{/foreach}
+			</tbody>
+		</table>
+		{$queryAccountLogList->getPageBar()}
+	</div>
+
+</div>
+<script type='text/javascript'>
+	var FromObj = new Form('accout_history');
+	FromObj.init
+	({
+		'history_time':'{$this->historyTime}'
+	});
+</script>

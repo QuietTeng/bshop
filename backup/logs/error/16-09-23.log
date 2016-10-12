@@ -1,0 +1,70 @@
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_quick_naviga  where admin_id =  and is_del = 0    limit 5000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and is_del = 0    limit 5000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-09-23 11:25:14
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_quick_naviga  where admin_id =  and is_del = 0    limit 5000)
+#1 IWEB_PATH/runtime/views/sysdefault/system/hsms.php(40): IQuery->find()
+#2 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/sysdefault/system/hsms.php)
+#3 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/sysdefault/system/hsms.php)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/sysdefault/system/hsms)
+#5 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/sysdefault/system/hsms)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#7 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(hsms)
+#8 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#9 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_user_list as o  where seller_id =1   order by o.id desc limit 5000
+ -- Table 'bshop.iwebshop_user_list' doesn't exist
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-09-23 16:59:50
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_user_list as o  where seller_id =1   order by o.id desc limit 5000)
+#1 IWEB_PATH/controllers/seller.php(503): IQuery->find()
+#2 : Seller->camera_user_list()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(camera_user_list)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_camera_user_list as o  where seller_id =1   order by o.id desc limit 5000
+ -- Table 'bshop.iwebshop_camera_user_list' doesn't exist
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-09-23 17:00:21
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_camera_user_list as o  where seller_id =1   order by o.id desc limit 5000)
+#1 IWEB_PATH/controllers/seller.php(503): IQuery->find()
+#2 : Seller->camera_user_list()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(camera_user_list)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_camera_user as o  where seller_id =1   order by o.id desc limit 5000
+ -- Unknown column 'seller_id' in 'where clause'
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-09-23 17:00:40
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_camera_user as o  where seller_id =1   order by o.id desc limit 5000)
+#1 IWEB_PATH/controllers/seller.php(503): IQuery->find()
+#2 : Seller->camera_user_list()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(camera_user_list)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+

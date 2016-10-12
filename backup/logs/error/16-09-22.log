@@ -1,0 +1,771 @@
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/controllers/site.php
+errorLine: 812
+errorCode: 8192
+errorTime: 2016-09-22 14:21:53
+#0 : Site->home()
+#1 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#2 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#3 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(home)
+#4 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#5 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:54
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:54
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:54
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:54
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:54
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:55
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:55
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:55
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:55
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:56
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:56
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:56
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:56
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:56
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:56
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:56
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:56
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:56
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:57
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:57
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:57
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:57
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:57
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:57
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:57
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:58
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:58
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:58
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:58
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:58
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:58
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:58
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:58
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:58
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:59
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:59
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:59
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:59
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:59
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:59
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Non-static method IController::run() should not be called statically, assuming $this from incompatible context
+errorFile: IWEB_PATH/runtime/views/default/site/error.php
+errorLine: 47
+errorCode: 8192
+errorTime: 2016-09-22 14:21:59
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/error.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/error.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/error)
+#3 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/error)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(error)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_quick_naviga  where admin_id =  and is_del = 0    limit 5000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and is_del = 0    limit 5000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-09-22 14:22:21
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_quick_naviga  where admin_id =  and is_del = 0    limit 5000)
+#1 IWEB_PATH/runtime/views/sysdefault/system/conf_base.php(40): IQuery->find()
+#2 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/sysdefault/system/conf_base.php)
+#3 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/sysdefault/system/conf_base.php)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/sysdefault/system/conf_base)
+#5 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/sysdefault/system/conf_base)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#7 IWEB_PATH/controllers/system.php(479): IController->redirect(conf_base)
+#8 : System->conf_base()
+#9 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#10 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#11 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(conf_base)
+#12 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#13 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_seller WHERE id =  limit 1
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 1' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-09-22 14:25:56
+#0 IWEB_PATH/lib/web/model/model_class.php(200): IDB->query(SELECT * FROM iwebshop_seller WHERE id =  limit 1)
+#1 IWEB_PATH/lib/web/model/model_class.php(148): IModel->query(id = ,*,,1)
+#2 IWEB_PATH/controllers/seller.php(424): IModel->getObj(id = )
+#3 : Seller->seller_edit()
+#4 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#5 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#6 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(seller_edit)
+#7 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#8 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select sum(og.real_price * og.goods_nums) as yValue,`pay_time`,DATE_FORMAT(`pay_time`,"%m-%d") as xValue from iwebshop_order_goods as og left join iwebshop_order  as o on o.id = og.order_id where og.is_send = 1 and og.seller_id =  and o.pay_status = 1 GROUP BY DATE_FORMAT(`pay_time`,'%Y-%m-%d') having `pay_time` >= '2016-09-16' and `pay_time` < '2016-09-22 23:59:59'   limit 5000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and o.pay_status = 1 GROUP BY DATE_FORMAT(`pay_time`,'%Y-%m-%d') having `pay_tim' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-09-22 14:43:49
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select sum(og.real_price * og.goods_nums) as yValue,`pay_time`,DATE_FORMAT(`pay_time`,"%m-%d") as xValue from iwebshop_order_goods as og left join iwebshop_order  as o on o.id = og.order_id where og.is_send = 1 and og.seller_id =  and o.pay_status = 1 GROUP BY DATE_FORMAT(`pay_time`,'%Y-%m-%d') having `pay_time` >= '2016-09-16' and `pay_time` < '2016-09-22 23:59:59'   limit 5000)
+#1 IWEB_PATH/classes/statistics.php(122): IQuery->find()
+#2 IWEB_PATH/classes/statistics.php(184): statistics::ParseCondition(pay_time,,)
+#3 IWEB_PATH/runtime/views/sysseller/seller/index.php(64): statistics::sellerAmount()
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/sysseller/seller/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/sysseller/seller/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/sysseller/seller/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/sysseller/seller/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#10 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select sum(og.real_price * og.goods_nums) as yValue,`pay_time`,DATE_FORMAT(`pay_time`,"%m-%d") as xValue from iwebshop_order_goods as og left join iwebshop_order  as o on o.id = og.order_id where og.is_send = 1 and og.seller_id =  and o.pay_status = 1 GROUP BY DATE_FORMAT(`pay_time`,'%Y-%m-%d') having `pay_time` >= '2016-09-16' and `pay_time` < '2016-09-22 23:59:59'   limit 5000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and o.pay_status = 1 GROUP BY DATE_FORMAT(`pay_time`,'%Y-%m-%d') having `pay_tim' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-09-22 14:48:34
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select sum(og.real_price * og.goods_nums) as yValue,`pay_time`,DATE_FORMAT(`pay_time`,"%m-%d") as xValue from iwebshop_order_goods as og left join iwebshop_order  as o on o.id = og.order_id where og.is_send = 1 and og.seller_id =  and o.pay_status = 1 GROUP BY DATE_FORMAT(`pay_time`,'%Y-%m-%d') having `pay_time` >= '2016-09-16' and `pay_time` < '2016-09-22 23:59:59'   limit 5000)
+#1 IWEB_PATH/classes/statistics.php(122): IQuery->find()
+#2 IWEB_PATH/classes/statistics.php(184): statistics::ParseCondition(pay_time,,)
+#3 IWEB_PATH/runtime/views/sysseller/seller/index.php(64): statistics::sellerAmount()
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/sysseller/seller/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/sysseller/seller/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/sysseller/seller/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/sysseller/seller/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#10 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_areas WHERE area_id in () limit 50000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') limit 50000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-09-22 16:29:42
+#0 IWEB_PATH/lib/web/model/model_class.php(200): IDB->query(SELECT * FROM iwebshop_areas WHERE area_id in () limit 50000)
+#1 IWEB_PATH/classes/area.php(28): IModel->query(area_id in ())
+#2 IWEB_PATH/controllers/site.php(32): area::name()
+#3 : Site->index()
+#4 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#5 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#6 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#7 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#8 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+

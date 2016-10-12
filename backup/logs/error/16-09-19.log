@@ -1,0 +1,76 @@
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_member as m,iwebshop_user as u WHERE m.user_id = u.id and m.user_id= limit 1
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 1' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-09-19 14:13:37
+#0 IWEB_PATH/lib/web/model/model_class.php(200): IDB->query(SELECT * FROM iwebshop_member as m,iwebshop_user as u WHERE m.user_id = u.id and m.user_id= limit 1)
+#1 IWEB_PATH/lib/web/model/model_class.php(148): IModel->query(m.user_id = u.id and m.user_id=,*,,1)
+#2 IWEB_PATH/classes/api/ucenter.php(61): IModel->getObj(m.user_id = u.id and m.user_id=)
+#3 : APIUcenter->getMemberInfo()
+#4 IWEB_PATH/classes/api.php(88): call_user_func_array()
+#5 IWEB_PATH/controllers/ucenter.php(18): Api::run(getMemberInfo)
+#6 : Ucenter->index()
+#7 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#10 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select count(*) as total from iwebshop_order  where user_id = and if_del= 0   
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and if_del= 0' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-09-19 14:13:44
+#0 IWEB_PATH/lib/core/paging_class.php(56): IDB->query(select count(*) as total from iwebshop_order  where user_id = and if_del= 0   )
+#1 IWEB_PATH/lib/core/paging_class.php(41): IPaging->setSql(select * from iwebshop_order  where user_id = and if_del= 0   order by id desc)
+#2 IWEB_PATH/lib/core/query_class.php(151): IPaging->__construct(select * from iwebshop_order  where user_id = and if_del= 0   order by id desc,20,10)
+#3 IWEB_PATH/runtime/views/default/ucenter/order.php(166): IQuery->find()
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/ucenter/order.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/ucenter/order.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/ucenter/order)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/ucenter/order)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/ucenter.php(95): IController->redirect(order)
+#10 : Ucenter->order()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(order)
+#14 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: readfile(): Filename cannot be empty
+errorFile: IWEB_PATH/controllers/pic.php
+errorLine: 167
+errorCode: 2
+errorTime: 2016-09-19 14:50:30
+#0 IWEB_PATH/controllers/pic.php(167): readfile()
+#1 : Pic->thumb()
+#2 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#3 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#4 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(thumb)
+#5 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#6 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: readfile(http://www.aircheng.com/images/defaultBanner/b4.jpg): failed to open stream: HTTP request failed! 
+errorFile: IWEB_PATH/controllers/pic.php
+errorLine: 167
+errorCode: 2
+errorTime: 2016-09-19 15:11:20
+#0 IWEB_PATH/controllers/pic.php(167): readfile(http://www.aircheng.com/images/defaultBanner/b4.jpg)
+#1 : Pic->thumb()
+#2 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#3 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#4 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(thumb)
+#5 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#6 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+

@@ -1,0 +1,175 @@
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_member as m,iwebshop_user as u WHERE m.user_id = u.id and m.user_id= limit 1
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 1' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-11 09:04:08
+#0 IWEB_PATH/lib/web/model/model_class.php(198): IDB->query(SELECT * FROM iwebshop_member as m,iwebshop_user as u WHERE m.user_id = u.id and m.user_id= limit 1)
+#1 IWEB_PATH/lib/web/model/model_class.php(146): IModel->query(m.user_id = u.id and m.user_id=,*,,1)
+#2 IWEB_PATH/classes/api/ucenter.php(62): IModel->getObj(m.user_id = u.id and m.user_id=)
+#3 : APIUcenter->getMemberInfo()
+#4 IWEB_PATH/classes/apple.php(88): call_user_func_array()
+#5 IWEB_PATH/controllers/ucenter.php(18): apple::go(getMemberInfo)
+#6 : Ucenter->index()
+#7 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#10 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select goAttr.attribute_id,goAttr.attribute_value,att.name from iwebshop_goods_attribute as goAttr left join iwebshop_goods  as go on go.id = goAttr.goods_id left join iwebshop_attribute  as att on att.id = goAttr.attribute_id  where go.is_del = 0 and (go.seller_id = "1" and  go.name like "%" searchWord "%" or find_in_set("" searchWord "",go.search_words) ) and att.search = 1    limit 5000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'searchWord "%" or find_in_set("" searchWord "",go.search_words) ) and att.search' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-11 11:19:46
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select goAttr.attribute_id,goAttr.attribute_value,att.name from iwebshop_goods_attribute as goAttr left join iwebshop_goods  as go on go.id = goAttr.goods_id left join iwebshop_attribute  as att on att.id = goAttr.attribute_id  where go.is_del = 0 and (go.seller_id = "1" and  go.name like "%" searchWord "%" or find_in_set("" searchWord "",go.search_words) ) and att.search = 1    limit 5000)
+#1 IWEB_PATH/classes/search_goods.php(228): IQuery->find()
+#2 IWEB_PATH/runtime/views/default/site/home.php(197): search_goods::find()
+#3 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/home.php)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/home.php)
+#5 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/home)
+#6 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/home)
+#7 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#8 IWEB_PATH/controllers/site.php(829): IController->redirect(home)
+#9 : Site->home()
+#10 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#11 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#12 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(home)
+#13 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#14 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select goAttr.attribute_id,goAttr.attribute_value,att.name from iwebshop_goods_attribute as goAttr left join iwebshop_goods  as go on go.id = goAttr.goods_id left join iwebshop_attribute  as att on att.id = goAttr.attribute_id  where go.is_del = 0 and (go.seller_id = "1" and  go.name like "%" searchWord "%" or find_in_set("" searchWord "",go.search_words) ) and att.search = 1    limit 5000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'searchWord "%" or find_in_set("" searchWord "",go.search_words) ) and att.search' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-11 11:20:04
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select goAttr.attribute_id,goAttr.attribute_value,att.name from iwebshop_goods_attribute as goAttr left join iwebshop_goods  as go on go.id = goAttr.goods_id left join iwebshop_attribute  as att on att.id = goAttr.attribute_id  where go.is_del = 0 and (go.seller_id = "1" and  go.name like "%" searchWord "%" or find_in_set("" searchWord "",go.search_words) ) and att.search = 1    limit 5000)
+#1 IWEB_PATH/classes/search_goods.php(228): IQuery->find()
+#2 IWEB_PATH/runtime/views/default/site/home.php(197): search_goods::find()
+#3 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/home.php)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/home.php)
+#5 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/home)
+#6 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/home)
+#7 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#8 IWEB_PATH/controllers/site.php(829): IController->redirect(home)
+#9 : Site->home()
+#10 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#11 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#12 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(home)
+#13 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#14 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select goAttr.attribute_id,goAttr.attribute_value,att.name from iwebshop_goods_attribute as goAttr left join iwebshop_goods  as go on go.id = goAttr.goods_id left join iwebshop_attribute  as att on att.id = goAttr.attribute_id  where go.is_del = 0 and (go.seller_id = "1" and  go.name like "%" searchWord "%" or find_in_set("" searchWord "",go.search_words) ) and att.search = 1    limit 5000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'searchWord "%" or find_in_set("" searchWord "",go.search_words) ) and att.search' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-11 11:22:17
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select goAttr.attribute_id,goAttr.attribute_value,att.name from iwebshop_goods_attribute as goAttr left join iwebshop_goods  as go on go.id = goAttr.goods_id left join iwebshop_attribute  as att on att.id = goAttr.attribute_id  where go.is_del = 0 and (go.seller_id = "1" and  go.name like "%" searchWord "%" or find_in_set("" searchWord "",go.search_words) ) and att.search = 1    limit 5000)
+#1 IWEB_PATH/classes/search_goods.php(228): IQuery->find()
+#2 IWEB_PATH/runtime/views/default/site/home.php(197): search_goods::find()
+#3 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/home.php)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/home.php)
+#5 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/home)
+#6 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/home)
+#7 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#8 IWEB_PATH/controllers/site.php(829): IController->redirect(home)
+#9 : Site->home()
+#10 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#11 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#12 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(home)
+#13 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#14 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select goAttr.attribute_id,goAttr.attribute_value,att.name from iwebshop_goods_attribute as goAttr left join iwebshop_goods  as go on go.id = goAttr.goods_id left join iwebshop_attribute  as att on att.id = goAttr.attribute_id  where go.is_del = 0 and (go.seller_id = "1" and  go.name like "%" searchWord "%" or find_in_set("" searchWord "",go.search_words) ) and att.search = 1    limit 5000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'searchWord "%" or find_in_set("" searchWord "",go.search_words) ) and att.search' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-11 11:22:27
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select goAttr.attribute_id,goAttr.attribute_value,att.name from iwebshop_goods_attribute as goAttr left join iwebshop_goods  as go on go.id = goAttr.goods_id left join iwebshop_attribute  as att on att.id = goAttr.attribute_id  where go.is_del = 0 and (go.seller_id = "1" and  go.name like "%" searchWord "%" or find_in_set("" searchWord "",go.search_words) ) and att.search = 1    limit 5000)
+#1 IWEB_PATH/classes/search_goods.php(228): IQuery->find()
+#2 IWEB_PATH/runtime/views/default/site/home.php(197): search_goods::find()
+#3 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/home.php)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/home.php)
+#5 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/home)
+#6 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/home)
+#7 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#8 IWEB_PATH/controllers/site.php(829): IController->redirect(home)
+#9 : Site->home()
+#10 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#11 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#12 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(home)
+#13 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#14 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_quick_naviga  where admin_id =  and is_del = 0    limit 5000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and is_del = 0    limit 5000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-11 11:35:01
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_quick_naviga  where admin_id =  and is_del = 0    limit 5000)
+#1 IWEB_PATH/runtime/views/sysdefault/system/default.php(40): IQuery->find()
+#2 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/sysdefault/system/default.php)
+#3 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/sysdefault/system/default.php)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/sysdefault/system/default)
+#5 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/sysdefault/system/default)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#7 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(default)
+#8 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#9 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_quick_naviga  where admin_id =  and is_del = 0    limit 5000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and is_del = 0    limit 5000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-11 12:02:38
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_quick_naviga  where admin_id =  and is_del = 0    limit 5000)
+#1 IWEB_PATH/runtime/views/sysdefault/system/default.php(40): IQuery->find()
+#2 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/sysdefault/system/default.php)
+#3 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/sysdefault/system/default.php)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/sysdefault/system/default)
+#5 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/sysdefault/system/default)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#7 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(default)
+#8 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#9 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select slide from iwebshop_seller  where  seller_id=1    limit 5000
+ -- Unknown column 'seller_id' in 'where clause'
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-11 13:54:44
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select slide from iwebshop_seller  where  seller_id=1    limit 5000)
+#1 IWEB_PATH/classes/api/other.php(100): IQuery->find()
+#2 : APIOther->getBannerList(1)
+#3 IWEB_PATH/classes/apple.php(88): call_user_func_array()
+#4 IWEB_PATH/controllers/site.php(823): apple::go(getBannerList,1)
+#5 : Site->home()
+#6 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#7 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#8 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(home)
+#9 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#10 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+

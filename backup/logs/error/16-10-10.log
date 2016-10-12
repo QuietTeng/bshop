@@ -1,0 +1,903 @@
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_quick_naviga  where admin_id =  and is_del = 0    limit 5000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and is_del = 0    limit 5000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 10:26:19
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_quick_naviga  where admin_id =  and is_del = 0    limit 5000)
+#1 IWEB_PATH/runtime/views/sysdefault/system/default.php(40): IQuery->find()
+#2 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/sysdefault/system/default.php)
+#3 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/sysdefault/system/default.php)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/sysdefault/system/default)
+#5 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/sysdefault/system/default)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#7 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(default)
+#8 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#9 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_quick_naviga  where admin_id =  and is_del = 0    limit 5000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and is_del = 0    limit 5000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 10:38:02
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_quick_naviga  where admin_id =  and is_del = 0    limit 5000)
+#1 IWEB_PATH/runtime/views/sysdefault/system/default.php(40): IQuery->find()
+#2 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/sysdefault/system/default.php)
+#3 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/sysdefault/system/default.php)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/sysdefault/system/default)
+#5 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/sysdefault/system/default)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#7 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(default)
+#8 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#9 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select distinct go.id,go.name,go.img,go.sell_price from iwebshop_goods as go left join iwebshop_category_extend  as ca on ca.goods_id = go.id where ca.category_id in () and go.is_del = 0   order by sale desc limit 10
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and go.is_del = 0   order by sale desc limit 10' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 12:00:05
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select distinct go.id,go.name,go.img,go.sell_price from iwebshop_goods as go left join iwebshop_category_extend  as ca on ca.goods_id = go.id where ca.category_id in () and go.is_del = 0   order by sale desc limit 10)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/products.php(340): apple::go(getCategoryExtendListByCategoryid)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/products.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/products.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/products)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/products)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(452): IController->redirect(products)
+#10 : Site->products()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(products)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select distinct go.id,go.name,go.img,go.sell_price from iwebshop_goods as go left join iwebshop_category_extend  as ca on ca.goods_id = go.id where ca.category_id in () and go.is_del = 0   order by sale desc limit 10
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and go.is_del = 0   order by sale desc limit 10' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 12:00:08
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select distinct go.id,go.name,go.img,go.sell_price from iwebshop_goods as go left join iwebshop_category_extend  as ca on ca.goods_id = go.id where ca.category_id in () and go.is_del = 0   order by sale desc limit 10)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/products.php(340): apple::go(getCategoryExtendListByCategoryid)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/products.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/products.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/products)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/products)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(452): IController->redirect(products)
+#10 : Site->products()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(products)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select sum(og.real_price * og.goods_nums) as yValue,`pay_time`,DATE_FORMAT(`pay_time`,"%m-%d") as xValue from iwebshop_order_goods as og left join iwebshop_order  as o on o.id = og.order_id where og.is_send = 1 and og.seller_id =  and o.pay_status = 1 GROUP BY DATE_FORMAT(`pay_time`,'%Y-%m-%d') having `pay_time` >= '2016-10-04' and `pay_time` < '2016-10-10 23:59:59'   limit 5000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and o.pay_status = 1 GROUP BY DATE_FORMAT(`pay_time`,'%Y-%m-%d') having `pay_tim' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 12:06:51
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select sum(og.real_price * og.goods_nums) as yValue,`pay_time`,DATE_FORMAT(`pay_time`,"%m-%d") as xValue from iwebshop_order_goods as og left join iwebshop_order  as o on o.id = og.order_id where og.is_send = 1 and og.seller_id =  and o.pay_status = 1 GROUP BY DATE_FORMAT(`pay_time`,'%Y-%m-%d') having `pay_time` >= '2016-10-04' and `pay_time` < '2016-10-10 23:59:59'   limit 5000)
+#1 IWEB_PATH/classes/statistics.php(122): IQuery->find()
+#2 IWEB_PATH/classes/statistics.php(184): statistics::ParseCondition(pay_time,,)
+#3 IWEB_PATH/runtime/views/sysseller/seller/index.php(65): statistics::sellerAmount()
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/sysseller/seller/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/sysseller/seller/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/sysseller/seller/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/sysseller/seller/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#10 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_quick_naviga  where admin_id =  and is_del = 0    limit 5000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and is_del = 0    limit 5000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 13:46:00
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_quick_naviga  where admin_id =  and is_del = 0    limit 5000)
+#1 IWEB_PATH/runtime/views/sysdefault/system/default.php(40): IQuery->find()
+#2 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/sysdefault/system/default.php)
+#3 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/sysdefault/system/default.php)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/sysdefault/system/default)
+#5 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/sysdefault/system/default)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#7 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(default)
+#8 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#9 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:08:32
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/products.php(91): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/products.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/products.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/products)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/products)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(452): IController->redirect(products)
+#10 : Site->products()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(products)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:08:41
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/products.php(91): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/products.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/products.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/products)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/products)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(452): IController->redirect(products)
+#10 : Site->products()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(products)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:14:56
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/products.php(91): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/products.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/products.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/products)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/products)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(452): IController->redirect(products)
+#10 : Site->products()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(products)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:16:11
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/pro_list.php(91): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/pro_list.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/pro_list.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/pro_list)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/pro_list)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(184): IController->redirect(pro_list)
+#10 : Site->pro_list()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(pro_list)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:46:42
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/products.php(91): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/products.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/products.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/products)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/products)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(452): IController->redirect(products)
+#10 : Site->products()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(products)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:49:40
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/index.php(91): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(36): IController->redirect(index)
+#10 : Site->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:50:29
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/index.php(91): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(36): IController->redirect(index)
+#10 : Site->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:50:30
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/index.php(91): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(36): IController->redirect(index)
+#10 : Site->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:50:31
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/index.php(91): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(36): IController->redirect(index)
+#10 : Site->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:51:10
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/index.php(91): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(36): IController->redirect(index)
+#10 : Site->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:51:11
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/index.php(91): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(36): IController->redirect(index)
+#10 : Site->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:51:12
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/index.php(91): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(36): IController->redirect(index)
+#10 : Site->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:51:15
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/index.php(91): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(36): IController->redirect(index)
+#10 : Site->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:51:24
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/index.php(91): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(36): IController->redirect(index)
+#10 : Site->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:52:49
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/search_list.php(91): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/search_list.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/search_list.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/search_list)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/search_list)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(90): IController->redirect(search_list)
+#10 : Site->search_list()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(search_list)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:53:58
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/products.php(91): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/products.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/products.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/products)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/products)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(452): IController->redirect(products)
+#10 : Site->products()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(products)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:54:02
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/products.php(91): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/products.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/products.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/products)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/products)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(452): IController->redirect(products)
+#10 : Site->products()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(products)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 0
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:56:10
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 0)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/products.php(91): apple::go(getCategoryListTop,0)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/products.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/products.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/products)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/products)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(452): IController->redirect(products)
+#10 : Site->products()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(products)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 0
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 15:56:14
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 0)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/site/products.php(91): apple::go(getCategoryListTop,0)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/site/products.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/site/products.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/site/products)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/site/products)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(452): IController->redirect(products)
+#10 : Site->products()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(products)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 16:06:21
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id = 0 and visibility = 1 and seller_id=(#seller_id#)   order by  sort asc limit 20)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/ucenter/index.php(79): apple::go(getCategoryListTop)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/ucenter/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/ucenter/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/ucenter.php(40): IController->redirect(index)
+#10 : Ucenter->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and visibility = 1    order by  sort asc limit 10' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 16:14:31
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/ucenter/index.php(87): apple::go(getCategoryByParentid)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/ucenter/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/ucenter/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/ucenter.php(40): IController->redirect(index)
+#10 : Ucenter->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and visibility = 1    order by  sort asc limit 10' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 16:15:00
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/ucenter/index.php(87): apple::go(getCategoryByParentid)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/ucenter/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/ucenter/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/ucenter.php(40): IController->redirect(index)
+#10 : Ucenter->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and visibility = 1    order by  sort asc limit 10' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 16:15:02
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/ucenter/index.php(87): apple::go(getCategoryByParentid)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/ucenter/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/ucenter/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/ucenter.php(40): IController->redirect(index)
+#10 : Ucenter->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and visibility = 1    order by  sort asc limit 10' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 16:15:14
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/ucenter/index.php(87): apple::go(getCategoryByParentid)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/ucenter/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/ucenter/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/ucenter.php(40): IController->redirect(index)
+#10 : Ucenter->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and visibility = 1    order by  sort asc limit 10' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 16:15:16
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/ucenter/index.php(87): apple::go(getCategoryByParentid)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/ucenter/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/ucenter/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/ucenter.php(40): IController->redirect(index)
+#10 : Ucenter->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and visibility = 1    order by  sort asc limit 10' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 16:15:56
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/ucenter/index.php(87): apple::go(getCategoryByParentid)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/ucenter/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/ucenter/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/ucenter.php(40): IController->redirect(index)
+#10 : Ucenter->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and visibility = 1    order by  sort asc limit 10' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 16:16:09
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/ucenter/index.php(87): apple::go(getCategoryByParentid)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/ucenter/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/ucenter/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/ucenter.php(40): IController->redirect(index)
+#10 : Ucenter->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and visibility = 1    order by  sort asc limit 10' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 16:16:10
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/ucenter/index.php(87): apple::go(getCategoryByParentid)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/ucenter/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/ucenter/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/ucenter.php(40): IController->redirect(index)
+#10 : Ucenter->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and visibility = 1    order by  sort asc limit 10' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 16:17:09
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/ucenter/index.php(87): apple::go(getCategoryByParentid)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/ucenter/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/ucenter/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/ucenter.php(40): IController->redirect(index)
+#10 : Ucenter->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and visibility = 1    order by  sort asc limit 10' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 16:17:33
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/ucenter/index.php(87): apple::go(getCategoryByParentid)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/ucenter/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/ucenter/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/ucenter.php(40): IController->redirect(index)
+#10 : Ucenter->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and visibility = 1    order by  sort asc limit 10' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-10-10 16:17:34
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_category  where  parent_id =  and visibility = 1    order by  sort asc limit 10)
+#1 IWEB_PATH/classes/apple.php(151): IQuery->find()
+#2 IWEB_PATH/classes/apple.php(56): apple::query()
+#3 IWEB_PATH/runtime/views/default/ucenter/index.php(87): apple::go(getCategoryByParentid)
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/default/ucenter/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/default/ucenter/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/default/ucenter/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(367): IViewAction->run()
+#9 IWEB_PATH/controllers/ucenter.php(40): IController->redirect(index)
+#10 : Ucenter->index()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#14 IWEB_PATH/lib/core/application_class.php(93): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(7): IApplication->run()
+</ERROR_BLOCK>
+

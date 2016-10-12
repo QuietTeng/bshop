@@ -1,0 +1,103 @@
+<ERROR_BLOCK>
+excepInfo: select * from iwebshop_quick_naviga  where admin_id =  and is_del = 0    limit 5000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and is_del = 0    limit 5000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-09-28 09:45:46
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select * from iwebshop_quick_naviga  where admin_id =  and is_del = 0    limit 5000)
+#1 IWEB_PATH/runtime/views/sysdefault/system/default.php(40): IQuery->find()
+#2 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/sysdefault/system/default.php)
+#3 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/sysdefault/system/default.php)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/sysdefault/system/default)
+#5 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/sysdefault/system/default)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#7 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(default)
+#8 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#9 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: select sum(og.real_price * og.goods_nums) as yValue,`pay_time`,DATE_FORMAT(`pay_time`,"%m-%d") as xValue from iwebshop_order_goods as og left join iwebshop_order  as o on o.id = og.order_id where og.is_send = 1 and og.seller_id =  and o.pay_status = 1 GROUP BY DATE_FORMAT(`pay_time`,'%Y-%m-%d') having `pay_time` >= '2016-09-22' and `pay_time` < '2016-09-28 23:59:59'   limit 5000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and o.pay_status = 1 GROUP BY DATE_FORMAT(`pay_time`,'%Y-%m-%d') having `pay_tim' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-09-28 14:18:33
+#0 IWEB_PATH/lib/core/query_class.php(161): IDB->query(select sum(og.real_price * og.goods_nums) as yValue,`pay_time`,DATE_FORMAT(`pay_time`,"%m-%d") as xValue from iwebshop_order_goods as og left join iwebshop_order  as o on o.id = og.order_id where og.is_send = 1 and og.seller_id =  and o.pay_status = 1 GROUP BY DATE_FORMAT(`pay_time`,'%Y-%m-%d') having `pay_time` >= '2016-09-22' and `pay_time` < '2016-09-28 23:59:59'   limit 5000)
+#1 IWEB_PATH/classes/statistics.php(122): IQuery->find()
+#2 IWEB_PATH/classes/statistics.php(184): statistics::ParseCondition(pay_time,,)
+#3 IWEB_PATH/runtime/views/sysseller/seller/index.php(65): statistics::sellerAmount()
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(115): require(IWEB_PATH/runtime/views/sysseller/seller/index.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(81): IControllerBase->requireFile(IWEB_PATH/runtime/views/sysseller/seller/index.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(166): IControllerBase->renderView(IWEB_PATH/views/sysseller/seller/index)
+#7 IWEB_PATH/lib/web/action/view_action.php(32): IController->render(IWEB_PATH/views/sysseller/seller/index)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IViewAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#10 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_member as m,iwebshop_user as u WHERE m.user_id = u.id and m.user_id= limit 1
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 1' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-09-28 14:27:31
+#0 IWEB_PATH/lib/web/model/model_class.php(200): IDB->query(SELECT * FROM iwebshop_member as m,iwebshop_user as u WHERE m.user_id = u.id and m.user_id= limit 1)
+#1 IWEB_PATH/lib/web/model/model_class.php(148): IModel->query(m.user_id = u.id and m.user_id=,*,,1)
+#2 IWEB_PATH/classes/api/ucenter.php(61): IModel->getObj(m.user_id = u.id and m.user_id=)
+#3 : APIUcenter->getMemberInfo()
+#4 IWEB_PATH/classes/apple.php(88): call_user_func_array()
+#5 IWEB_PATH/controllers/ucenter.php(18): apple::go(getMemberInfo)
+#6 : Ucenter->index()
+#7 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#10 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_member as m,iwebshop_user as u WHERE m.user_id = u.id and m.user_id= limit 1
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 1' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-09-28 14:27:37
+#0 IWEB_PATH/lib/web/model/model_class.php(200): IDB->query(SELECT * FROM iwebshop_member as m,iwebshop_user as u WHERE m.user_id = u.id and m.user_id= limit 1)
+#1 IWEB_PATH/lib/web/model/model_class.php(148): IModel->query(m.user_id = u.id and m.user_id=,*,,1)
+#2 IWEB_PATH/classes/api/ucenter.php(61): IModel->getObj(m.user_id = u.id and m.user_id=)
+#3 : APIUcenter->getMemberInfo()
+#4 IWEB_PATH/classes/apple.php(88): call_user_func_array()
+#5 IWEB_PATH/controllers/ucenter.php(18): apple::go(getMemberInfo)
+#6 : Ucenter->index()
+#7 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#10 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_member as m,iwebshop_user as u WHERE m.user_id = u.id and m.user_id= limit 1
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 1' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 119
+excepCode: 1000
+excepTime: 2016-09-28 15:46:24
+#0 IWEB_PATH/lib/web/model/model_class.php(200): IDB->query(SELECT * FROM iwebshop_member as m,iwebshop_user as u WHERE m.user_id = u.id and m.user_id= limit 1)
+#1 IWEB_PATH/lib/web/model/model_class.php(148): IModel->query(m.user_id = u.id and m.user_id=,*,,1)
+#2 IWEB_PATH/classes/api/ucenter.php(61): IModel->getObj(m.user_id = u.id and m.user_id=)
+#3 : APIUcenter->getMemberInfo()
+#4 IWEB_PATH/classes/apple.php(88): call_user_func_array()
+#5 IWEB_PATH/controllers/ucenter.php(18): apple::go(getMemberInfo)
+#6 : Ucenter->index()
+#7 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(index)
+#10 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+

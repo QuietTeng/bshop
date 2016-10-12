@@ -1,0 +1,66 @@
+<div class="main f_r">
+    <div class="uc_title m_10">
+        <label class="current"><span>我的订单</span></label>
+    </div>
+    <div class="box m_10">
+        <form action='{url:/ucenter/order}' method='post' name='order_history'>
+            <div class="uc_title2 m_10">
+                <span class="f_r">
+                    <select name='seller_id'>
+                        <option value="-1" selected=selected>全部商家</option>
+                        <option value="0">平台自营</option>
+                        {set:$queryOrderLists = apple::go('getOrderSellerList',$this->user['user_id'])}
+                            {foreach:items = $queryOrderLists->find()}
+                                <option value="{$item['id']}">{$item['true_name']}</option>
+                            {/foreach}
+                    </select>
+                      <select name='order_status'>
+                        <option value="-1" selected=selected>全部订单</option>
+                        <option value="1">待付款</option>
+                        <option value="2">待发货</option>
+                        <option value="3">已取消</option>
+                        <option value="4">待收货</option>
+                        <option value="5">待评价</option>
+                    </select>
+                    <input class="sbtn" type="submit" value="查询" />
+                </span>
+     
+            </div>
+        </form>
+        <table class="list_table" width="100%" cellpadding="0" cellspacing="0">
+        	<col width="140px" />
+            <tr>
+                <th>订单编号</th>
+                <th>下单日期</th>
+                <th>收货人</th>
+                <th>支付方式</th>
+                <th>总金额</th>
+                <th>订单状态</th>
+            </tr>
+            {set:$queryOrderList = apple::go('getOrderList',$this->user['user_id'],$this->order_status,$this->seller_id)}
+			{foreach:items = $queryOrderList->find()}
+            <tr>
+                <td>
+                	<a href="{url:/ucenter/order_detail/id/$item[id]}" class="orange">{$item['order_no']}</a>
+                </td>
+                <td>{$item['create_time']}</td>
+                <td>{$item['accept_name']}</td>
+                <td>{$this->payments[$item['pay_type']]['name']}</td>
+                <td>￥{echo:$item['order_amount']}</td>
+                <td>{$item['status']}
+                	<b class="orange">{echo:Order_Class::orderStatusText(Order_Class::getOrderStatus($item))}</b>
+                </td>
+            </tr>
+            {/foreach}
+            <tfoot><tr><td colspan="6" class="t_l">{$queryOrderList->getPageBar()}</td></tr></tfoot>
+        </table>
+    </div>
+</div>
+<script type='text/javascript'>
+    var FromObj = new Form('order_history');
+    FromObj.init
+    ({
+        'seller_id':'{$this->seller_id}',
+        'order_status':'{$this->order_status}',
+    });
+</script>
