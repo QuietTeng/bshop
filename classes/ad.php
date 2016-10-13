@@ -62,7 +62,7 @@ class Ad
 		$adArray        = array();
 
 		$positionObject = self::getPositionInfo($position);
-		print_r($positionObject);
+		 
 		if($positionObject)
 		{
 			$adList = self::getAdList($positionObject['id'],$goods_cat_id);

@@ -19,6 +19,9 @@
 </head>
 <body class="index">
 <div class="container">
+
+	<?php echo Ad::show("页面顶部通栏广告条");?>
+
 	<div class="header">
 		<h1 class="logo"><a title="<?php echo $this->_siteConfig->name;?>" style="background:url(<?php if($this->_siteConfig->logo){?><?php echo IUrl::creatUrl("")."".$this->_siteConfig->logo."";?><?php }else{?><?php echo $this->getWebSkinPath()."images/front/logo.gif";?><?php }?>) center no-repeat;background-size:contain;" href="<?php echo IUrl::creatUrl("");?>"><?php echo $this->_siteConfig->name;?></a></h1>
 		<ul class="shortcut">
@@ -132,14 +135,14 @@
 			<?php }?>
 		</div>
 	</div>
-	<?php echo Ad::show(1);?>
+	<?php echo Ad::show("页面顶部通栏广告条",23);?>
 
 	<script type="text/javascript" charset="UTF-8" src="/runtime/_systemjs/jquerySlider/jquery.bxslider.min.js"></script><link rel="stylesheet" type="text/css" href="/runtime/_systemjs/jquerySlider/jquery.bxslider.css" />
 <div class="wrapper clearfix">
 	<div class="sidebar f_r">
 		<!--cms新闻展示-->
 		<div class="box m_10">
-			<div class="title"><h2>系统公告</h2><a class="more" href="<?php echo IUrl::creatUrl("/site/article");?>">more...</a></div>
+			<div class="title"><h2>快报</h2><a class="more" href="<?php echo IUrl::creatUrl("/site/article");?>">更多...</a></div>
 			<div class="cont">
 				<ul class="list">
 				<?php foreach(apple::go('getArtList',5) as $key => $item){?>
@@ -158,7 +161,7 @@
 		<?php if($this->index_slide){?>
 		<ul class="bxslider">
 			<?php foreach($this->index_slide as $key => $item){?>
-			<li title="<?php echo isset($item['name'])?$item['name']:"";?>"><a href="<?php echo IUrl::creatUrl("".$item['url']."");?>" target="_blank"><img src="<?php echo IUrl::creatUrl("/pic/thumb/img/".$item['img']."");?>" width="750px" title="<?php echo isset($item['name'])?$item['name']:"";?>" /></a></li>
+			<li title="<?php echo isset($item['name'])?$item['name']:"";?>"><a href="<?php echo IUrl::creatUrl("".$item['url']."");?>" target="_blank"><img src="<?php echo IUrl::creatUrl("/pic/thumb/img/".$item['img']."");?>" width="900px" title="<?php echo isset($item['name'])?$item['name']:"";?>" /></a></li>
 			<?php }?>
 		</ul>
 		<?php }?>
@@ -220,7 +223,7 @@
 					<?php foreach(apple::go('getCommendHot',8) as $key => $item){?>
 					<?php $tmpId=$item['id']?>
 					<li>
-						<a href="<?php echo IUrl::creatUrl("/site/products/id/".$tmpId."");?>"><img src="<?php echo IUrl::creatUrl("/pic/thumb/img/".$item['img']."/w/85/h/85");?>" width="85" height="85" alt="<?php echo isset($item['name'])?$item['name']:"";?>" /></a>
+						<a href="<?php echo IUrl::creatUrl("/site/products/id/".$tmpId."");?>"><img src="<?php echo IUrl::creatUrl("/pic/thumb/img/".$item['img']."/w/60/h/60");?>" width="85" height="85" alt="<?php echo isset($item['name'])?$item['name']:"";?>" /></a>
 						<p class="pro_title"><a href="<?php echo IUrl::creatUrl("/site/products/id/".$tmpId."");?>"><?php echo isset($item['name'])?$item['name']:"";?></a></p>
 						<p class="brown"><b>￥<?php echo isset($item['sell_price'])?$item['sell_price']:"";?></b></p>
 					</li>
@@ -307,16 +310,16 @@
 		<!--商品分类展示-->
 
 		<!--最新商品-->
-		<div class="box yellow m_10">
+		<div class="box m_10">
 			<div class="title2">
 				<h2><img src="<?php echo $this->getWebSkinPath()."images/front/new_product.gif";?>" alt="最新商品" width="160" height="36" /></h2>
 			</div>
 			<div class="cont clearfix">
 				<ul class="prolist">
-					<?php foreach(apple::go('getCommendNew',8) as $key => $item){?>
+					<?php foreach(apple::go('getCommendNew',5) as $key => $item){?>
 					<?php $tmpId=$item['id'];?>
 					<li style="overflow:hidden">
-						<a href="<?php echo IUrl::creatUrl("/site/products/id/".$tmpId."");?>"><img src="<?php echo IUrl::creatUrl("/pic/thumb/img/".$item['img']."/w/175/h/175");?>" width="175" height="175" alt="<?php echo isset($item['name'])?$item['name']:"";?>" /></a>
+						<a href="<?php echo IUrl::creatUrl("/site/products/id/".$tmpId."");?>"><img src="<?php echo IUrl::creatUrl("/pic/thumb/img/".$item['img']."/w/120/h/120");?>" width="120" height="120" alt="<?php echo isset($item['name'])?$item['name']:"";?>" /></a>
 						<p class="pro_title"><a title="<?php echo isset($item['name'])?$item['name']:"";?>" href="<?php echo IUrl::creatUrl("/site/products/id/".$tmpId."");?>"><?php echo isset($item['name'])?$item['name']:"";?></a></p>
 						<p class="brown">惊喜价：<b>￥<?php echo isset($item['sell_price'])?$item['sell_price']:"";?></b></p>
 						<p class="light_gray">市场价：<s>￥<?php echo isset($item['market_price'])?$item['market_price']:"";?></s></p>
@@ -342,9 +345,9 @@
 
 			<div class="cont clearfix">
 				<ul class="prolist">
-					<?php foreach(apple::go('getCategoryExtendList',array('#categroy_id#',$first['id']),8) as $key => $item){?>
+					<?php foreach(apple::go('getCategoryExtendList',array('#categroy_id#',$first['id']),10) as $key => $item){?>
 					<li style="overflow:hidden">
-						<a href="<?php echo IUrl::creatUrl("/site/products/id/".$item['id']."");?>"><img src="<?php echo IUrl::creatUrl("/pic/thumb/img/".$item['img']."/w/175/h/175");?>" width="175" height="175" alt="<?php echo isset($item['name'])?$item['name']:"";?>" title="<?php echo isset($item['name'])?$item['name']:"";?>" /></a>
+						<a href="<?php echo IUrl::creatUrl("/site/products/id/".$item['id']."");?>"><img src="<?php echo IUrl::creatUrl("/pic/thumb/img/".$item['img']."/w/120/h/120");?>" width="120" height="120" alt="<?php echo isset($item['name'])?$item['name']:"";?>" title="<?php echo isset($item['name'])?$item['name']:"";?>" /></a>
 						<p class="pro_title"><a title="<?php echo isset($item['name'])?$item['name']:"";?>" href="<?php echo IUrl::creatUrl("/site/products/id/".$item['id']."");?>"><?php echo isset($item['name'])?$item['name']:"";?></a></p>
 						<p class="brown">惊喜价：<b>￥<?php echo isset($item['sell_price'])?$item['sell_price']:"";?></b></p>
 						<p class="light_gray">市场价：<s>￥<?php echo isset($item['market_price'])?$item['market_price']:"";?></s></p>
@@ -360,7 +363,7 @@
 			<div class="title2"><h2><img src="<?php echo $this->getWebSkinPath()."images/front/brand.gif";?>" alt="品牌列表" width="155" height="36" /></h2><a class="more" href="<?php echo IUrl::creatUrl("/site/brand");?>">&lt;<span>全部品牌</span>&gt;</a></div>
 			<div class="cont clearfix">
 				<ul>
-					<?php foreach(apple::go('getBrandList',6) as $key => $item){?>
+					<?php foreach(apple::go('getBrandList',7) as $key => $item){?>
 					<?php $tmpId=$item['id'];?>
 					<li><a href="<?php echo IUrl::creatUrl("/site/brand_zone/id/".$tmpId."");?>"><img src="<?php echo IUrl::creatUrl("")."".$item['logo']."";?>"  width="110" height="50"/><?php echo isset($item['name'])?$item['name']:"";?></a></li>
 					<?php }?>

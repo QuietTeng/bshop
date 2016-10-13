@@ -19,6 +19,9 @@
 </head>
 <body class="index">
 <div class="container">
+
+		<?php echo Ad::show("页面顶部通栏广告条");?>
+
 	<div class="header">
 		<h1 class="logo"><a title="<?php echo $this->_siteConfig->name;?>" style="background:url(<?php if($this->_siteConfig->logo){?><?php echo IUrl::creatUrl("")."".$this->_siteConfig->logo."";?><?php }else{?><?php echo $this->getWebSkinPath()."images/front/logo.gif";?><?php }?>) center no-repeat;background-size:contain;" href="<?php echo IUrl::creatUrl("");?>"><?php echo $this->_siteConfig->name;?></a></h1>
 		<ul class="shortcut">
@@ -132,7 +135,7 @@
 			<?php }?>
 		</div>
 	</div>
-	<?php echo Ad::show(1);?>
+	<?php echo Ad::show("页面顶部通栏广告条",23);?>
 
 	<script type="text/javascript" charset="UTF-8" src="/runtime/_systemjs/artTemplate/artTemplate.js"></script><script type="text/javascript" charset="UTF-8" src="/runtime/_systemjs/artTemplate/artTemplate-plugin.js"></script>
 <script type="text/javascript" charset="UTF-8" src="/runtime/_systemjs/jqueryZoom/jquery.imagezoom.min.js"></script><link rel="stylesheet" type="text/css" href="/runtime/_systemjs/jqueryZoom/imagezoom.css" />

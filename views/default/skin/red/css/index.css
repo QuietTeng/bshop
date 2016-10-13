@@ -85,7 +85,7 @@ a.more{color:#a2a2a2}a.zoom{padding-left:20px;background:url(../images/front/spr
     background-position: 0 0;
 }
 /* grade style end */
-body.index{ background:url(../images/front/sprites.gif) 0 -341px repeat-x}
+body.index{/* background:url(../images/front/spritess3.gif) 0 -341px repeat-x scroll*/ }
 .container,.container_2{width:1200px;margin:0 auto}
 .tabs_menu .node{cursor:pointer}
 /* header style start */
@@ -102,7 +102,7 @@ body.index{ background:url(../images/front/sprites.gif) 0 -341px repeat-x}
 		.header .loginfo a.reg{color:#CA4133;background:none}
 /* header style end */
 /* navbar style start */
-.navbar{height:32px;padding-top:6px}
+.navbar{height:32px;padding-top:6px;background: deeppink}
 .navbar ul{float:left;height:32px}
 	.navbar li{float:left;height:32px;font-size:14px;font-weight:bold;background:url(../images/front/sprites.gif) right -132px no-repeat;overflow:hidden}
 	.navbar li.last{background:none}
@@ -165,11 +165,11 @@ body.index{ background:url(../images/front/sprites.gif) 0 -341px repeat-x}
 /* position style end */
 .wrapper{margin-bottom:10px}
 body.second .wrapper{border-top:2px solid #cc1b30}
-.main{width:900px}
+.main{width:900px;margin-top: 5px;}
 .sidebar{width:285px}
 	.wrapper .box{border:1px #e1e1e1 solid}
 		.wrapper .box .title{height:31px;border-bottom:1px #e1e1e1 solid;line-height:30px}
-		.wrapper .box .title2{height:36px;border-bottom:1px #e1e1e1 solid;line-height:36px}
+		.wrapper .box .title2{height:36px;border-bottom:1px #e1e1e1 solid;/*line-height:36px*/}
 		.wrapper .box .title3{height:41px;margin-top:10px;border-bottom:0;overflow:hidden}
 		.wrapper .box .title4{height:32px;background:#f3f3f3;line-height:32px}
 			.wrapper .box .title h2,.wrapper .box .title2 h2,.wrapper .box .title4 h2{float:left;display:inline;margin-left:8px;font-size:14px;color:#635A4E;text-align:left}
@@ -220,10 +220,10 @@ ul.list{padding:6px 6px 4px}
 	ul.list li{height:15px;line-height:15px;margin:0 0 5px;padding:8px 0 0 9px;text-align:left;background:url(../images/front/sprites.gif) -290px -185px no-repeat;overflow:hidden}
 /* ul.list style end */
 /* prolist style start */
-ul.prolist li{float:left;display:inline;width:175px;height:238px;margin:10px 1px 10px 9px;text-align:left}
+ul.prolist li{float:left;display:inline;width:175px;height:238px;margin:10px -50px 10px 50px;text-align:left}
 	ul.prolist li.h{width:180px;height:329px;margin:10px 6px 10px 9px}
 	ul.prolist li.s{width:121px;height:168px;margin:10px 6px 10px 9px}
-	ul.prolist li .pro_title{margin-top:8px;height:18px;overflow:hidden}
+	ul.prolist li .pro_title{margin-top:8px;height:36px;overflow:hidden;width:120px;}
 	ul.prolist li .integral{color:#464646}
 		ul.prolist li b,div.prolist dl dd b,.hot ul.prolist li b,ul.ranklist li.current em,ul.ranklist li.current b,.container_2 .box ul.ranklist li.current b,.cart_stats dd span b{color:#a40000;font:bold 14px "宋体"}
 		ul.prolist li s,ul.prolist li span{color:#999;font-family:Times, serif}
@@ -233,7 +233,7 @@ ul.prolist li{float:left;display:inline;width:175px;height:238px;margin:10px 1px
 	.buying ul.prolist li div{ position:absolute;top:115px;left:110px;width:56px;height:48px;background:url(../images/front/buying.png) no-repeat;_display:none}
 	.buying ul.prolist li .countdown .countdown{margin:0 auto 5px;}
 	.buying ul.prolist li .countdown b{margin:0 3px;font-size:20px;color:#c4000f}
-.hot ul.prolist li{width:87px;height:136px;text-align:center;margin:5px 1px 5px 9px;overflow:hidden}
+.hot ul.prolist li{width:87px;height:136px;text-align:center;margin:5px 10px 5px 30px;overflow:hidden}
 	.hot ul.prolist li img,.buying ul.prolist li img{border:1px solid #e1e1e1}
 	.hot ul.prolist li .pro_title{margin:6px 0}
 .ucenter ul.prolist{width:100%}
@@ -374,7 +374,7 @@ a.btn_pay{display:inline-block;width:119px;height:37px;margin-right:20px;backgro
 /* gray_box style end */
 /* ucenter style start */
 .ucenter .sidebar{width:180px}
-.ucenter .main{width:770px;text-align:left}
+.ucenter .main{width:1000px;text-align:left}
 .ucenter .main .box .cont{overflow:visible}
 	.ucenter .main .box p.text{margin:10px 30px}
 .ucenter .sidebar .box{margin-top:-1px}
@@ -838,7 +838,7 @@ a.reg_btn{display:block;width:159px;margin:10px 0 0;background-position:0 -210px
 /* help style start */
 .help{padding:6px 0 0 0;background:url(../images/front/help_bg.gif) repeat-x}
 	.help .cont{padding-bottom:20px;background:url(../images/front/help_cont_bg.gif) 0 bottom repeat-x}
-		.help dl{display:inline;float:left;width:180px;overflow:hidden;text-align:left;line-height:23px;padding:25px 0 10px 0px}
+		.help dl{display:inline;float:left;width:180px;overflow:hidden;text-align:left;line-height:23px;padding:25px 0 10px 0px;margin-left:50px;}
 			.help dl dt{border-bottom:1px solid #e1e1e1;padding:0 0 5px 2px;margin-bottom:5px;margin-left:52px}
 				.help dl dt a{font:bold 14px Arial, Helvetica, sans-serif;color:#888}
 			.help dl dd{padding-left:15px;background:url(../images/front/sprites.gif) -287px -292px no-repeat;margin-left:52px}
