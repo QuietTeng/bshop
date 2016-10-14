@@ -5,6 +5,25 @@
 {set:$breadGuide = goods_class::catRecursion($category);}
 <div class="position"><span>您当前的位置：</span><a href="{url:}">首页</a>{foreach:items=$breadGuide} » <a href="{url:/site/pro_list/cat/$item[id]}">{$item['name']}</a>{/foreach} » {$name}</div>
 <div class="wrapper clearfix">
+	
+
+	<!--图片放大镜-->
+	<div class="preview">
+		<div class="pic_show" style="width:435px;height:435px;position:relative;z-index:5;padding-bottom:5px;">
+			<img id="picShow" rel="" src="" />
+		</div>
+
+		<ul id="goodsPhotoList" class="pic_thumb">
+			{foreach:items=$photo}
+			<li>
+				<a href="javascript:void(0);" thumbimg="{url:/pic/thumb/img/$item['img']/w/435/h/435}" sourceimg="{webroot:$item['img']}">
+					<img src='{url:/pic/thumb/img/$item['img']/w/60/h/60}' width="60px" height="60px" />
+				</a>
+			</li>
+			{/foreach}
+		</ul>
+	</div>
+
 	<div class="summary">
 		<h2>{$name}</h2>
 
@@ -136,23 +155,21 @@
 		{/if}
 		</div>
 	</div>
-
-	<!--图片放大镜-->
-	<div class="preview">
-		<div class="pic_show" style="width:435px;height:435px;position:relative;z-index:5;padding-bottom:5px;">
-			<img id="picShow" rel="" src="" />
+	<div class="progoods">
+			<div class="title">推荐商品</div>
+			<div class="content">
+				<ul class="ranklist">
+				{foreach:items=apple::go('getCommendRecom',7)}
+					<li class="current">
+						<a href="{url:/site/products/id/$item[id]}"><img width="58px" height="58px" alt="{$item['name']}" src="{url:/pic/thumb/img/$item[img]/w/58/h/58}" /></a>
+						<a title="{$item['name']}" class="p_name" href="{url:/site/products/id/$item[id]}">{$item['name']}</a>
+						<b>￥{$item['sell_price']}</b>
+					</li>
+				{/foreach}
+				</ul>
+			</div>
 		</div>
 
-		<ul id="goodsPhotoList" class="pic_thumb">
-			{foreach:items=$photo}
-			<li>
-				<a href="javascript:void(0);" thumbimg="{url:/pic/thumb/img/$item['img']/w/435/h/435}" sourceimg="{webroot:$item['img']}">
-					<img src='{url:/pic/thumb/img/$item['img']/w/60/h/60}' width="60px" height="60px" />
-				</a>
-			</li>
-			{/foreach}
-		</ul>
-	</div>
 </div>
 
 <div class="t_l">
@@ -163,6 +180,18 @@
 
 	<!--左边栏-->
 	<div class="sidebar f_l">
+
+		<!--商家信息-->
+		<div class="box m_10">
+			<div class="title">店铺信息</div>
+			<div style="margin-top:20px;">北京国贸大厦科技公司</div>
+			<div style="margin-top:20px;margin-bottom:10px">评分 物流 描述</div>
+			<div class="cont">
+				<a  style="color:#fff;" href="//fruitday.tmall.com?spm=a220o.1000855.1997427133.d4918061.43UpON" class="cc">进店逛逛</a>
+				<a  style="color:#fff;" href="//fruitday.tmall.com?spm=a220o.1000855.1997427133.d4918061.43UpON" class="cc">收藏店铺</a>
+			</div>
+		</div>
+		<!--促销规则-->
 
 		<!--促销规则-->
 		<div class="box m_10">
@@ -194,22 +223,7 @@
 		</div>
 		<!--热卖商品-->
 
-		<!--推荐商品-->
-		<div class="box m_10">
-			<div class="title">推荐商品</div>
-			<div class="content">
-				<ul class="ranklist">
-				{foreach:items=apple::go('getCommendRecom')}
-					<li class="current">
-						<a href="{url:/site/products/id/$item[id]}"><img width="58px" height="58px" alt="{$item['name']}" src="{url:/pic/thumb/img/$item[img]/w/58/h/58}" /></a>
-						<a title="{$item['name']}" class="p_name" href="{url:/site/products/id/$item[id]}">{$item['name']}</a>
-						<b>￥{$item['sell_price']}</b>
-					</li>
-				{/foreach}
-				</ul>
-			</div>
-		</div>
-		<!--推荐商品-->
+		 
 
 	</div>
 

@@ -594,4 +594,28 @@ class Util
 
 		return implode(" and ", $where);
 	}
+
+
+	/**
+	 * 字符串截取
+	 * @param string $string 字符串
+	 * @param array $len 截取长度
+	 * @return string 
+	 */
+	public static function str_cut($string,$len=8){
+		if(!$string)  return $string;
+		$sub_string = '';
+ 		$count =0;
+ 		$f = 0;
+		for($i=0;$i<$len;$i++){
+		    $tmp = substr($string,$f,1);
+			if(ord($tmp)>128){
+				$tmp = substr($string,$f,3);
+				$f +=2; 
+			}
+			$f++;
+			$sub_string .= $tmp;
+		}
+		return $sub_string;
+	}
 }

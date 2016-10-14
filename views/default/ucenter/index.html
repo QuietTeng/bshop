@@ -58,8 +58,8 @@
 			{foreach:items=apple::go('getOrderListByUserid',array('#user_id#',$user['user_id']))}
 			<tr>
 				<td><a href="{url:/ucenter/order_detail/id/$item[id]}">{$item['order_no']}</a></td>{set:$goods=json_decode($item['goods_array'],true)}
-				<td title="{$goods['name']}">{echo:substr($goods['name'],0,24)}</td>
-				<td><img src="{$item['img']}" style="width:40px"></td>
+				<td title="{$goods['name']}">{echo: util::str_cut($goods['name'],12)}</td>
+				<td><img src="/{$item['img']}" style="width:40px"></td>
 				<td>{$item['create_time']}</td>
 				<td>{$item['accept_name']}</td>
 				<td>{$this->payments[$item['pay_type']]['name']}</td>

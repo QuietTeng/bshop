@@ -7,7 +7,7 @@
 			<div class="content">
 				<div class="c_box">
 					<dl class="clearfix">
-						<dt><strong style="margin-left:15px">{$sellerRow['true_name']}</strong><a class="favorite" onclick="favorite_add_ajax('',{$sellerRow['id']});" href="javascript:void(0)">收藏店铺</a></dt>
+						<dt style="margin-right:10px;"><strong style="margin-left:15px">{$sellerRow['true_name']}</strong><a class="favorite" onclick="favorite_add_ajax('',{$sellerRow['id']});" href="javascript:void(0)">收藏店铺</a></dt>
 
 					</dl>
 					<p> 评分：<span class="grade-star g-star{echo:statistics::gradeSeller($sellerRow['id'])}"></span></p>

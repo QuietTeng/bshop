@@ -21,7 +21,13 @@
 		<ul class="shortcut">
 			<li class="first"><a href="{url:/ucenter/index}">我的账户</a></li><li><a href="{url:/ucenter/order}">我的订单</a></li><li class='last'><a href="{url:/site/help_list}">使用帮助</a></li>
 		</ul>
-		<p class="loginfo">{$this->user['username']}您好，欢迎您来到{$this->_siteConfig->name}购物！[<a class='reg' href="{url:/simple/logout}">安全退出</a>]</p>
+		<p class="loginfo">
+			{if:$this->user}欢迎你：
+			{echo:$this->user['username']}&nbsp[<a href="{url:/simple/logout}" class="reg">安全退出</a>]
+			{else:}
+			[<a href="{url:/simple/login}">登录</a><a class="reg" href="{url:/simple/reg}">免费注册</a>]
+			{/if}
+		</p>
 	</div>
 	<div class="navbar">
 		<ul>

@@ -579,7 +579,7 @@ dl.sorting{ position:relative;width:688px;border-bottom:1px solid #e5e5e5;paddin
 				.display_list li .handle label.btn_gray_m{float:left;margin-bottom:7px;text-align:left}
 					.display_list li .handle label.btn_gray_m input{font-weight:normal;color:#333}
 					.display_list li .handle label.btn_gray_m img{margin:3px 3px 5px 0}
-	.display_list li.win{float:left;width:205px;height:352px;padding:0;margin:20px 22px 10px;text-align:left;border:none;_margin:20px 18px 10px;overflow:hidden}
+	.display_list li.win{float:left;width:205px;height:356px;padding:0;margin:20px 10px 10px;text-align:left;border:none;_margin:20px 18px 10px;overflow:hidden}
 		.display_list li.win .pic{width:201px;height:201px;margin:0 0 5px;_width:196px}
 		.display_list li.win .title,.display_list li.win .price{float:left;width:190px;padding:5px}
 		.display_list li.win .handle{width:204px}
@@ -654,7 +654,7 @@ span.sel{padding-right:18px;background:url(../images/front/ucenter/sel.gif) righ
 	.pic_thumb li.current{background:#f60 url(../images/front/sprites_2.gif) 0 -284px no-repeat}
 		.pic_thumb li a{display:block;width:60px;height:60px;margin:6px;border:1px solid #ccc}
 		.pic_thumb li.current a{border:1px solid #fff}
-.summary{float:right;width:500px;text-align:left}
+.summary{float:left;width:500px;text-align:left;margin-left: 20px;}
 	.summary h2{font-size:14px;border-bottom:1px dashed #ddd;padding:5px 0;color:#333}
 	.summary ul li{padding-left:6px;margin:10px 0;line-height:20px;color:#636363}
 	.summary div.current{padding:10px 20px;border:1px solid #ed4d4d;background:#fffcea}
@@ -956,4 +956,25 @@ a.reg_btn{display:block;width:159px;margin:10px 0 0;background-position:0 -210px
 
 
 /*edit by songsang*/
+.progoods{width: 200px;margin-left: 20px;float: left;border: 1px #e1e1e1 solid;}
+.progoods .title{    height: 34px;
+    line-height: 34px;
+    padding-left: 15px;
+    border-bottom: none;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    background: url(../images/front/sprites_2.gif) 0 -94px repeat-x;
+    color: #635A4E;}
+.cc{
+  	border: 1px solid #333;
+    background-color: #333;
+    float: left;
+    width: 70px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    margin-left: 40px;
+  
+}
  

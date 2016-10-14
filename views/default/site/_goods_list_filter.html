@@ -1,9 +1,9 @@
 {js:bxSlider}
-<div class="main">
+<div class="main" style="margin-top:0px;">
 		{if:$this->index_slide}
 		<ul class="bxslider">
 			{foreach:items=$this->index_slide}
-			<li title="{$item['name']}"><a href="{url:$item[url]}" target="_blank"><img src="{url:/pic/thumb/img/$item['img']}" width="750px" title="{$item['name']}" /></a></li>
+			<li title="{$item['name']}"><a href="{url:$item[url]}" target="_blank"><img src="{url:/pic/thumb/img/$item['img']}" width="900px" title="{$item['name']}" /></a></li>
 			{/foreach}
 		</ul>
 		{/if}

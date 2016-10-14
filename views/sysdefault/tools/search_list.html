@@ -24,7 +24,7 @@
 
 			<tbody>
 				{set:$page= (isset($_GET['page'])&&(intval($_GET['page'])>0))?intval($_GET['page']):1;}
-				{query: name=search page=$page order=num desc}
+				{query:  pagesize=10 name=search page=$page order=num desc}
 				<tr>
 					<td><input type="checkbox" name="id[]" value="{$item['id']}" /></td>
 					<td>{$item['keyword']}</td>
@@ -34,8 +34,9 @@
 			</tbody>
 		</table>
 	</form>
+	{$query->getPageBar()}
 </div>
-{$query->getPageBar()}
+
 <script type="text/javascript">
 function search_del()
 {

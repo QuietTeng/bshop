@@ -19,9 +19,7 @@
 </head>
 <body class="index">
 <div class="container">
-   
 	<?php echo Ad::show("页面顶部通栏广告条");?>
-
 	<div class="header">
 		<h1 class="logo"><a title="<?php echo $this->_siteConfig->name;?>" style="background:url(<?php if($this->_siteConfig->logo){?><?php echo IUrl::creatUrl("")."".$this->_siteConfig->logo."";?><?php }else{?><?php echo $this->getWebSkinPath()."images/front/logo.gif";?><?php }?>) center no-repeat;background-size:contain;" href="<?php echo IUrl::creatUrl("");?>"><?php echo $this->_siteConfig->name;?></a></h1>
 		<ul class="shortcut">
@@ -135,7 +133,6 @@
 			<?php }?>
 		</div>
 	</div>
-	<?php echo Ad::show("页面顶部通栏广告条",23);?>
 
 	<script type="text/javascript" charset="UTF-8" src="/runtime/_systemjs/artTemplate/artTemplate.js"></script><script type="text/javascript" charset="UTF-8" src="/runtime/_systemjs/artTemplate/artTemplate-plugin.js"></script>
 <script type="text/javascript" charset="UTF-8" src="/runtime/_systemjs/jqueryZoom/jquery.imagezoom.min.js"></script><link rel="stylesheet" type="text/css" href="/runtime/_systemjs/jqueryZoom/imagezoom.css" />
@@ -144,6 +141,25 @@
 <?php $breadGuide = goods_class::catRecursion($category);?>
 <div class="position"><span>您当前的位置：</span><a href="<?php echo IUrl::creatUrl("");?>">首页</a><?php foreach($breadGuide as $key => $item){?> » <a href="<?php echo IUrl::creatUrl("/site/pro_list/cat/".$item['id']."");?>"><?php echo isset($item['name'])?$item['name']:"";?></a><?php }?> » <?php echo isset($name)?$name:"";?></div>
 <div class="wrapper clearfix">
+	
+
+	<!--图片放大镜-->
+	<div class="preview">
+		<div class="pic_show" style="width:435px;height:435px;position:relative;z-index:5;padding-bottom:5px;">
+			<img id="picShow" rel="" src="" />
+		</div>
+
+		<ul id="goodsPhotoList" class="pic_thumb">
+			<?php foreach($photo as $key => $item){?>
+			<li>
+				<a href="javascript:void(0);" thumbimg="<?php echo IUrl::creatUrl("/pic/thumb/img/".$item['img']."/w/435/h/435");?>" sourceimg="<?php echo IUrl::creatUrl("")."".$item['img']."";?>">
+					<img src='<?php echo IUrl::creatUrl("/pic/thumb/img/".$item['img']."/w/60/h/60");?>' width="60px" height="60px" />
+				</a>
+			</li>
+			<?php }?>
+		</ul>
+	</div>
+
 	<div class="summary">
 		<h2><?php echo isset($name)?$name:"";?></h2>
 
@@ -275,23 +291,21 @@
 		<?php }?>
 		</div>
 	</div>
-
-	<!--图片放大镜-->
-	<div class="preview">
-		<div class="pic_show" style="width:435px;height:435px;position:relative;z-index:5;padding-bottom:5px;">
-			<img id="picShow" rel="" src="" />
+	<div class="progoods">
+			<div class="title">推荐商品</div>
+			<div class="content">
+				<ul class="ranklist">
+				<?php foreach(apple::go('getCommendRecom',7) as $key => $item){?>
+					<li class="current">
+						<a href="<?php echo IUrl::creatUrl("/site/products/id/".$item['id']."");?>"><img width="58px" height="58px" alt="<?php echo isset($item['name'])?$item['name']:"";?>" src="<?php echo IUrl::creatUrl("/pic/thumb/img/".$item['img']."/w/58/h/58");?>" /></a>
+						<a title="<?php echo isset($item['name'])?$item['name']:"";?>" class="p_name" href="<?php echo IUrl::creatUrl("/site/products/id/".$item['id']."");?>"><?php echo isset($item['name'])?$item['name']:"";?></a>
+						<b>￥<?php echo isset($item['sell_price'])?$item['sell_price']:"";?></b>
+					</li>
+				<?php }?>
+				</ul>
+			</div>
 		</div>
 
-		<ul id="goodsPhotoList" class="pic_thumb">
-			<?php foreach($photo as $key => $item){?>
-			<li>
-				<a href="javascript:void(0);" thumbimg="<?php echo IUrl::creatUrl("/pic/thumb/img/".$item['img']."/w/435/h/435");?>" sourceimg="<?php echo IUrl::creatUrl("")."".$item['img']."";?>">
-					<img src='<?php echo IUrl::creatUrl("/pic/thumb/img/".$item['img']."/w/60/h/60");?>' width="60px" height="60px" />
-				</a>
-			</li>
-			<?php }?>
-		</ul>
-	</div>
 </div>
 
 <div class="t_l">
@@ -302,6 +316,18 @@
 
 	<!--左边栏-->
 	<div class="sidebar f_l">
+
+		<!--商家信息-->
+		<div class="box m_10">
+			<div class="title">店铺信息</div>
+			<div style="margin-top:20px;">北京国贸大厦科技公司</div>
+			<div style="margin-top:20px;margin-bottom:10px">评分 物流 描述</div>
+			<div class="cont">
+				<a  style="color:#fff;" href="//fruitday.tmall.com?spm=a220o.1000855.1997427133.d4918061.43UpON" class="cc">进店逛逛</a>
+				<a  style="color:#fff;" href="//fruitday.tmall.com?spm=a220o.1000855.1997427133.d4918061.43UpON" class="cc">收藏店铺</a>
+			</div>
+		</div>
+		<!--促销规则-->
 
 		<!--促销规则-->
 		<div class="box m_10">
@@ -333,22 +359,7 @@
 		</div>
 		<!--热卖商品-->
 
-		<!--推荐商品-->
-		<div class="box m_10">
-			<div class="title">推荐商品</div>
-			<div class="content">
-				<ul class="ranklist">
-				<?php foreach(apple::go('getCommendRecom') as $key => $item){?>
-					<li class="current">
-						<a href="<?php echo IUrl::creatUrl("/site/products/id/".$item['id']."");?>"><img width="58px" height="58px" alt="<?php echo isset($item['name'])?$item['name']:"";?>" src="<?php echo IUrl::creatUrl("/pic/thumb/img/".$item['img']."/w/58/h/58");?>" /></a>
-						<a title="<?php echo isset($item['name'])?$item['name']:"";?>" class="p_name" href="<?php echo IUrl::creatUrl("/site/products/id/".$item['id']."");?>"><?php echo isset($item['name'])?$item['name']:"";?></a>
-						<b>￥<?php echo isset($item['sell_price'])?$item['sell_price']:"";?></b>
-					</li>
-				<?php }?>
-				</ul>
-			</div>
-		</div>
-		<!--推荐商品-->
+		 
 
 	</div>
 
