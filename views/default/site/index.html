@@ -45,7 +45,8 @@
 					<li class="current">
 						{set:$tmpId=$item['id'];}
 						<a href="{url:/site/groupon/id/$tmpId}"><img width="60px" height="60px" alt="{$item['title']}" src="{webroot:$item[img]}"></a>
-						<a class="p_name" title="{$item['title']}" href="{url:/site/groupon/id/$tmpId}">{$item['title']}</a><p class="light_gray">团购价：<em>￥{$item['regiment_price']}</em></p>
+						<a class="p_name" style="margin-top:10px" title="{$item['title']}" href="{url:/site/groupon/id/$tmpId}">{$item['title']}</a>
+						<p class="light_gray">团购价：<em>￥{$item['regiment_price']}</em></p>
 					</li>
 					{/foreach}
 
@@ -66,7 +67,7 @@
 						<p class="countdown">倒计时:<br /><b id='cd_hour_{$item['p_id']}'>{echo:floor($free_time/3600);}</b>时<b id='cd_minute_{$item['p_id']}'>{echo:floor(($free_time%3600)/60);}</b>分<b id='cd_second_{$item['p_id']}'>{echo:$free_time%60;}</b>秒</p>
 						{set:$tmpGoodsId=$item['goods_id'];$tmpPId=$item['p_id'];}
 						<a href="{url:/site/products/id/$tmpGoodsId/promo/time/active_id/$tmpPId}"><img src="{url:/pic/thumb/img/$item[img]/w/175/h/175}" width="175" height="175" alt="{$item['name']}" title="{$item['name']}" /></a>
-						<p class="pro_title"><a href="{url:/site/products/id/$tmpGoodsId/promo/time/active_id/$tmpPId}">{$item['name']}</a></p>
+						<p class="pro_title"><a  style="margin-left:50px" href="{url:/site/products/id/$tmpGoodsId/promo/time/active_id/$tmpPId}">{$item['name']}</a></p>
 						<p class="light_gray">抢购价：<b>￥{$item['award_value']}</b></p>
 						<div></div>
 					</li>
@@ -85,7 +86,7 @@
 					{set:$tmpId=$item['id']}
 					<li>
 						<a href="{url:/site/products/id/$tmpId}"><img src="{url:/pic/thumb/img/$item[img]/w/60/h/60}" width="85" height="85" alt="{$item['name']}" /></a>
-						<p class="pro_title"><a href="{url:/site/products/id/$tmpId}">{$item['name']}</a></p>
+						<p class="pro_title" style="width:80px"><a href="{url:/site/products/id/$tmpId}">{$item['name']}</a></p>
 						<p class="brown"><b>￥{$item['sell_price']}</b></p>
 					</li>
 					{/foreach}

@@ -62,7 +62,7 @@ class Active
 		{
 			return "商品ID不存在";
 		}
-		$goodsData = ($this->type == 'product') ? Api::run('getProductInfo',array('#id#',$this->id)) : Api::run('getGoodsInfo',array('#id#',$this->id));
+		$goodsData = ($this->type == 'product') ? apple::go('getProductInfo',array('#id#',$this->id)) : apple::go('getGoodsInfo',array('#id#',$this->id));
 
 		//库存判断
 		if(!$goodsData || $this->buy_num <= 0 || $this->buy_num > $goodsData['store_nums'])
@@ -85,7 +85,7 @@ class Active
 					return "参加团购活动请您先登录";
 				}
 
-				$regimentRow = Api::run('getRegimentRowById',array("#id#",$this->active_id));
+				$regimentRow = apple::go('getRegimentRowById',array("#id#",$this->active_id));
 				if($regimentRow)
 				{
 					if($regimentRow['goods_id'] != $goodsData['goods_id'])
@@ -157,7 +157,7 @@ class Active
 			//抢购
 			case "time":
 			{
-				$promotionRow = Api::run('getPromotionRowById',array("#id#",$this->active_id));
+				$promotionRow = apple::go('getPromotionRowById',array("#id#",$this->active_id));
 				if($promotionRow)
 				{
 					if($promotionRow['condition'] != $goodsData['goods_id'])
@@ -235,7 +235,7 @@ class Active
 		{
 			case "groupon":
 			{
-				$data = Api::run("getRegimentRowById",array("#id#",$this->active_id));
+				$data = apple::go("getRegimentRowById",array("#id#",$this->active_id));
 				if($data && $data['goods_id'] ==  $this->id)
 				{
 					return $data;
@@ -246,7 +246,7 @@ class Active
 
 			case "time":
 			{
-				$data = Api::run("getPromotionRowById",array("#id#",$this->active_id));
+				$data = apple::go("getPromotionRowById",array("#id#",$this->active_id));
 				if($data && $data['condition'] == $this->id)
 				{
 					return $data;

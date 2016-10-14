@@ -19,7 +19,7 @@
 </head>
 <body class="index">
 <div class="container">
-
+   
 	<?php echo Ad::show("页面顶部通栏广告条");?>
 
 	<div class="header">
@@ -184,7 +184,8 @@
 					<li class="current">
 						<?php $tmpId=$item['id'];?>
 						<a href="<?php echo IUrl::creatUrl("/site/groupon/id/".$tmpId."");?>"><img width="60px" height="60px" alt="<?php echo isset($item['title'])?$item['title']:"";?>" src="<?php echo IUrl::creatUrl("")."".$item['img']."";?>"></a>
-						<a class="p_name" title="<?php echo isset($item['title'])?$item['title']:"";?>" href="<?php echo IUrl::creatUrl("/site/groupon/id/".$tmpId."");?>"><?php echo isset($item['title'])?$item['title']:"";?></a><p class="light_gray">团购价：<em>￥<?php echo isset($item['regiment_price'])?$item['regiment_price']:"";?></em></p>
+						<a class="p_name" style="margin-top:10px" title="<?php echo isset($item['title'])?$item['title']:"";?>" href="<?php echo IUrl::creatUrl("/site/groupon/id/".$tmpId."");?>"><?php echo isset($item['title'])?$item['title']:"";?></a>
+						<p class="light_gray">团购价：<em>￥<?php echo isset($item['regiment_price'])?$item['regiment_price']:"";?></em></p>
 					</li>
 					<?php }?>
 
@@ -205,7 +206,7 @@
 						<p class="countdown">倒计时:<br /><b id='cd_hour_<?php echo isset($item['p_id'])?$item['p_id']:"";?>'><?php echo floor($free_time/3600);?></b>时<b id='cd_minute_<?php echo isset($item['p_id'])?$item['p_id']:"";?>'><?php echo floor(($free_time%3600)/60);?></b>分<b id='cd_second_<?php echo isset($item['p_id'])?$item['p_id']:"";?>'><?php echo $free_time%60;?></b>秒</p>
 						<?php $tmpGoodsId=$item['goods_id'];$tmpPId=$item['p_id'];?>
 						<a href="<?php echo IUrl::creatUrl("/site/products/id/".$tmpGoodsId."/promo/time/active_id/".$tmpPId."");?>"><img src="<?php echo IUrl::creatUrl("/pic/thumb/img/".$item['img']."/w/175/h/175");?>" width="175" height="175" alt="<?php echo isset($item['name'])?$item['name']:"";?>" title="<?php echo isset($item['name'])?$item['name']:"";?>" /></a>
-						<p class="pro_title"><a href="<?php echo IUrl::creatUrl("/site/products/id/".$tmpGoodsId."/promo/time/active_id/".$tmpPId."");?>"><?php echo isset($item['name'])?$item['name']:"";?></a></p>
+						<p class="pro_title"><a  style="margin-left:50px" href="<?php echo IUrl::creatUrl("/site/products/id/".$tmpGoodsId."/promo/time/active_id/".$tmpPId."");?>"><?php echo isset($item['name'])?$item['name']:"";?></a></p>
 						<p class="light_gray">抢购价：<b>￥<?php echo isset($item['award_value'])?$item['award_value']:"";?></b></p>
 						<div></div>
 					</li>
@@ -224,7 +225,7 @@
 					<?php $tmpId=$item['id']?>
 					<li>
 						<a href="<?php echo IUrl::creatUrl("/site/products/id/".$tmpId."");?>"><img src="<?php echo IUrl::creatUrl("/pic/thumb/img/".$item['img']."/w/60/h/60");?>" width="85" height="85" alt="<?php echo isset($item['name'])?$item['name']:"";?>" /></a>
-						<p class="pro_title"><a href="<?php echo IUrl::creatUrl("/site/products/id/".$tmpId."");?>"><?php echo isset($item['name'])?$item['name']:"";?></a></p>
+						<p class="pro_title" style="width:80px"><a href="<?php echo IUrl::creatUrl("/site/products/id/".$tmpId."");?>"><?php echo isset($item['name'])?$item['name']:"";?></a></p>
 						<p class="brown"><b>￥<?php echo isset($item['sell_price'])?$item['sell_price']:"";?></b></p>
 					</li>
 					<?php }?>

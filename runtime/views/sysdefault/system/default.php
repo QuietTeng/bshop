@@ -91,13 +91,10 @@
 								<col />
 							</colgroup>
 							<tbody>
-								<tr><th>购买及服务</th><td><a href='http://wpa.qq.com/msgrd?v=3&uin=846327344&site=qq&menu=yes' target='_blank'><b class='red3'>联系我们</b></a></td></tr>
+								<tr><th>联系技术</th><td><a href='http://wpa.qq.com/msgrd?v=3&uin=867796137&site=qq&menu=yes' target='_blank'><b class='red3'>联系技术</b></a></td></tr>
 								<tr><th>当前版本号</th><td><?php echo Common::getLocalVersion();?></td></tr>
-								<tr><th>最新版本号</th><td>...</td></tr>
-								<tr><th>官网地址</th><td><a href='http://www.aircheng.com' target='_blank'><b class='red3'>www.aircheng.com</b></a></td></tr>
 								<tr><th>服务器软件</th><td><?php echo isset($_SERVER['SERVER_SOFTWARE'])?$_SERVER['SERVER_SOFTWARE']:"";?></td></tr>
 								<tr><th>附件上传容量</th><td><?php echo IUpload::getMaxSize();?></td></tr>
-								<tr><th>授权信息</th><td>...</td></tr>
 							</tbody>
 						</table>
 					</td>

@@ -223,7 +223,7 @@ ul.list{padding:6px 6px 4px}
 ul.prolist li{float:left;display:inline;width:175px;height:238px;margin:10px -50px 10px 50px;text-align:left}
 	ul.prolist li.h{width:180px;height:329px;margin:10px 6px 10px 9px}
 	ul.prolist li.s{width:121px;height:168px;margin:10px 6px 10px 9px}
-	ul.prolist li .pro_title{margin-top:8px;height:36px;overflow:hidden;width:120px;}
+	ul.prolist li .pro_title{margin-top:8px;height:18px;overflow:hidden;width:120px;}
 	ul.prolist li .integral{color:#464646}
 		ul.prolist li b,div.prolist dl dd b,.hot ul.prolist li b,ul.ranklist li.current em,ul.ranklist li.current b,.container_2 .box ul.ranklist li.current b,.cart_stats dd span b{color:#a40000;font:bold 14px "宋体"}
 		ul.prolist li s,ul.prolist li span{color:#999;font-family:Times, serif}

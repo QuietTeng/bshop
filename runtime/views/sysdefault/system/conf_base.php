@@ -466,10 +466,6 @@
 					</td>
 				</tr>
 
-				<tr>
-					<th>授权编号：</th>
-					<td><input type='text' name='authorizeCode' class='normal' empty /><label>购买正式授权的编号 <a href="http://www.aircheng.com/search" target="_blank">点击查询</a></label></td>
-				</tr>
 
 				<tr>
 					<th></th>

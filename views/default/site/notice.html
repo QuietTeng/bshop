@@ -6,7 +6,7 @@
 		<div class="content">
 		  <ul class="ranklist">
 
-			{foreach:items=Api::run('getCommendHot',10)}
+			{foreach:items=apple::go('getCommendHot',10)}
 			<li class='current'><a href="{url:/site/products/id/$item[id]}"><img src="{url:/pic/thumb/img/$item[img]/w/58/h/58}" width="58" height="58" /></a><a href="{url:/site/products/id/$item[id]}">{$item['name']}</a><b>￥{$item['sell_price']}</b></li>
 			{/foreach}
 		  </ul>
@@ -19,7 +19,7 @@
 		<div class="cont">
 			<h5 class="list_title gray"><span class="f_l">标题</span>发表时间</li></h5>
 			<ul class="newslist">
-				{set:$queryNotice = Api::run('getNoticeList')}
+				{set:$queryNotice = apple::go('getNoticeList')}
 				{foreach:items = $queryNotice->find()}
 				<li><a class="" href="{url:/site/notice_detail/id/$item[id]}">{$item['title']}</a><span>({$item['time']})</span></li>
 				{/foreach}

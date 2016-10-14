@@ -25,11 +25,21 @@
   'commission' => '',
   'store_num_warning' => '1',
   'reg_option' => '3',
-  'logo' => 'upload/2016/10/11/20161011142943322.png',
+  'logo' => 'upload/2016/10/14/20161014093944406.png',
   'index_slide' => 'a:5:{i:0;a:3:{s:4:"name";s:9:"导航一";s:3:"url";s:20:"http://www.baidu.com";s:3:"img";s:39:"upload/2016/10/11/20161011020906520.jpg";}i:1;a:3:{s:4:"name";s:9:"导航二";s:3:"url";s:20:"http://www.baidu.com";s:3:"img";s:39:"upload/2016/10/11/20161011020906553.jpg";}i:2;a:3:{s:4:"name";s:9:"导航三";s:3:"url";s:20:"http://www.baidu.com";s:3:"img";s:39:"upload/2016/10/11/20161011020906143.jpg";}i:3;a:3:{s:4:"name";s:9:"导航四";s:3:"url";s:20:"http://www.baidu.com";s:3:"img";s:39:"upload/2016/10/11/20161011020906795.jpg";}i:4;a:3:{s:4:"name";s:9:"导航五";s:3:"url";s:20:"http://www.baidu.com";s:3:"img";s:39:"upload/2016/10/11/20161011043123877.jpg";}}',
   'sms_platform' => 'haiyan',
   'sms_userid' => 'ID',
   'sms_username' => 'cf_boe',
   'sms_pwd' => '21218cca77804d2ba1922c33e0151105',
   'test_address' => 'sunyongct@boe.com.cn',
+  'guide_name' => 
+  array (
+    0 => '后台管理',
+    1 => '商家管理',
+  ),
+  'guide_link' => 
+  array (
+    0 => 'systemadmin/index',
+    1 => 'seller/index',
+  ),
 )?>

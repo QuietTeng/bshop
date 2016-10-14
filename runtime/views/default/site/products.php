@@ -19,8 +19,8 @@
 </head>
 <body class="index">
 <div class="container">
-
-		<?php echo Ad::show("页面顶部通栏广告条");?>
+   
+	<?php echo Ad::show("页面顶部通栏广告条");?>
 
 	<div class="header">
 		<h1 class="logo"><a title="<?php echo $this->_siteConfig->name;?>" style="background:url(<?php if($this->_siteConfig->logo){?><?php echo IUrl::creatUrl("")."".$this->_siteConfig->logo."";?><?php }else{?><?php echo $this->getWebSkinPath()."images/front/logo.gif";?><?php }?>) center no-repeat;background-size:contain;" href="<?php echo IUrl::creatUrl("");?>"><?php echo $this->_siteConfig->name;?></a></h1>

@@ -5,7 +5,7 @@
 		<div class="title">热卖商品</div>
 		<div class="content">
 		  <ul class="ranklist">
-			{foreach:items=Api::run('getCommendHot')}
+			{foreach:items=apple::go('getCommendHot')}
 			<li class='current'><a href="{url:/site/products/id/$item[id]}"><img src="{url:/pic/thumb/img/$item[img]/w/58/h/58}" width="58" height="58" /></a><a href="{url:/site/products/id/$item[id]}">{$item['name']}</a><b>￥{$item['sell_price']}</b></li>
 			{/foreach}
 		  </ul>
