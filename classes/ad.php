@@ -62,6 +62,7 @@ class Ad
 		$adArray        = array();
 
 		$positionObject = self::getPositionInfo($position);
+
 		 
 		if($positionObject)
 		{
@@ -194,11 +195,12 @@ OEF;
 	 * @param $goods_cat_id 商品分类ID
 	 * @return array
 	 */
-	public static function getAdList($position,$goods_cat_id = 0,$seller_id)
+	public static function getAdList($position,$goods_cat_id = 0,$seller_id = 0)
 	{
 		$now    = date("Y-m-d H:i:s",ITime::getNow());
 		$adDB   = new IModel("ad_manage");
-		return $adDB->query("seller_id={$seller_id} and position_id={$position} and goods_cat_id = {$goods_cat_id} and start_time < '{$now}' AND end_time > '{$now}' ORDER BY `order` ASC ");
+		$w = $adDB->query("status=1 and seller_id={$seller_id} and position_id={$position} and goods_cat_id = {$goods_cat_id} and start_time < '{$now}' AND end_time > '{$now}' ORDER BY `order` ASC ");
+		return $w;
 	}
     
 

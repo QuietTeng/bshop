@@ -26,6 +26,7 @@
 					<th>显示类别</th>
 					<th>广告位</th>
 					<th>排序</th>
+					<th>开启状态</th>
 					<th>开始时间 ～ 结束时间</th>
 					<th>操作</th>
 				</tr>
@@ -39,6 +40,7 @@
 					<td>{echo:Ad::showType($item['type'])}</td>
 					<td>{$item['adp_name']}</td>
 					<td>{$item['order']}</td>
+					<td>{echo:$item['status']==1 ? '是':'否'}</td>
 					<td>{$item['start_time']} ～ {$item['end_time']} </td>
 					<td>
 						<a href='{url:/tools/ad_edit/id/$item[id]}'><img class="operator" src="{skin:images/admin/icon_edit.gif}" alt="编辑" title="编辑" /></a>

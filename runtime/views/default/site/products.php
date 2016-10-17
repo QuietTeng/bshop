@@ -19,12 +19,12 @@
 </head>
 <body class="index">
 <div class="container">
-	<?php echo Ad::show("页面顶部通栏广告条",0,2);?>
+	<?php echo Ad::show("【商家】首页顶部通栏",0,$seller_id);?>
 	<div class="header">
 		<h1 class="logo"><a title="<?php echo $this->_siteConfig->name;?>" style="background:url(<?php echo IUrl::creatUrl("")."".$this->_siteConfig->logo."";?>) center no-repeat;background-size:contain;" href="<?php echo IUrl::creatUrl("");?>"><?php echo $this->_siteConfig->name;?></a></h1>
 
 		<ul class="shortcut">
-			<li class="first"><a href="<?php echo IUrl::creatUrl("/ucenter/index");?>">我的s账户</a></li>
+			<li class="first"><a href="<?php echo IUrl::creatUrl("/ucenter/index");?>">我的账户(店铺)</a></li>
 			<li><a href="<?php echo IUrl::creatUrl("/ucenter/order");?>">我的订单</a></li>
 			<li><a href="<?php echo IUrl::creatUrl("/simple/seller");?>">申请开店</a></li>
 			<li class='last'><a href="<?php echo IUrl::creatUrl("/site/help_list");?>">使用帮助</a></li>
@@ -133,9 +133,7 @@
 			<?php }?>
 		</div>
 	</div>
-	<?php echo Ad::show(1);?>
-
-	<script type="text/javascript" charset="UTF-8" src="/runtime/_systemjs/artTemplate/artTemplate.js"></script><script type="text/javascript" charset="UTF-8" src="/runtime/_systemjs/artTemplate/artTemplate-plugin.js"></script>
+		<script type="text/javascript" charset="UTF-8" src="/runtime/_systemjs/artTemplate/artTemplate.js"></script><script type="text/javascript" charset="UTF-8" src="/runtime/_systemjs/artTemplate/artTemplate-plugin.js"></script>
 <script type="text/javascript" charset="UTF-8" src="/runtime/_systemjs/jqueryZoom/jquery.imagezoom.min.js"></script><link rel="stylesheet" type="text/css" href="/runtime/_systemjs/jqueryZoom/imagezoom.css" />
 <script type="text/javascript" charset="UTF-8" src="/runtime/_systemjs/jquerySlider/jquery.bxslider.min.js"></script><link rel="stylesheet" type="text/css" href="/runtime/_systemjs/jquerySlider/jquery.bxslider.css" />
 <script type="text/javascript" src="<?php echo $this->getWebViewPath()."javascript/products.js";?>"></script>
@@ -369,15 +367,12 @@
 			</div>
 		</div>
 		<!--热卖商品-->
-
-		 
-
 	</div>
 
 	<!--滑动面tab标签-->
 	<div class="main f_r" style="overflow:hidden">
-
-		<div class="uc_title" name="showButton">
+ 		<?php echo Ad::show("【商品】详情页中部",0,$seller_id);?>
+		<div class="uc_title" name="showButton">	
 			<label class="current"><span>商品详情</span></label>
 			<label><span>顾客评价(<?php echo isset($comments)?$comments:"";?>)</span></label>
 			<label><span>购买记录(<?php echo isset($buy_num)?$buy_num:"";?>)</span></label>
@@ -684,7 +679,6 @@ $(function(){
 	});
 });
 </script>
-
 
 	<div class="help m_10">
 		<div class="cont clearfix">

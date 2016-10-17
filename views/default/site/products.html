@@ -232,15 +232,12 @@
 			</div>
 		</div>
 		<!--热卖商品-->
-
-		 
-
 	</div>
 
 	<!--滑动面tab标签-->
 	<div class="main f_r" style="overflow:hidden">
-
-		<div class="uc_title" name="showButton">
+ 		{echo:Ad::show("【商品】详情页中部",0,$seller_id)}
+		<div class="uc_title" name="showButton">	
 			<label class="current"><span>商品详情</span></label>
 			<label><span>顾客评价({$comments})</span></label>
 			<label><span>购买记录({$buy_num})</span></label>
