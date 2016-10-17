@@ -430,8 +430,11 @@ class Site extends IController
 		//获取商家信息
 		if($goods_info['seller_id'])
 		{
+			$this->layout = 'home'; //商家模板
 			$sellerDB = new IModel('seller');
 			$goods_info['sellerRow'] = $goods_info['seller'] = $sellerDB->getObj('id = '.$goods_info['seller_id']);
+			$this->_siteConfig->name = $goods_info['seller']['true_name'];
+			$this->_siteConfig->logo = $goods_info['seller']['logo'];
 		}
 
 		//增加浏览次数

@@ -92,12 +92,12 @@
 			</li>
 
 			<!--商家信息 开始-->
-			{if:isset($seller)}
+		<!-- 	{if:isset($seller)}
 			<li>商家：<a class="orange" href="{url:/site/home/id/$seller_id}">{$seller['true_name']}</a><a class="favorite" onclick="favorite_add_ajax('',{$seller_id});" href="javascript:void(0)">收藏商家</a></li>
 			<li>联系电话：{$seller['phone']}</li>
 			<li>所在地：{echo:join(' ',area::name($seller['province'],$seller['city'],$seller['area']))}</li>
 			<li>{set:plugin::trigger("onServiceButton",$seller['id'])}</li>
-			{/if}
+			{/if} -->
 			<!--商家信息 结束-->
 		</ul>
 
@@ -182,16 +182,26 @@
 	<div class="sidebar f_l">
 
 		<!--商家信息-->
+		{if:isset($seller)}
 		<div class="box m_10">
-			<div class="title">店铺信息</div>
-			<div style="margin-top:20px;">北京国贸大厦科技公司</div>
-			<div style="margin-top:20px;margin-bottom:10px">评分 物流 描述</div>
-			<div class="cont">
-				<a  style="color:#fff;" href="//fruitday.tmall.com?spm=a220o.1000855.1997427133.d4918061.43UpON" class="cc">进店逛逛</a>
-				<a  style="color:#fff;" href="//fruitday.tmall.com?spm=a220o.1000855.1997427133.d4918061.43UpON" class="cc">收藏店铺</a>
+			<div class="title">商户信息</div>
+			<div class="content">
+				<div class="c_box">
+					<dl class="clearfix">
+						<dt style="margin-right:10px;"><strong style="margin-left:15px">{$sellerRow['true_name']}</strong></dt>
+					</dl>
+					<p> 评分：<span class="grade-star g-star{echo:statistics::gradeSeller($sellerRow['id'])}"></span></p>
+					<p> 联系：QQ</p>
+					<p> 资质：已结缴纳保证金100000</p>
+				</div>
+				<div class="cont" style="margin-bottom:10px;">
+					<a  style="color:#fff;" href="" class="cc">进店逛逛</a>
+					<a  style="color:#fff;"  onclick="favorite_add_ajax('',{$sellerRow['id']});" href="javascript:void(0)"class="cc">收藏店铺</a>
+				</div>
 			</div>
 		</div>
-		<!--促销规则-->
+		{/if}
+		<!--商家规则-->
 
 		<!--促销规则-->
 		<div class="box m_10">

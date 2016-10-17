@@ -19,14 +19,14 @@
 </head>
 <body class="index">
 <div class="container">
-	<?php echo Ad::show("页面顶部通栏广告条");?>
+	<?php echo Ad::show("页面顶部通栏广告条",0,2);?>
 	<div class="header">
-		<h1 class="logo"><a title="<?php echo $this->_siteConfig->name;?>" style="background:url(<?php if($this->_siteConfig->logo){?><?php echo IUrl::creatUrl("")."".$this->_siteConfig->logo."";?><?php }else{?><?php echo $this->getWebSkinPath()."images/front/logo.gif";?><?php }?>) center no-repeat;background-size:contain;" href="<?php echo IUrl::creatUrl("");?>"><?php echo $this->_siteConfig->name;?></a></h1>
+		<h1 class="logo"><a title="<?php echo $this->_siteConfig->name;?>" style="background:url(<?php echo IUrl::creatUrl("")."".$this->_siteConfig->logo."";?>) center no-repeat;background-size:contain;" href="<?php echo IUrl::creatUrl("");?>"><?php echo $this->_siteConfig->name;?></a></h1>
+
 		<ul class="shortcut">
-			<li class="first"><a href="<?php echo IUrl::creatUrl("/ucenter/index");?>">我的账户</a></li>
+			<li class="first"><a href="<?php echo IUrl::creatUrl("/ucenter/index");?>">我的s账户</a></li>
 			<li><a href="<?php echo IUrl::creatUrl("/ucenter/order");?>">我的订单</a></li>
 			<li><a href="<?php echo IUrl::creatUrl("/simple/seller");?>">申请开店</a></li>
-			<li><a href="<?php echo IUrl::creatUrl("/seller/index");?>">商家管理</a></li>
 			<li class='last'><a href="<?php echo IUrl::creatUrl("/site/help_list");?>">使用帮助</a></li>
 		</ul>
 		<p class="loginfo">
@@ -85,11 +85,11 @@
 
 	<div class="searchbar">
 		<div class="allsort">
-			<a href="javascript:void(0);">全部商品分类</a>
+			<a href="javascript:void(0);">商品分类</a>
 
 			<!--总的商品分类-开始-->
 			<ul class="sortlist" id='div_allsort' style='display:none'>
-				<?php foreach(apple::go('getCategoryListTop') as $key => $first){?>
+				<?php foreach(apple::go('getCategoryListTop',$seller_id) as $key => $first){?>
 				<li>
 					<h2><a href="<?php echo IUrl::creatUrl("/site/pro_list/cat/".$first['id']."");?>"><?php echo isset($first['name'])?$first['name']:"";?></a></h2>
 
@@ -120,9 +120,9 @@
 		</div>
 
 		<div class="searchbox">
-			<form method='get'>
+			<form method='get' onkeydown="if(event.keyCode==13)return false;">
 				<input class="text" type="text" name='word' autocomplete="off" value="" placeholder="请输入关键词..."  />
-				<input class="btn" type="button" value="商品搜索" onclick="search_ca(this.form)" />
+				<input class="btn" type="button" value="搜索本店" onclick="search_ca(this.form)" />
 			</form>
 		</div>
 
@@ -133,6 +133,7 @@
 			<?php }?>
 		</div>
 	</div>
+	<?php echo Ad::show(1);?>
 
 	<script type="text/javascript" charset="UTF-8" src="/runtime/_systemjs/artTemplate/artTemplate.js"></script><script type="text/javascript" charset="UTF-8" src="/runtime/_systemjs/artTemplate/artTemplate-plugin.js"></script>
 <script type="text/javascript" charset="UTF-8" src="/runtime/_systemjs/jqueryZoom/jquery.imagezoom.min.js"></script><link rel="stylesheet" type="text/css" href="/runtime/_systemjs/jqueryZoom/imagezoom.css" />
@@ -228,12 +229,12 @@
 			</li>
 
 			<!--商家信息 开始-->
-			<?php if(isset($seller)){?>
+		<!-- 	<?php if(isset($seller)){?>
 			<li>商家：<a class="orange" href="<?php echo IUrl::creatUrl("/site/home/id/".$seller_id."");?>"><?php echo isset($seller['true_name'])?$seller['true_name']:"";?></a><a class="favorite" onclick="favorite_add_ajax('',<?php echo isset($seller_id)?$seller_id:"";?>);" href="javascript:void(0)">收藏商家</a></li>
 			<li>联系电话：<?php echo isset($seller['phone'])?$seller['phone']:"";?></li>
 			<li>所在地：<?php echo join(' ',area::name($seller['province'],$seller['city'],$seller['area']));?></li>
 			<li><?php plugin::trigger("onServiceButton",$seller['id'])?></li>
-			<?php }?>
+			<?php }?> -->
 			<!--商家信息 结束-->
 		</ul>
 
@@ -318,16 +319,26 @@
 	<div class="sidebar f_l">
 
 		<!--商家信息-->
+		<?php if(isset($seller)){?>
 		<div class="box m_10">
-			<div class="title">店铺信息</div>
-			<div style="margin-top:20px;">北京国贸大厦科技公司</div>
-			<div style="margin-top:20px;margin-bottom:10px">评分 物流 描述</div>
-			<div class="cont">
-				<a  style="color:#fff;" href="//fruitday.tmall.com?spm=a220o.1000855.1997427133.d4918061.43UpON" class="cc">进店逛逛</a>
-				<a  style="color:#fff;" href="//fruitday.tmall.com?spm=a220o.1000855.1997427133.d4918061.43UpON" class="cc">收藏店铺</a>
+			<div class="title">商户信息</div>
+			<div class="content">
+				<div class="c_box">
+					<dl class="clearfix">
+						<dt style="margin-right:10px;"><strong style="margin-left:15px"><?php echo isset($sellerRow['true_name'])?$sellerRow['true_name']:"";?></strong></dt>
+					</dl>
+					<p> 评分：<span class="grade-star g-star<?php echo statistics::gradeSeller($sellerRow['id']);?>"></span></p>
+					<p> 联系：QQ</p>
+					<p> 资质：已结缴纳保证金100000</p>
+				</div>
+				<div class="cont" style="margin-bottom:10px;">
+					<a  style="color:#fff;" href="" class="cc">进店逛逛</a>
+					<a  style="color:#fff;"  onclick="favorite_add_ajax('',<?php echo isset($sellerRow['id'])?$sellerRow['id']:"";?>);" href="javascript:void(0)"class="cc">收藏店铺</a>
+				</div>
 			</div>
 		</div>
-		<!--促销规则-->
+		<?php }?>
+		<!--商家规则-->
 
 		<!--促销规则-->
 		<div class="box m_10">
@@ -679,12 +690,12 @@ $(function(){
 		<div class="cont clearfix">
 			<?php foreach(apple::go('getHelpCategoryFoot') as $key => $helpCat){?>
 			<dl>
-     			<dt><a href="<?php echo IUrl::creatUrl("/site/help_list/id/".$helpCat['id']."");?>"><?php echo isset($helpCat['name'])?$helpCat['name']:"";?></a></dt>
+				<dt><a href="<?php echo IUrl::creatUrl("/site/help_list/id/".$helpCat['id']."");?>"><?php echo isset($helpCat['name'])?$helpCat['name']:"";?></a></dt>
 				<?php foreach(apple::go('getHelpListByCatidAll',array('#cat_id#',$helpCat['id'])) as $key => $item){?>
 					<dd><a href="<?php echo IUrl::creatUrl("/site/help/id/".$item['id']."");?>"><?php echo isset($item['name'])?$item['name']:"";?></a></dd>
 				<?php }?>
-      		</dl>
-      		<?php }?>
+			</dl>
+			<?php }?>
 		</div>
 	</div>
 	<?php echo IFilter::stripSlash($this->_siteConfig->site_footer_code);?>
@@ -736,17 +747,13 @@ $(function()
 	);
 });
 function search_ca(myform){
-if(myform.word.value!="")
-{
- 
-	window.location.href='/site/search_list/word/'+(myform.word.value);
-}else{
-	alert('请输入关键词');
-}
-}
- 
-function removeWhitespace(str) {
-	return str.replace(/[^0-9a-zA-Z]/g,"");
+	var searchWord = myform.word.value;
+	if(searchWord!="")
+	{
+		window.location.href= "/site/home/id/<?php echo isset($seller_id)?$seller_id:"";?>/search/"+searchWord;
+	}else{
+		alert('请输入关键词');
+	}
 }
 </script>
 </body>
