@@ -30,6 +30,7 @@ class _userInfo extends pluginBase
 		plugin::reg("onBeforeCreateAction",$this,"initUser");
 
 		//注册页面拦截配置
+		plugin::reg("onCreateView@simple@seller",$this,"initUserReg");
 		plugin::reg("onCreateView@simple@reg",$this,"initUserReg");
 		plugin::reg("onCreateView@simple@bind_user",$this,"initUserReg");
 
@@ -71,7 +72,6 @@ class _userInfo extends pluginBase
 	{
 		//记录callback地址
 		$this->saveCallback();
-
 		$siteObj = new Config('site_config');
 		if($siteObj->reg_option == 2)
 		{
@@ -263,11 +263,13 @@ class _userInfo extends pluginBase
 	}
 
 	//发送注册验证码
+
 	public function sendRegMobileCode()
 	{
 		$mobile   = IReq::get('mobile');
 		$captcha  = IReq::get('captcha');
 		$_captcha = ISafe::get('captcha');
+		$reg_type = IReq::get('reg_type');
 		if(IValidate::mobi($mobile) == false)
 		{
 			die("请填写正确的手机号码");
@@ -277,7 +279,7 @@ class _userInfo extends pluginBase
 			die("请填写正确的图形验证码");
 		}
 
-		$memberObj = new IModel('member');
+		$memberObj = $reg_type ? new IModel('seller') : new IModel('member');
 		$memberRow = $memberObj->getObj('mobile = "'.$mobile.'"');
 		if($memberRow)
 		{

@@ -1,0 +1,67 @@
+<div class="wrapper clearfix">
+	<div class="wrap_box">
+		<div id="fp_form">
+			<h3 class="notice">申请加盟商户&nbsp;&nbsp;step1</h3> 
+			<p class="tips">加入我们的电商平台，成为我们的供应商，一起共创美好未来</p>
+			<div class="box">
+				<form action="{url:/simple/seller_reg1}" method="post" enctype='multipart/form-data' name="sellerForm">
+					<table class="form_table">
+						<colgroup>
+							<col width="300px" />
+							<col />
+						</colgroup>
+
+						<tbody>
+							<tr>
+								<th>登陆名：</th>
+								<td><input class="normal" name="username" type="text" value="" pattern="required" alt="用户名不能为空" /><label>* 用户名称（必填）</label></td>
+							</tr>
+							<tr>
+								<th>密码：</th><td><input class="normal" name="password" type="password" bind='repassword' pattern="required" /><label>* 登录密码</label></td>
+							</tr>
+							<tr>
+								<th>确认密码：</th><td><input class="normal" name="repassword" type="password" bind='password' pattern="required" /><label>* 重复确认密码</label></td>
+							</tr>
+							<tr>
+								<th>验证码：</th>
+								<td><input class='gray_s' type='text' name='captcha' pattern='^\w{5,10}$' alt='填写图片所示的字符' /><img src='{url:/simple/getCaptcha}' id='captchaImg' onclick="changeCaptcha();" /><label>填写图片所示的字符</label>
+								</td>
+							</tr>
+						
+							<tr>
+								<th>手机号码：</th>
+								<td><input type="text" class="normal" name="mobile" pattern="mobi" /><label>* 移动电话联系方式：如：13000000000</label></td>
+								<input type="hidden"  id="reg_type" value="1"/>
+							</tr>
+
+							<tr>
+								<th>手机验证：</th>
+								<td>
+									<input class='gray_s' type='text' name='mobile_code' pattern='^\w{4,6}$' />
+									<input onclick="_sendMobileCode(this);" type="button" value="获取验证码" style="line-height:25px;background-color:#fff;color:#000;width:90px; " /><label> * 填写手机短信验证码</label>
+								</td>
+							</tr>
+
+							<tr>
+								<th>
+									<input  style="margin-top:4px" type="checkbox" name="cbo1" checked="checked" value="true">
+								</th>
+								<td>
+		                       	 	<p>我已阅读并接受  <a href="/site/help/id/59" target="_blank" title="加盟商户注册协议注册协议" style="color: #76bf48; text-decoration: underline;">加盟商户注册协议注册协议</a></p>
+		                    	</td>
+		                      
+		                   
+		                    </tr>
+							<tr>
+								<td></td>
+								<td>
+									<input class="submit" type="submit" value="申请加盟" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

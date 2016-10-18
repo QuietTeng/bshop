@@ -18,9 +18,9 @@ class Simple extends IController
     public $layout='site_mini';
 	function init()
 	{	
-		 
-
+	 
 	}
+
 	function login()
 	{
 		//如果已经登录，就跳到ucenter页面
@@ -1271,76 +1271,107 @@ class Simple extends IController
 		}
     }
 
-	/**
-	 * @brief 商户的增加动作
-	 */
-	public function seller_reg()
-	{
-		$seller_name = IValidate::name(IReq::get('seller_name')) ? IReq::get('seller_name') : "";
-		$email       = IValidate::email(IReq::get('email'))      ? IReq::get('email')       : "";
-		$truename    = IValidate::name(IReq::get('true_name'))   ? IReq::get('true_name')   : "";
-		$phone       = IValidate::phone(IReq::get('phone'))      ? IReq::get('phone')       : "";
-		$mobile      = IValidate::mobi(IReq::get('mobile'))      ? IReq::get('mobile')      : "";
-		$home_url    = IValidate::url(IReq::get('home_url'))     ? IReq::get('home_url')    : "";
 
-		$password    = IFilter::act(IReq::get('password'));
-		$repassword  = IFilter::act(IReq::get('repassword'));
-		$province    = IFilter::act(IReq::get('province'),'int');
-		$city        = IFilter::act(IReq::get('city'),'int');
-		$area        = IFilter::act(IReq::get('area'),'int');
-		$address     = IFilter::act(IReq::get('address'));
+    public function seller_reg1(){
+		$mobile     = IFilter::act(IReq::get('mobile','post'));
+		$mobile_code= IFilter::act(IReq::get('mobile_code','post'));
+    	$username   = IFilter::act(IReq::get('username','post'));
+    	$password   = IFilter::act(IReq::get('password','post'));
+    	$repassword = IFilter::act(IReq::get('repassword','post'));
+    	$captcha    = IFilter::act(IReq::get('captcha','post'));
+    	$_captcha   = ISafe::get('captcha');
 
-		if($password == '')
+    	if(!preg_match('|\S{6,32}|',$password))
+    	{
+    		$errorMsg = "密码是字母，数字，下划线组成的6-32个字符";
+    	}
+
+    	if($password != $repassword)
+    	{
+    		$errorMsg = "2次密码输入不一致";
+    	}
+
+    	if(!$_captcha || !$captcha || $captcha != $_captcha)
+    	{
+    		$errorMsg = "图形验证码输入不正确";
+    	}
+
+		if(IValidate::mobi($mobile) == false)
 		{
-			$errorMsg = '请输入密码！';
+			$errorMsg = "手机号格式不正确";
 		}
 
-		if($password != $repassword)
+		//ISafe::set('code'.$mobile,'111111');
+	 	$_mobileCode = ISafe::get('code'.$mobile);
+		if(!$mobile_code || !$_mobileCode || $mobile_code != $_mobileCode)
 		{
-			$errorMsg = '两次输入的密码不一致！';
+			$errorMsg = "手机号验证码不正确";
 		}
 
-		if(!$seller_name)
-		{
-			$errorMsg = '填写正确的登陆用户名';
-		}
-
-		if(!$truename)
-		{
-			$errorMsg = '填写正确的商户真实全称';
-		}
-
-		//创建商家操作类
-		$sellerDB = new IModel("seller");
-		if($seller_name && $sellerDB->getObj("seller_name = '{$seller_name}'"))
-		{
-			$errorMsg = "登录用户名重复";
-		}
-		else if($truename && $sellerDB->getObj("true_name = '{$truename}'"))
-		{
-			$errorMsg = "商户真实全称重复";
-		}
-
-		//操作失败表单回填
+		//用户名检查
+    	if(IValidate::name($username) == false)
+    	{
+    		$errorMsg = "用户名必须是由2-20个字符，可以为字数，数字下划线和中文";
+    	}
+    	else
+    	{
+    		$userRow = array();
+			$sellerDB = new IModel('seller');
+			$userRow = $sellerDB->getObj('seller_name = "'.$username.'"');
+			if($userRow)
+			{
+				$errorMsg = "用户名已经被注册";
+			}
+    	}
+    	//操作失败表单回填
 		if(isset($errorMsg))
 		{
 			$this->sellerRow = IFilter::act($_POST,'text');
-			$this->redirect('seller',false);
+			$this->redirect('seller1',false);
 			Util::showMessage($errorMsg);
 		}
 
 		//待更新的数据
 		$sellerRow = array(
+			'mobile'    => $mobile,
+			'seller_name'=>$username,
+			'password'=>md5($password),
+			'create_time'=>ITime::getDateTime(),
+			'is_lock'   => 1,
+		);
+		$sellerDB->setData($sellerRow);
+		$sellerRow['id'] = $sellerDB->add();
+		if($sellerRow['id']){
+			$this->sellerRow = $sellerRow;
+			$this->redirect('seller2',false);
+		}
+    }
+	/**
+	 * @brief 商户的增加动作
+	 */
+	public function seller_reg2()
+	{
+		
+		$email       = IValidate::email(IReq::get('email'))      ? IReq::get('email')       : "";
+		$truename    = IValidate::name(IReq::get('true_name'))   ? IReq::get('true_name')   : "";
+		$home_url    = IValidate::url(IReq::get('home_url'))     ? IReq::get('home_url')    : "";
+		$province    = IFilter::act(IReq::get('province'),'int');
+		$city        = IFilter::act(IReq::get('city'),'int');
+		$area        = IFilter::act(IReq::get('area'),'int');
+		$address     = IFilter::act(IReq::get('address'));
+		$seller_id   = IFilter::act(IReq::get('seller_id'),'int');
+		$phone       = IReq::get('phone');
+
+		//待更新的数据
+		$sellerRow = array(
 			'true_name' => $truename,
 			'phone'     => $phone,
-			'mobile'    => $mobile,
 			'email'     => $email,
 			'address'   => $address,
 			'province'  => $province,
 			'city'      => $city,
 			'area'      => $area,
 			'home_url'  => $home_url,
-			'is_lock'   => 1,
 		);
 
 		//商户资质上传
@@ -1354,20 +1385,15 @@ class Simple extends IController
 				$sellerRow['paper_img'] = $photoInfo['paper_img']['img'];
 			}
 		}
-
-		$sellerRow['seller_name'] = $seller_name;
-		$sellerRow['password']    = md5($password);
-		$sellerRow['create_time'] = ITime::getDateTime();
-
+		$sellerDB = new IModel('seller');
 		$sellerDB->setData($sellerRow);
-		$sellerDB->add();
-
+		$row = $sellerDB->update("id = ".$seller_id);
 		//短信通知商城平台
-		if($this->_siteConfig->mobile)
-		{
-			$content = smsTemplate::sellerReg(array('{true_name}' => $truename));
-			$result = Hsms::send($this->_siteConfig->mobile,$content);
-		}
+		// if($this->_siteConfig->mobile)
+		// {
+		// 	$content = smsTemplate::sellerReg(array('{true_name}' => $truename));
+		// 	$result = Hsms::send($this->_siteConfig->mobile,$content);
+		// }
 
 		$this->redirect('/site/success?message='.urlencode("申请成功！请耐心等待管理员的审核"));
 	}
