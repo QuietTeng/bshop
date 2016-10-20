@@ -199,7 +199,7 @@ class Util
 		if (isset($search['is_del']) && '' != $search['is_del'])
 		{
 			$is_del = IFilter::act($search['is_del'], 'int');
-			if (in_array($is_del, array(0,2,3)))
+			if (in_array($is_del, array(0,2,3,4)))
 			{
 				$where[] = "go.is_del='$is_del' ";
 			}
@@ -363,6 +363,16 @@ class Util
 			if ('' != $accept_name)
 			{
 				$where[] = "o.accept_name='$accept_name' ";
+			}
+		}
+
+		// 支付类型
+		if (isset($search['pay_type']) && '' != $search['pay_type'])
+		{
+			$pay_status = IFilter::act($search['pay_type'], 'int');
+			if (in_array($pay_status, array(0,1,2,4,5,6,7,8,9,10,11)))
+			{
+				$where[] = "o.pay_type='$pay_type' ";
 			}
 		}
 

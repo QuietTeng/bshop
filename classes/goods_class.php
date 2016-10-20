@@ -638,7 +638,7 @@ class goods_class
 	 */
 	public static function statusText($is_del)
 	{
-		$date = array('0' => '上架','1' => '删除','2' => '下架','3' => '等审');
+		$date = array('0' => '上架','1' => '删除','2' => '下架','3' => '等审','4'=>'违规');
 		return isset($date[$is_del]) ? $date[$is_del] : '';
 	}
 

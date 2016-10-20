@@ -93,13 +93,72 @@ class Seller extends IController implements sellerAuthorization
 		if(!$data)
 		{
 			$goods = new goods_class();
-			$data = $goods->sortdata($tb_category->query('seller_id=1','*','sort asc'));
+			$data = $goods->sortdata($tb_category->query('seller_id='.$this->seller['seller_id'],'*','sort asc'));
 			$isCache ? $cacheObj->set('sortdata',$data) : "";
 		}
 		$datas['category'] = $data;
 		$this->setRenderData($datas);
 		$this->redirect('category_list',false);
 	}
+
+	/**
+	 * @brief 商品分类添加、修改
+	 */
+	function category_edit()
+	{
+		$category_id = IFilter::act(IReq::get('cid'),'int');
+		if($category_id)
+		{
+			$categoryObj = new IModel('category');
+			$this->categoryRow = $categoryObj->getObj('id = '.$category_id);
+		}
+		$this->setRenderData($this->seller);
+		$this->redirect('category_edit');
+	}
+		/**
+	 * @brief 保存商品分类
+	 */
+	function category_save()
+	{
+		//获得post值
+		$category_id = IFilter::act(IReq::get('id'),'int');
+		$name = IFilter::act(IReq::get('name'));
+		$parent_id = IFilter::act(IReq::get('parent_id'),'int');
+		$visibility = IFilter::act(IReq::get('visibility'),'int');
+		$sort = IFilter::act(IReq::get('sort'),'int');
+		$title = IFilter::act(IReq::get('title'));
+		$keywords = IFilter::act(IReq::get('keywords'));
+		$descript = IFilter::act(IReq::get('descript'));
+
+		if(!$name)
+		{
+			$this->redirect('category_list');
+		}
+
+		$tb_category = new IModel('category');
+		$category_info = array(
+			'name'      => $name,
+			'parent_id' => $parent_id,
+			'sort'      => $sort,
+			'visibility'=> $visibility,
+			'keywords'  => $keywords,
+			'descript'  => $descript,
+			'title'     => $title,
+			'seller_id' => $this->seller['seller_id'],
+		);
+		$tb_category->setData($category_info);
+		if($category_id)									//保存修改分类信息
+		{
+			$where = "id=".$category_id;
+			$tb_category->update($where);
+		}
+		else												//添加新商品分类
+		{
+			$tb_category->add();
+		}
+		$this->redirect('category_list');
+	}
+
 
 		/**
 	 * @brief 删除商品分类
@@ -334,7 +393,7 @@ class Seller extends IController implements sellerAuthorization
 			{
 		 		//获取地区
 		 		$data['area_addr'] = join('&nbsp;',area::name($data['province'],$data['city'],$data['area']));
-
+		 		$data['orderStatus'] = $data['status'];
 			 	$this->setRenderData($data);
 				$this->redirect('order_show',false);
 			}

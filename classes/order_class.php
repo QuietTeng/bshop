@@ -810,7 +810,6 @@ class Order_Class
 	 		case "admin":
 	 		{
 	 			$paramArray['admin_id'] = $sendor_id;
-
 	 			$adminDB = new IModel('admin');
 	 			$sendorData = $adminDB->getObj('id = '.$sendor_id);
 	 			$sendorName = $sendorData['admin_name'];
@@ -821,7 +820,6 @@ class Order_Class
 	 		case "seller":
 	 		{
 	 			$paramArray['seller_id'] = $sendor_id;
-
 	 			$sellerDB = new IModel('seller');
 	 			$sendorData = $sellerDB->getObj('id = '.$sendor_id);
 	 			$sendorName = $sendorData['true_name'];

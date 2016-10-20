@@ -1,12 +1,12 @@
 {js:kindeditor}
+{set:$seller_id = $this->seller['seller_id']}
 <article class="module width_full">
 	<header>
-		<h3 class="tabs_involved">团购编辑</h3>
+		<h3 class="tabs_involved">分类编辑</h3>
 	</header>
-
-	<form action="{url:/goods/category_save}" method="post">
+	<form action="{url:/seller/category_save}" method="post">
 			<input name="id" value="" type="hidden" />
-			<table class="form_table" cellpadding="0" cellspacing="0">
+			<table class="tablesorter" cellpadding="0" >
 				<colgroup>
 					<col width="150px" />
 					<col />

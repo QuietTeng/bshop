@@ -944,3 +944,7 @@ button span{display:block;height:20px;line-height:20px;height:18px\9;padding:0 5
 
 /* attr_list style start*/
 .attr_list li{float:left; width:220px; white-space:nowrap}
+.t_c{text-align: center;}
+.t_c .submit{color: #aca899;margin:10px 10px 10px 0;border:1px #a4c639 solid;font-weight:bold;color:#fff;cursor:pointer;background:url(../images/main/admin_bg.gif) 0 -271px repeat-x;}
+.t_c .submit .call{cursor:auto;color:red}
+

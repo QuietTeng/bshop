@@ -28,15 +28,15 @@ class menuSeller
 		"商品模块" => array(
 			"/seller/category_list" => "分类列表",
 			"/seller/goods_list" => "商品列表",
-			"/seller/goods_edit" => "添加商品",
 			"/seller/share_list" => "平台共享商品",
 			"/seller/refer_list" => "商品咨询",
 			"/seller/comment_list" => "商品评价",
-			"/seller/refundment_list" => "商品退款",
+			
 			"/seller/spec_list" => "规格列表",
 		),
 
 		"订单模块" => array(
+			"/seller/refundment_list" => "退款列表",
 			"seller/order_list" => "订单列表",
 		),
 
