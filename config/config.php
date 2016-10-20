@@ -42,14 +42,14 @@
     'pc' => 
     array (
       'sysdefault' => 'green',
-      'sysseller' => 'green',
       'default' => 'red',
+      'sysseller' => 'green',
     ),
     'mobile' => 
     array (
       'sysdefault' => 'default',
-      'sysseller' => 'default',
       'default' => 'red',
+      'sysseller' => 'green',
     ),
   ),
   'timezone' => 'Etc/GMT-8',

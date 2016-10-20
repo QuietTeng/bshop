@@ -4,24 +4,25 @@
 
 		<ul class="tabs">
 			<li><input type="button" class="alt_btn" onclick="selectAll('id[]');" value="全选" /></li>
-			<li><input type="button" class="alt_btn" onclick="delModel();" value="批量删除" /></li>
+			<!-- <li><input type="button" class="alt_btn" onclick="delModel();" value="批量删除" /></li> -->
 		</ul>
 	</header>
-	<form action="{url:/seller/message_del}" method="post" name="messageForm">
+	<form action="#" method="post" name="messageForm">
 	<table class="tablesorter" cellspacing="0">
 		<colgroup>
-			<col width="40px" />
+			<col width="10px" />
 			<col width="10px" />
 			<col width="30px" />
+			<col width="20px" />
 			<col width="30px" />
-			<col width="30px" />
-			<col width="30px" />
-			<col width="30px" />
-			<col width="30px" />
+			<col width="20px" />
+			<col width="40px" />
+			<col width="40px" />
+			<col width="40px" />
 		</colgroup>
-
 		<thead>
 			<tr>
+				<th>选择</th>
 				<th>性别</th>
 				<th>头像</th>
 				<th>眼镜</th>
@@ -35,7 +36,7 @@
 		<tbody>
 			{foreach:items = $this->seller_messageHandle->find()}
 			<tr>
-				
+				<td><input type="checkbox" name="id[]" value="{$item['id']}" /></td>
 				<td>{if:$item['people_sex']==1}男{else:}女{/if}</td>
 				<td><img style="width:60px" src="{$item['record_url']}"/></td>
 				<td>{if:$item['people_class']==1}戴眼镜{else:}不带眼镜{/if}</td>

@@ -9,6 +9,13 @@ class SystemSeller extends IController
 {
 	public $layout = '';
 
+
+	public function index(){
+		if(ISafe::get('seller_id')){
+			$this->redirect('/seller/index');
+		}
+		$this->redirect('index');
+	}
 	/**
 	 * @brief 商家登录动作
 	 */

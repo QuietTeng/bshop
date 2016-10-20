@@ -8,6 +8,7 @@
 class Seller extends IController implements sellerAuthorization
 {
 	public $layout = 'seller';
+	private $dat = array();
 
 	/**
 	 * @brief 初始化检查
@@ -82,6 +83,65 @@ class Seller extends IController implements sellerAuthorization
 
 		$callback ? $this->redirect($callback) : $this->redirect("goods_list");
 	}
+
+	//商品分类列表
+	public function category_list(){
+		$isCache = false;
+		$tb_category = new IModel('category');
+		$cacheObj = new ICache('file');
+		$data = $cacheObj->get('sortdata');
+		if(!$data)
+		{
+			$goods = new goods_class();
+			$data = $goods->sortdata($tb_category->query('seller_id=1','*','sort asc'));
+			$isCache ? $cacheObj->set('sortdata',$data) : "";
+		}
+		$datas['category'] = $data;
+		$this->setRenderData($datas);
+		$this->redirect('category_list',false);
+	}
+
+		/**
+	 * @brief 删除商品分类
+	 */
+	function category_del()
+	{
+		$category_id = IFilter::act(IReq::get('cid'),'int');
+		$seller_id = IFilter::act(IReq::get('seller_id'),'int');
+		if($category_id&&$seller_id)
+		{
+			$tb_category = new IModel('category');
+			$catRow      = $tb_category->getObj('seller_id='.$seller_id.' and parent_id = '.$category_id);
+
+			//要删除的分类下还有子节点
+			if(!empty($catRow))
+			{
+				$this->category_list();
+				Util::showMessage('无法删除此分类，此分类下还有子分类，或者回收站内还留有子分类');
+				exit;
+			}
+
+			if($tb_category->del('seller_id='.$seller_id.' and id = '.$category_id))
+			{
+				$tb_category_extend  = new IModel('category_extend');
+				$tb_category_extend->del('category_id = '.$category_id);
+				$this->redirect('category_list');
+			}
+			else
+			{
+				$this->category_list();
+				$msg = "没有找到相关分类记录！";
+				Util::showMessage($msg);
+			}
+		}
+		else
+		{
+			$this->category_list();
+			$msg = "没有找到相关分类记录！";
+			Util::showMessage($msg);
+		}
+	}
+
 	//商品列表
 	public function goods_list()
 	{
@@ -421,7 +481,9 @@ class Seller extends IController implements sellerAuthorization
 	{
 		$seller_id = $this->seller['seller_id'];
 		$sellerDB        = new IModel('seller');
-		$this->sellerRow = $sellerDB->getObj('id = '.$seller_id);
+		$sellerRow = $sellerDB->getObj('id = '.$seller_id);
+		$sellerRow['paper_img'] = explode(',',$sellerRow['paper_img']);
+		$this->sellerRow = $sellerRow;
 		$this->redirect('seller_edit');
 	}
 
@@ -445,6 +507,9 @@ class Seller extends IController implements sellerAuthorization
 		$home_url    = IFilter::act(IReq::get('home_url'));
 		$tax         = IFilter::act(IReq::get('tax'),'float');
 
+
+		print_r($_POST);
+		exit('www');
 		if(!$seller_id && $password == '')
 		{
 			$errorMsg = '请输入密码！';
@@ -453,6 +518,11 @@ class Seller extends IController implements sellerAuthorization
 		if($password != $repassword)
 		{
 			$errorMsg = '两次输入的密码不一致！';
+		}
+
+		//acount 处理
+		if(3 != count(explode(",", $account))){
+			 $errorMsg = '收款账号错误';
 		}
 
 		//操作失败表单回填
@@ -499,6 +569,7 @@ class Seller extends IController implements sellerAuthorization
 		$orderHandle = new IQuery('camera_user as o');
 		$orderHandle->page = $page;
 		$orderHandle->order  = "o.id desc";
+		$orderHandle->pagesize = 10;
 		$orderHandle->where  = 'seller_id ='.$this->seller['seller_id'];
 		$this->seller_messageHandle  =  $orderHandle;
 		$this->redirect('camera_user_list');
