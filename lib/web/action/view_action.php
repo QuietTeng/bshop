@@ -45,7 +45,19 @@ class IViewAction extends IAction
 	 * @return string 完整的图片物理路径
 	 */
 	public function resolveView()
-	{
-		return $this->getController()->getViewFile($this->getId());
+	{ 
+		$list = explode("/",$this->getId());
+		if(count($list)>1){//扩展跨越模块
+			list($theme,$controller,$action) = $list;
+			if($theme&&$controller&&$action){
+				$path = $this->getController()->getViewPath();
+				$re = $this->getController()->getThemeDir();
+				$path  = str_replace($re, $theme, $path).$controller.'\\'.$action;
+				return $path;
+			} 
+		}else{
+			return $this->getController()->getViewFile($this->getId());		
+		}
+		
 	}
 }

@@ -13,13 +13,12 @@ class menuSeller
 	public static $menu = array
 	(
 		"店铺管理模块" => array(
-			"/seller/index" => "店铺设置",
-			"/seller/account" => "模板设置",
+			"/seller/index" => "管理首页",
+			"/seller/shop" => "店铺管理",
 			"/seller/order_goods_list" => "广告设置",
 			"/seller/bill_list" => "QQ设置",
 		),
 		"统计结算模块" => array(
-			"/seller/index" => "管理首页",
 			"/seller/account" => "销售额统计",
 			"/seller/order_goods_list" => "货款明细列表",
 			"/seller/bill_list" => "货款结算申请",
@@ -31,7 +30,6 @@ class menuSeller
 			"/seller/share_list" => "平台共享商品",
 			"/seller/refer_list" => "商品咨询",
 			"/seller/comment_list" => "商品评价",
-			
 			"/seller/spec_list" => "规格列表",
 		),
 

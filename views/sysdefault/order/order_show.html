@@ -453,7 +453,7 @@
 		<button type="button" class="submit" id="to_deliver" onclick="deliver({$order_id});"><span>发货</span></button>
 		<button type="button" class="submit" id="to_refundment" onclick="refundment({$order_id});"><span>退款</span></button>
 		<button type="button" class="submit" id="to_finish" onclick="complete({$order_id},5)"><span>完成</span></button>
-		<button type="button" class="submit" id="to_cancel" onclick="complete({$order_id},4)"><span>作废</span></button>
+		<button type="button" class="submit" id="to_cancel" onclick="complete({$order_id},4)"><span>作废{$orderStatus}</span></button>
 	</div>
 </div>
 

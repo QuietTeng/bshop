@@ -393,7 +393,6 @@ class Seller extends IController implements sellerAuthorization
 			{
 		 		//获取地区
 		 		$data['area_addr'] = join('&nbsp;',area::name($data['province'],$data['city'],$data['area']));
-		 		$data['orderStatus'] = $data['status'];
 			 	$this->setRenderData($data);
 				$this->redirect('order_show',false);
 			}
@@ -566,9 +565,6 @@ class Seller extends IController implements sellerAuthorization
 		$home_url    = IFilter::act(IReq::get('home_url'));
 		$tax         = IFilter::act(IReq::get('tax'),'float');
 
-
-		print_r($_POST);
-		exit('www');
 		if(!$seller_id && $password == '')
 		{
 			$errorMsg = '请输入密码！';
@@ -620,6 +616,37 @@ class Seller extends IController implements sellerAuthorization
 		$sellerDB->update("id = ".$seller_id);
 
 		$this->redirect('seller_edit');
+	}
+
+	function shop_add(){
+		$seller_id   = $this->seller['seller_id'];
+		$shop_name    = IFilter::act(IReq::get('shop_name'));
+		$shop_domain    = IFilter::act(IReq::get('shop_domain'));
+
+
+		//待更新的数据
+		$sellerRow = array(
+			'shop_name'   => $shop_name,
+			'shop_domain' => $shop_domain,
+		 
+		);
+
+		//处理上传图片
+		if(isset($_FILES['logo']) && $_FILES['logo'] != '')
+		{
+			$uploadObj = new PhotoUpload();
+			$photoInfo = $uploadObj->run();
+			$sellerRow['logo'] = $photoInfo['logo']['img'];
+		}
+
+			//创建商家操作类
+		$sellerDB   = new IModel("seller");
+
+		$sellerDB->setData($sellerRow);
+		$sellerDB->update("id = ".$seller_id);
+
+		$this->redirect('shop');
+
 	}
 	//[会员列表][单页]
 	function camera_user_list()
@@ -1509,6 +1536,122 @@ class Seller extends IController implements sellerAuthorization
 		}
 		$this->redirect('refer_list');
 	}
+
+	public function shop(){
+		$seller_id = $this->seller['seller_id'];
+		$sellerDB        = new IModel('seller');
+		$sellerRow = $sellerDB->getObj('id = '.$seller_id);
+		$this->sellerRow = $sellerRow;
+		$this->redirect('shop');
+	}
+
+	/*********************************** 订单模块 begin*******************************/
+	/**
+	 * @brief 退款单页面
+	 */
+	public function order_refundment()
+	{
+		//去掉左侧菜单和上部导航
+		$this->layout='';
+		$orderId   = IFilter::act(IReq::get('id'),'int');
+		$refundsId = IFilter::act(IReq::get('refunds_id'),'int');
+
+		if($orderId)
+		{
+			$orderDB = new Order_Class();
+			$data    = $orderDB->getOrderShow($orderId);
+
+			//已经存退款申请
+			if($refundsId)
+			{
+				$refundsDB  = new IModel('refundment_doc');
+				$refundsRow = $refundsDB->getObj('id = '.$refundsId);
+				$data['refunds'] = $refundsRow;
+			}
+			$this->setRenderData($data);
+			$this->data = $data;
+			$this->redirect('theme:sysdefault/order/order_refundment');
+			return;
+		}
+		die('订单数据不存在');
+	}
+
+	/**
+	 * @brief 完成或作废订单页面
+	 **/
+	public function order_complete()
+	{
+		//去掉左侧菜单和上部导航
+		$this->layout='';
+		$order_id = IFilter::act(IReq::get('id'),'int');
+		$type     = IFilter::act(IReq::get('type'),'int');
+		$order_no = IFilter::act(IReq::get('order_no'));
+
+		//oerder表的对象
+		$tb_order = new IModel('order');
+		$tb_order->setData(array(
+			'status'          => $type,
+			'completion_time' => ITime::getDateTime(),
+		));
+		$tb_order->update('id='.$order_id);
+
+		//生成订单日志
+		$tb_order_log = new IModel('order_log');
+		$action = '作废';
+		$note   = '订单【'.$order_no.'】作废成功';
+
+		if($type=='5')
+		{
+			$action = '完成';
+			$note   = '订单【'.$order_no.'】完成成功';
+
+			//完成订单并且进行支付
+			Order_Class::updateOrderStatus($order_no);
+
+			//增加用户评论商品机会
+			Order_Class::addGoodsCommentChange($order_id);
+
+			$logObj = new log('db');
+			$logObj->write('operation',array("管理员:".ISafe::get('admin_name'),"订单更新为完成",'订单号：'.$order_no));
+		}
+		else
+		{
+			Order_class::resetOrderProp($order_id);
+
+			$logObj = new log('db');
+			$logObj->write('operation',array("管理员:".ISafe::get('admin_name'),"订单更新为作废",'订单号：'.$order_no));
+		}
+
+		$tb_order_log->setData(array(
+			'order_id' => $order_id,
+			'user'     => $this->admin['admin_name'],
+			'action'   => $action,
+			'result'   => '成功',
+			'note'     => $note,
+			'addtime'  => ITime::getDateTime(),
+		));
+		$tb_order_log->add();
+		die('success');
+	}
+	/**
+	 * @brief 支付订单页面collection_doc
+	 */
+	public function order_collection()
+	{
+	 	//去掉左侧菜单和上部导航
+	 	$this->layout='';
+	 	$order_id = IFilter::act(IReq::get('id'),'int');
+	 	$data = array();
+	 	if($order_id)
+	 	{
+	 		$order_show = new Order_Class();
+	 		$data = $order_show->getOrderShow($order_id);
+	 	}
+	 	$this->setRenderData($data);
+	 	$this->redirect('theme:sysdefault/order/order_collection');
+
+	}
+	/*********************************** 订单模块 end*******************************/
 
 
 }

@@ -1,4 +1,5 @@
 {set:$seller_id = $this->seller['seller_id']}
+{set:$orderStatus = Order_class::getOrderStatus(array('order_no' => $order_no,'status' => $status,'pay_type' => $pay_type,'distribution_status' => $distribution_status))}
 
 <article class="module width_full">
 	<header>
@@ -423,20 +424,13 @@
 		</fieldset>
 	</div>
  
-
-		
-
-
-
-
-		
 	<div class="t_c" id="ctrlButtonArea">
 
 		<button type="button" class="submit" id="to_pay" onclick="pay({$order_id});"><span>支付</span></button>
 		<button type="button" class="submit" id="to_deliver" onclick="deliver({$order_id});"><span>发货</span></button>
 		<button type="button" class="submit" id="to_refundment" onclick="refundment({$order_id});"><span>退款</span></button>
 		<button type="button" class="submit" id="to_finish" onclick="complete({$order_id},5)"><span>完成</span></button>
-		<button type="button" class="submit" id="to_cancel" onclick="complete({$order_id},4)"><span>作废</span></button>
+		<button type="button" class="submit" id="to_cancel" onclick="complete({$order_id},4)"><span>作废{$orderStatus}</span></button>
 
 	</div>
 		
@@ -452,7 +446,44 @@ var pay_status = '{$pay_status}';
 $(function()
 {
 	select_tab(1);
+	initButton();
 });
+
+function initButton()
+{
+	//全部操作区域的按钮锁定
+	$('#ctrlButtonArea button').prop('disabled',true);
+	$('#ctrlButtonArea button').hide();
+
+	//作废
+	$('#to_cancel').removeAttr('disabled');
+	$('#to_cancel').show();
+
+	//完成
+	{if:in_array($orderStatus,array(11,3))}
+	$('#to_finish').removeAttr('disabled');
+	$('#to_finish').show();
+	{/if}
+
+	//付款
+	{if:in_array($orderStatus,array(11,2))}
+	$('#to_pay').removeAttr('disabled');
+	$('#to_pay').show();
+	{/if}
+
+	//发货
+	{if:in_array($orderStatus,array(1,4,8,9))}
+	$('#to_deliver').removeAttr('disabled');
+	$('#to_deliver').show();
+	{/if}
+
+	//退款
+	{if:in_array($orderStatus,array(4,6,9,10))}
+	$('#to_refundment').removeAttr('disabled');
+	$('#to_refundment').show();
+	{/if}
+}
+
 
 //选择当前Tab
 function select_tab(curr_tab)
@@ -488,4 +519,79 @@ function updateDiscount()
 		tips('价格修改失败');
 	});
 }
+
+//发货
+function deliver(id){
+	window.location.href= '/seller/order_deliver/id/'+id;
+}
+
+//完成或作废订单
+function complete(id,statusVal)
+{
+	$.get("{url:/seller/order_complete}",{'order_no':"{$order_no}",'type':statusVal,'id':id}, function(data)
+	{
+		if(data=='success')
+		{
+			actionCallback();
+		}
+		else
+		{
+			alert('发生错误');
+		}
+	});
+}
+//退款
+function refundment(id)
+{
+	var tempUrl = '{url:/seller/order_refundment/id/@id@}';
+	tempUrl     = tempUrl.replace('@id@',id);
+	art.dialog.open(tempUrl,{
+		id:'refundment',
+		cancelVal:'关闭',
+		okVal:'退款',
+	    title: '订单号:{$order_no}【退款到余额账户】',
+	    ok:function(iframeWin, topWin){
+	    	iframeWin.document.forms[0].submit();
+	    	return false;
+	    },
+	    cancel:function(){
+	    	return true;
+		}
+	});
+}
+
+//执行回调处理
+function actionCallback(msg)
+{
+	msg ? alert(msg) : window.location.reload();
+	window.setTimeout(function()
+	{
+		var list = art.dialog.list;
+		for (var i in list)
+		{
+		    list[i].close();
+		};
+	},2500);
+}
+//付款
+function pay(id)
+{
+	var tempUrl = '{url:/seller/order_collection/id/@id@}';
+	tempUrl     = tempUrl.replace('@id@',id);
+
+	art.dialog.open(tempUrl,{
+		id:'pay',
+	    title: '订单号:{$order_no}【付款】',
+	    cancelVal:'关闭',
+		okVal:'付款',
+	    ok:function(iframeWin, topWin){
+			iframeWin.document.forms[0].submit();
+			return false;
+	    },
+	    cancel:function (){
+	    	return true;
+		}
+	});
+}
+
 </script>

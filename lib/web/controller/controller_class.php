@@ -351,8 +351,13 @@ class IController extends IControllerBase
 			//分析$nextAction 支持跨控制器跳转
 			$nextUrl = strtr($nextUrl,'\\','/');
 
+			if(strchr($nextUrl,'theme')){//跨越模块
+				$nextUrl = substr($nextUrl,6);
+				$this->action = new IViewAction($this,$nextUrl);
+				$this->action->run();
+			}
 			//不跨越控制器redirect
-			if($nextUrl[0] != '/')
+			elseif($nextUrl[0] != '/')
 			{
 				//重定跳转定向
 				if($actionId!=$nextUrl && $location == true)

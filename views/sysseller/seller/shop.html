@@ -1,0 +1,58 @@
+{js:artTemplate}
+{js:areaSelect}
+<article class="module width_full">
+	<header>
+		<h3>编辑店铺</h3>
+	</header>
+
+	<form action="{url:/seller/shop_add}" method="post" name="sellerForm" enctype='multipart/form-data'>
+		<div class="module_content">
+			 
+			<fieldset>
+				<label>店铺名称：</label>
+				<input class="normal"  name="shop_name" type="text" value="" pattern="required" />
+			</fieldset>
+
+			<fieldset>
+				<label>banner：</label>
+				 
+			</fieldset>
+
+			<fieldset>
+				<label>店铺二级域名：</label>
+				<input class="normal"  name="shop_domain" type="text" value="" pattern="required" />
+			</fieldset>
+
+			<fieldset>
+				<label>店铺Logo：</label>
+				<input type='file' name='logo' class='normal' />
+				{if:$this->sellerRow['logo']}
+						<img src="{webroot:$this->sellerRow['logo']}" style="width:220px;" />
+				{/if} 
+			</fieldset>
+			<fieldset>
+				<label>店铺模板：</label>
+				 
+			</fieldset>
+
+			<fieldset>
+				<label>客服QQ号码：</label>
+				<input name="server_num" class="normal" type="text" empty value="" />
+				 
+			</fieldset>
+		<footer>
+			<div class="submit_link">
+				<input type="submit" class="alt_btn" value="确 定" />
+				<input type="reset" value="重 置" />
+			</div>
+		</footer>
+	</form>
+</article>
+
+<script language="javascript">
+var formObj = new Form('sellerForm');
+formObj.init({echo:JSON::encode($this->sellerRow)});
+
+var areaInstance = new areaSelect('province');
+areaInstance.init({echo:JSON::encode($this->sellerRow)});
+</script>

@@ -25,7 +25,7 @@ class statistics
 		//默认没有时间条件,查询之前7天的数据
 		if(!$start && !$end)
 		{
-			$diffSec = 86400 * 6;
+			$diffSec = 86400 * 30;
 			$beforeDate = ITime::pass(-$diffSec,self::$format);
 			return array($beforeDate,ITime::getNow(self::$format));
 		}
