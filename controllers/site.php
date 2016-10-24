@@ -24,10 +24,7 @@ class Site extends IController
 
 	}
 
-	function error(){
-		exit('1');
-		IError::show('503','no permission to access');
-	}
+ 
 
 
 	function index()
