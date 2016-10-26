@@ -460,6 +460,7 @@ class Seller extends IController implements sellerAuthorization
 		$orderHandle = new IQuery('order as o');
 		$orderHandle->order  = "o.id desc";
 		$orderHandle->where  = $where;
+		$orderHandle->pagesize = 8;
 		$orderHandle->page	 = $page;
 		$this->orderHandle   = $orderHandle;
 		$order_info = array();
@@ -619,34 +620,48 @@ class Seller extends IController implements sellerAuthorization
 	}
 
 	function shop_add(){
+
 		$seller_id   = $this->seller['seller_id'];
-		$shop_name    = IFilter::act(IReq::get('shop_name'));
-		$shop_domain    = IFilter::act(IReq::get('shop_domain'));
+		$shop_name    = IFilter::act(IReq::get('shop_name','post'));
+		$shop_domain    = IFilter::act(IReq::get('shop_domain','post'));
+		$slide_img  = IFilter::act(IReq::get('slide_img','post'));
+		$slide_name  = IFilter::act(IReq::get('slide_name','post'));
+		$slide_url = IFilter::act(IReq::get('slide_url','post'));
+		$server_num = IFilter::act(IReq::get('server_nums','post'));
+
+
 
 
 		//待更新的数据
 		$sellerRow = array(
 			'shop_name'   => $shop_name,
 			'shop_domain' => $shop_domain,
-		 
+			'slide'=>'',
+			'server_num'=>rtrim(implode(',', $server_num),','), 
 		);
 
-		//处理上传图片
-		if(isset($_FILES['logo']) && $_FILES['logo'] != '')
+		//banner图片处理
+		if($slide_img&&$slide_url&&$slide_name){
+			foreach ($slide_img as $key => $value) {
+				$slide[] = array(
+					'name'=>$slide_name[$key],
+					'img'=>$slide_img[$key],
+					'url'=>$slide_url[$key]);
+			}
+		} 
+		$sellerRow['slide'] = serialize($slide);
+		//处理上传logo
+		if(isset($_FILES['logo']) && $_FILES['logo']['name'] != '')
 		{
 			$uploadObj = new PhotoUpload();
 			$photoInfo = $uploadObj->run();
 			$sellerRow['logo'] = $photoInfo['logo']['img'];
 		}
-
-			//创建商家操作类
+		//创建商家操作类
 		$sellerDB   = new IModel("seller");
-
 		$sellerDB->setData($sellerRow);
 		$sellerDB->update("id = ".$seller_id);
-
 		$this->redirect('shop');
-
 	}
 	//[会员列表][单页]
 	function camera_user_list()
@@ -733,10 +748,8 @@ class Seller extends IController implements sellerAuthorization
 			'regiment_price'=> IFilter::act(IReq::get('regiment_price','post')),
 			'seller_id'     => $this->seller['seller_id'],
 		);
-
 		$dataArray['limit_min_count'] = $dataArray['limit_min_count'] <= 0 ? 1 : $dataArray['limit_min_count'];
 		$dataArray['limit_max_count'] = $dataArray['limit_max_count'] <= 0 ? $dataArray['store_nums'] : $dataArray['limit_max_count'];
-
 		if($goodsId)
 		{
 			$goodsObj = new IModel('goods');
@@ -1541,8 +1554,43 @@ class Seller extends IController implements sellerAuthorization
 		$seller_id = $this->seller['seller_id'];
 		$sellerDB        = new IModel('seller');
 		$sellerRow = $sellerDB->getObj('id = '.$seller_id);
+		//selde
+		$sellerRow['slide'] = unserialize($sellerRow['slide']);
+		//server_num
+		$sellerRow['server_num'] = explode(',', $sellerRow['server_num']);
+		$this->setRenderData($sellerRow);
 		$this->sellerRow = $sellerRow;
 		$this->redirect('shop');
+	}
+
+
+	public function banner_upload(){
+		$result = array(
+			'isError' => true,
+		);
+		if(isset($_FILES['attach']['name']) && $_FILES['attach']['name'] != '')
+		{
+			$photoObj = new PhotoUpload();
+			$photo    = $photoObj->run();
+
+			if($photo['attach']['img'])
+			{
+				$result['img'] = $photo['attach']['img'];
+				$result['name'] =   IFilter::act(IReq::get('name','post'));
+				$result['url'] = IFilter::act(IReq::get('url','post'));
+				$result['isError'] = false;
+			}
+			else
+			{
+				$result['message'] = '上传失败';
+			}
+		}
+		else
+		{
+			$result['message'] = '请选择图片';
+		}
+
+       echo '<script type="text/javascript">parent.callback_banner('.JSON::encode($result).');</script>';
 	}
 
 	/*********************************** 订单模块 begin*******************************/

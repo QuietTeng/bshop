@@ -15,11 +15,11 @@ class menuSeller
 		"店铺管理模块" => array(
 			"/seller/index" => "管理首页",
 			"/seller/shop" => "店铺管理",
-			"/seller/order_goods_list" => "广告设置",
-			"/seller/bill_list" => "QQ设置",
+			"/seller/ad_list" => "广告设置",
 		),
 		"统计结算模块" => array(
 			"/seller/account" => "销售额统计",
+			"/seller/trade" => "交易数统计",
 			"/seller/order_goods_list" => "货款明细列表",
 			"/seller/bill_list" => "货款结算申请",
 		),

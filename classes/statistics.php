@@ -22,7 +22,7 @@ class statistics
 	 */
 	public static function dateParse($start = '',$end = '')
 	{
-		//默认没有时间条件,查询之前7天的数据
+		//默认没有时间条件,查询之前30天的数据
 		if(!$start && !$end)
 		{
 			$diffSec = 86400 * 30;
@@ -79,6 +79,8 @@ class statistics
 	 */
 	private static function ParseCondition($db,$timeCols = 'time',$start = '',$end = '')
 	{
+
+
 		$result     = array();
 
 		//获取时间段
@@ -120,6 +122,8 @@ class statistics
 			break;
 		}
 		$data = $db->find();
+
+
 		foreach($data as $key => $val)
 		{
 			$result[$val['xValue']] = intval($val['yValue']);
@@ -181,17 +185,50 @@ class statistics
 		$db->join   = 'left join order as o on o.id = og.order_id';
 		$db->fields = 'sum(og.real_price * og.goods_nums) as yValue,`pay_time`';
 		$db->where  = "og.is_send = 1 and og.seller_id = {$seller_id} and o.pay_status = 1";
+
+ 		if($start=='-1'||$end=='-1'){
+ 			$data = $db->find();
+ 			return $data[0]['yValue'];
+ 		}
+ 		$data = $db->find();
 		return self::ParseCondition($db,'pay_time',$start,$end);
 	}
+
+	/**
+	 * @brief 获取商品库存
+	 * @param int $seller_id 商家ID
+	 * @return int
+	 */
+	public static function goodStoreNums($seller_id=''){
+		$where = 'is_del=0';
+		if($seller_id){
+			$where .= " and seller_id={$seller_id}";
+		}
+		$goodsDB = new IModel('goods');
+		$data = $goodsDB->getObj($where,'sum(store_nums) as num');
+		return isset($data['num']) ? $data['num'] : 0;
+	}
+
+	public static function orderNums($seller_id=''){
+		$where = "if_del = 0 and status not in(3,4)";
+		if($seller_id){
+			$where .= " and seller_id={$seller_id}";
+		}
+		$goodsDB = new IModel('order');
+		$data = $goodsDB->getObj($where,'count(*) as num');
+		return isset($data['num']) ? $data['num'] : 0;
+	}
+
 
 	/**
 	 * @brief 获取商品统计数据
 	 * @param int $seller_id 商家ID
 	 * @return int
 	 */
-	public static function goodsCount($seller_id = '')
+	public static function goodsCount($seller_id = '',$is_del = null)
 	{
-		$where = "is_del != 1";
+		
+		$where = isset($is_del) ? "is_del=".$is_del : "is_del != 1";
 		if($seller_id)
 		{
 			$where .= " and seller_id = {$seller_id} ";
@@ -241,13 +278,21 @@ class statistics
 	 * @param int $seller_id 商家ID
 	 * @return int
 	 */
-	public static function sellCountSeller($seller_id)
+	public static function sellCountSeller($seller_id='',$start='-1',$end='-1')
 	{
-		$sellerDB = new IModel('seller');
-		$dataRow = $sellerDB->getObj("id = {$seller_id}",'sale');
-		return isset($dataRow['sale']) ? intval($dataRow['sale']) : 0;
+		if($start=='-1'||$end=='-1'){
+			$sellerDB = new IModel('seller');
+			$dataRow = $sellerDB->getObj("id = {$seller_id}",'sale');
+			return isset($dataRow['sale']) ? intval($dataRow['sale']) : 0;
+		}else{
+				$db = new IQuery('order_goods as og');
+				$db->join   = 'left join order as o on o.id = og.order_id';
+				$db->fields = 'sum(og.goods_nums) as yValue,`pay_time`';
+				$db->where  = "og.is_send = 1 and og.seller_id = {$seller_id} and o.pay_status = 1";
+		 		$data = $db->find();
+				return self::ParseCondition($db,'pay_time',$start,$end);
+		}
 	}
-
 	/**
 	 * @brief 商户的评分
 	 * @param int $seller_id 商家ID

@@ -14,8 +14,25 @@
 			</fieldset>
 
 			<fieldset>
-				<label>banner：</label>
+				<div>
+					<label>banner：</label>
+					<a class="blue" href="javascript:select_ico();">添加幻灯片</a>
+				</div>
+				<div id="thumbnails">
+					{foreach:items = $this->sellerRow['slide']}
+					<div style="float:left">
+						<div>
+							<span class="pic">
+								<input type="hidden" name="slide_name[]" value="{$item['name']}" />
+								<input type="hidden" name="slide_url[]" value="{$item['url']}" />
+								<input type="hidden" name="slide_img[]" value="{$item['img']}" />
+								<img  name="picThumb" onclick="defaultImage(this);" style="margin:5px; opacity:1;width:100px;height:100px" src="{webroot:$item['img']}" alt="{webroot:$item['img']}">
+							</span>
+						</div>
 				 
+					</div>
+				 	{/foreach}
+				</div>
 			</fieldset>
 
 			<fieldset>
@@ -25,20 +42,30 @@
 
 			<fieldset>
 				<label>店铺Logo：</label>
-				<input type='file' name='logo' class='normal' />
+				<input type='file' name='logo' class='normal'  />
 				{if:$this->sellerRow['logo']}
 						<img src="{webroot:$this->sellerRow['logo']}" style="width:220px;" />
 				{/if} 
 			</fieldset>
 			<fieldset>
 				<label>店铺模板：</label>
+				<span style="color:red">暂未显示</span>
 				 
 			</fieldset>
 
 			<fieldset>
 				<label>客服QQ号码：</label>
-				<input name="server_num" class="normal" type="text" empty value="" />
-				 
+				<a class="blue" href="javascript:add_qq();">添加幻QQ联系人</a>
+				<span>
+					<ul id="qq" style="padding-left:20px">
+						{foreach:items = $this->sellerRow['server_num']}
+						<li>{$item}<input type="hidden" name="server_nums[]" value="{$item}" />
+							<a class="orange" href="javascript:void(0)" onclick="$(this).parents('li').remove();"><img src="/views/sysdefault/skin/green/images/admin/sign_cacel.png" title="删除" alt="删除"></a>
+						</li>
+						{/foreach}
+					</ul>
+				</span>
+				
 			</fieldset>
 		<footer>
 			<div class="submit_link">
@@ -50,9 +77,58 @@
 </article>
 
 <script language="javascript">
+//添加幻灯片
+function select_ico()
+{
+	{set:$callback = urlencode(IUrl::creatUrl('/seller/banner_upload'))}
+	art.dialog.open('{url:/block/banner_upload?callback=$callback}',
+	{
+		'id':'user_ico',
+		'title':'添加banner',
+		'ok':function(iframeWin, topWin)
+		{
+			iframeWin.document.forms[0].submit();
+			return false;
+		}
+	});
+}
+
+//添加QQ
+function add_qq()
+{
+	art.dialog.prompt('添加幻QQ联系人',function(qq){
+		if(!qq)
+		{
+			alert('请填写QQ');
+			return;
+		}
+		var html = '<li>'+qq+'<input type="hidden" name="server_nums[]" value="'+qq+'"></li>';
+		$("#qq").append(html);
+
+	})
+}
 var formObj = new Form('sellerForm');
 formObj.init({echo:JSON::encode($this->sellerRow)});
 
-var areaInstance = new areaSelect('province');
-areaInstance.init({echo:JSON::encode($this->sellerRow)});
+
+function defaultImage(_self)
+{
+	$('#thumbnails img[name="picThumb"]').removeClass('current');
+	$(_self).addClass('current');
+}
+function callback_banner(content){
+	var content = eval(content);
+	if(content.isError == true)
+	{
+		alert(content.message);
+	}
+	else
+	{
+		var html  = '<div style="float:left"><div><span class="pic"><input type="hidden" name="slide_name[]" value="'+content.name+'" /><input type="hidden" name="slide_url[]" value="'+content.url+'" /><input type="hidden" name="slide_img[]" value="'+content.img+'" /><img name="picThumb" onclick="defaultImage(this);" style="margin:5px; opacity:1;width:100px;height:100px" src="{webroot:}'+content.img+'" alt="{webroot:}'+content.img+'"></span></div></div>';
+
+		$('#thumbnails').append(html);
+	}
+	art.dialog({id:'user_ico'}).close();
+}
+
 </script>
