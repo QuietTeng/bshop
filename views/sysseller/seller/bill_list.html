@@ -6,12 +6,16 @@
 		<h3 class="tabs_involved">货款结算单列表</h3>
 
 		<ul class="tabs">
-			<li><input type="button" class="alt_btn" onclick="window.location.href='{url:/seller/bill_edit}';" value="申请结算货款" /></li>
+			
+			<li><input type="button" class="alt_btn" onclick="selectAll('id[]');" value="全选" /></li>
+			<li><input type="button" class="alt_btn" onclick="bill_status(0);" value="提交结算" /></li>
+			<li><input type="button" class="alt_btn" onclick="filterResult();" value="检索" /></li>
 		</ul>
 	</header>
-
+	<form  method="post" action="" name="billsForm">
 	<table class="tablesorter" cellspacing="0">
 		<colgroup>
+			<col width="50px" />
 			<col width="180px" />
 			<col width="155px" />
 			<col width="80px" />
@@ -22,6 +26,7 @@
 
 		<thead>
 			<tr>
+				<th>选择</th>
 				<th>订单的结算起止</th>
 				<th>申请时间</th>
 				<th>结算状态</th>
@@ -32,15 +37,19 @@
 		</thead>
 
 		<tbody>
-			{set:$page= (isset($_GET['page'])&&(intval($_GET['page'])>0))?intval($_GET['page']):1;}
-			{query: name=bill where=seller_id eq $seller_id page=$page}
+			{foreach:items = $this->billHandle->find()}
 			<tr>
+				<td><input type="checkbox" name="id[]" value="{$item['id']}" /></td>
 				<td>{$item['start_time']} ~ {$item['end_time']}</td>
 				<td>{$item['apply_time']}</td>
 				<td>
 					{if:$item['is_pay'] == 1}
 					<label class="green">已结算</label>
-					{else:}
+					{elseif:$item['is_pay'] ==2}
+					<label class="orange">已驳回</label>
+					{elseif:$item['is_pay'] ==-1}
+					<label class="orange">未提交</label>
+					{elseif:$item['is_pay'] ==0}
 					<label class="orange">未结算</label>
 					{/if}
 				</td>
@@ -58,9 +67,80 @@
 					{/if}
 				</td>
 			</tr>
-			{/query}
+			{/foreach}
 		</tbody>
 	</table>
-
-	{$query->getPageBar()}
+	</form>
+	{$this->billHandle->getPageBar()}
 </article>
+<script type="text/html" id="filterTemplate">
+<form action="{url:/}" method="get" name="filterForm">
+	<input type='hidden' name='controller' value='seller' />
+	<input type='hidden' name='action' value='bill_list' />
+	<div class="module_content">
+		<fieldset>
+		<label>审核状态</label>
+		<select name="is_pay">
+			<option value="">不限</option>
+			<option value="-1">未提交</option>
+			<option value="0">已提交</option>
+			<option value="1">已结算</option>
+			<option value="2">已驳回</option>
+			
+		</select>
+
+		<label>结算时间</label>
+		<select name="apply_time">
+			<option value="">选择时间</option>
+			<option value="1">一个月以内</option>
+			<option value="2">三个月以内</option>
+			<option value="3">三个月以前</option>
+		</select>
+		</fieldset>
+	</div>
+</form>
+</script>
+<script type="text/javascript">
+//检索商品
+function filterResult()
+{
+	var goodsHeadHtml = template.render('filterTemplate');
+	art.dialog(
+	{
+		"init":function()
+		{
+			var filterPost = {echo:JSON::encode(IReq::get('search'))};
+			var formObj = new Form('filterForm');
+			for(var index in filterPost)
+			{
+				formObj.setValue("search["+index+"]",filterPost[index]);
+			}
+		},
+		"title":"检索条件",
+		"content":goodsHeadHtml,
+		"okVal":"立即检索",
+		"ok":function(iframeWin, topWin)
+		{
+			iframeWin.document.forms[0].submit();
+		}
+	});
+}
+
+//结算状态修改
+function bill_status(is_pay)
+{
+	var checkNum = $('input:checkbox[name="id[]"]:checked').length;
+	if(checkNum > 0)
+	{
+		var postUrl = "{url:/seller/bill_status/is_pay/@is_pay@}";
+		postUrl = postUrl.replace("@is_pay@",is_pay);
+		$("form[name='billsForm']").attr('action',postUrl);
+		confirm('确定要修改所选中的结算吗？','formSubmit(\'billsForm\')');
+	}
+	else
+	{
+		alert('请选择要修改的结算');
+		return false;
+	}
+}
+</script>

@@ -597,7 +597,8 @@ class Tools extends IController implements adminAuthorization
 			'width'        => IFilter::act( IReq::get('width','post') ),
 			'height'       => IFilter::act( IReq::get('height','post') ),
 			'fashion'      => IFilter::act( IReq::get('fashion','post'),'int' ),
-			'status'       => IFilter::act( IReq::get('status','post'),'int' )
+			'status'       => IFilter::act( IReq::get('status','post'),'int' ),
+			'type'		   => IFilter::act( IReq::get('type','post'),'int' ),
 		);
 		$obj->setData($dataArray);
 

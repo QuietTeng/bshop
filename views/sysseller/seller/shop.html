@@ -18,21 +18,22 @@
 					<label>banner：</label>
 					<a class="blue" href="javascript:select_ico();">添加幻灯片</a>
 				</div>
-				<div id="thumbnails">
+				<div id="thumbnails">	
 					{foreach:items = $this->sellerRow['slide']}
-					<div style="float:left">
-						<div>
-							<span class="pic">
-								<input type="hidden" name="slide_name[]" value="{$item['name']}" />
-								<input type="hidden" name="slide_url[]" value="{$item['url']}" />
-								<input type="hidden" name="slide_img[]" value="{$item['img']}" />
-								<img  name="picThumb" onclick="defaultImage(this);" style="margin:5px; opacity:1;width:100px;height:100px" src="{webroot:$item['img']}" alt="{webroot:$item['img']}">
-							</span>
-						</div>
+						<span class="pic">
+							<input type="hidden" name="slide_name[]" value="{$item['name']}" />
+							<input type="hidden" name="slide_url[]" value="{$item['url']}" />
+							<input type="hidden" name="slide_img[]" value="{$item['img']}" />
+							<img  name="picThumb" onclick="defaultImage(this);" style="margin:5px; opacity:1;width:100px;height:100px" src="{webroot:$item['img']}" alt="{webroot:$item['img']}">
+					 		<P>
+					 			<a class="orange" href="javascript:void(0)" onclick="$(this).parents('.pic').insertBefore($(this).parents('.pic').prev());"><img src="/views/sysdefault/skin/green/images/admin/arrow_left.png" title="左移动" alt="左移动"></a>
+				 				<a class="orange" href="javascript:void(0)" onclick="$(this).parents('.pic').remove();"><img src="/views/sysdefault/skin/green/images/admin/sign_cacel.png" title="删除" alt="删除"></a>
+				 				<a class="orange" href="javascript:void(0)" onclick="$(this).parents('.pic').insertAfter($(this).parents('.pic').next());"><img src="/views/sysdefault/skin/green/images/admin/arrow_right.png" title="右移动" alt="右移动"></a>
+				 			</P>
+				 		</span>
 				 
-					</div>
 				 	{/foreach}
-				</div>
+		 	 	</diV>
 			</fieldset>
 
 			<fieldset>

@@ -6,14 +6,14 @@
 	<header>
 		<h3 class="tabs_involved">商品货款明细</h3>
 		<ul class="tabs">
-			<li><input type="button" class="alt_btn" onclick="window.location.href='{url:/seller/bill_edit}';" value="申请结算货款" /></li>
+			<li><input type="button" class="alt_btn" onclick="window.location.href='{url:/seller/bill_edit}';" value="申请结算货款" />
+			</li>
 		</ul>
 	</header>
 
 	<table class="tablesorter" cellspacing="0">
 		<colgroup>
-			<col />
-			<col width="150px" />
+			<col width="100px" />
 			<col width="100px" />
 			<col width="100px" />
 			<col width="100px" />
@@ -29,7 +29,6 @@
 				<th>平台促销活动</th>
 				<th>退款金额</th>
 				<th>结算状态</th>
-				<th>操作</th>
 			</tr>
 		</thead>
 
@@ -38,12 +37,13 @@
 				$page = (isset($_GET['page'])&&(intval($_GET['page'])>0))?intval($_GET['page']):1;
 				$orderGoodsQuery = CountSum::getSellerGoodsFeeQuery($seller_id);
 				$orderGoodsQuery->page = $page;
+				$orderGoodsQuery->pagesize = 10;
 			}
 
 			{foreach: items = $orderGoodsQuery->find()}
 			{set:$countData = CountSum::countSellerOrderFee(array($item))}
 			<tr>
-				<td>{$item['order_no']}</td>
+				<td><a href="{url:/seller/order_show/id/$item[id]}">{$item['order_no']}</a></td>
 				<td>{$item['create_time']}</td>
 				<td>￥{$countData['orderAmountPrice']}</td>
 				<td>￥{$countData['platformFee']}</td>
@@ -52,10 +52,14 @@
 					{if:$item['is_checkout'] == 1}
 					<label class="green">已结算</label>
 					{else:}
-					<label class="orange">未结算</label>
+					<label class="orange">未结算
+							{if:$item['status'] >= 6}
+								(已退款)
+							{/if}
+					</label>
 					{/if}
 				</td>
-				<td><a href="{url:/seller/order_show/id/$item[id]}"><img title="订单详情" alt="订单详情" src="{skin:images/main/icn_settings.png}" /></a></td>
+				 
 			</tr>
 			{/foreach}
 		</tbody>

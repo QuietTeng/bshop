@@ -628,19 +628,18 @@ class Seller extends IController implements sellerAuthorization
 		$slide_name  = IFilter::act(IReq::get('slide_name','post'));
 		$slide_url = IFilter::act(IReq::get('slide_url','post'));
 		$server_num = IFilter::act(IReq::get('server_nums','post'));
-
-
-
-
+		if($server_num){
+			$server_num = rtrim(implode(',', $server_num),',');
+		}
 		//待更新的数据
 		$sellerRow = array(
 			'shop_name'   => $shop_name,
 			'shop_domain' => $shop_domain,
 			'slide'=>'',
-			'server_num'=>rtrim(implode(',', $server_num),','), 
+			'server_num'=>$server_num, 
 		);
-
 		//banner图片处理
+		$slide = '';
 		if($slide_img&&$slide_url&&$slide_name){
 			foreach ($slide_img as $key => $value) {
 				$slide[] = array(
@@ -649,7 +648,7 @@ class Seller extends IController implements sellerAuthorization
 					'url'=>$slide_url[$key]);
 			}
 		} 
-		$sellerRow['slide'] = serialize($slide);
+		$sellerRow['slide'] = $slide?serialize($slide):$slide;
 		//处理上传logo
 		if(isset($_FILES['logo']) && $_FILES['logo']['name'] != '')
 		{
@@ -830,6 +829,59 @@ class Seller extends IController implements sellerAuthorization
 		$this->redirect('bill_list');
 	}
 
+
+	public function bill_status(){
+		$id        = IFilter::act(IReq::get('id'),'int');
+		$is_pay    = IFilter::act(IReq::get('is_pay'),'int');
+		$seller_id = $this->seller['seller_id'];
+
+		$goodsDB = new IModel('bill');
+		$goodsDB->setData(array('is_pay' => $is_pay));
+
+	    if($id)
+		{
+			if(is_array($id))
+			{
+				foreach($id as $key => $val)
+				{
+					$goodsDB->update("id = ".$val." and seller_id = ".$seller_id." and is_pay=-1");
+				}
+			}
+			else
+			{
+				$goodsDB->update("id = ".$val." and seller_id = ".$seller_id." and is_pay=-1");
+			}
+		}
+		$this->redirect("bill_list");
+	}
+
+	public function bill_list(){
+		$page   = IReq::get('page') ? IFilter::act(IReq::get('page'),'int') : 1;
+		$is_pay   =  IFilter::act(IReq::get('is_pay'));
+		$apply_time   =  IFilter::act(IReq::get('apply_time'));
+		$where = 'seller_id='.$this->seller['seller_id'];
+		//时间换算
+		if(1==$apply_time){
+			$lastTime     = ITime::getDateTime('Y-m-d',strtotime("-1 month"));
+			$where .= " and apply_time>{$lastTime}";
+
+		}elseif (2==$apply_time) {
+			$lastTime     = ITime::getDateTime('Y-m-d',strtotime("-3 month"));
+			$where .= " and apply_time>{$lastTime}";
+		}elseif (3==$apply_time) {
+			$lastTime     = ITime::getDateTime('Y-m-d',strtotime("-3 month"));
+			$where .= " and apply_time<{$lastTime}";
+		}
+		if(''!=$is_pay){
+			$where .= " and is_pay={$is_pay}";
+		}
+		$billHandle = new IQuery('bill');
+		$billHandle->page = $page;
+		$billHandle->where = $where;
+		$this->billHandle= $billHandle;
+		$this->redirect('bill_list');
+	}
+
 	//结算单更新
 	public function bill_update()
 	{
@@ -843,7 +895,7 @@ class Seller extends IController implements sellerAuthorization
 		if($id)
 		{
 			$billRow = $billDB->getObj('id = '.$id);
-			if($billRow['is_pay'] == 0)
+			if($billRow['is_pay'] <= 0)
 			{
 				$billDB->setData(array('apply_content' => $apply_content));
 				$billDB->update('id = '.$id.' and seller_id = '.$this->seller['seller_id']);
@@ -1555,9 +1607,9 @@ class Seller extends IController implements sellerAuthorization
 		$sellerDB        = new IModel('seller');
 		$sellerRow = $sellerDB->getObj('id = '.$seller_id);
 		//selde
-		$sellerRow['slide'] = unserialize($sellerRow['slide']);
+		$sellerRow['slide'] = $sellerRow['slide']?unserialize($sellerRow['slide']):array();
 		//server_num
-		$sellerRow['server_num'] = explode(',', $sellerRow['server_num']);
+		$sellerRow['server_num'] = $sellerRow['server_num']?explode(',', $sellerRow['server_num']):array();
 		$this->setRenderData($sellerRow);
 		$this->sellerRow = $sellerRow;
 		$this->redirect('shop');

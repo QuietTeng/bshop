@@ -63,6 +63,7 @@ class Ad
 
 		$positionObject = self::getPositionInfo($position);
 
+
 		 
 		if($positionObject)
 		{
@@ -74,7 +75,6 @@ class Ad
 				$adArray[] = self::display($val);
 			}
 		}
-
 		//有广告内容数据
 		if($adArray)
 		{
@@ -199,8 +199,9 @@ OEF;
 	{
 		$now    = date("Y-m-d H:i:s",ITime::getNow());
 		$adDB   = new IModel("ad_manage");
-		$w = $adDB->query("status=1 and seller_id={$seller_id} and position_id={$position} and goods_cat_id = {$goods_cat_id} and start_time < '{$now}' AND end_time > '{$now}' ORDER BY `order` ASC ");
-		return $w;
+		$data = $adDB->query("status=1 and seller_id={$seller_id} and position_id={$position} and goods_cat_id = {$goods_cat_id} and start_time < '{$now}' AND end_time > '{$now}' ORDER BY `order` ASC ");	 
+		//echo $adDB->getsql();
+		return $data;
 	}
     
 

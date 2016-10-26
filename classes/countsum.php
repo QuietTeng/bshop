@@ -567,7 +567,6 @@ class CountSum
 
 		//最终结算金额
 		$result['countFee'] = $result['orgCountFee'] - $result['commission'];
-
     	return $result;
     }
 }

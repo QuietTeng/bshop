@@ -1,6 +1,7 @@
 //全选
 function selectAll(nameVal)
 {
+
 	//获取复选框的form对象
 	var formObj = $("form:has(:checkbox[name='"+nameVal+"'])");
 
