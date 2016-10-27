@@ -14,7 +14,7 @@
 			</div>
 		</div>
 		<!--cms新闻展示-->
-		{echo:Ad::show("【首页】右上方")}
+		{echo:Ad::show("【平台】首页右上方")}
 	</div>
 
 	<!--幻灯片 开始-->
@@ -29,7 +29,7 @@
 	</div>
 	<!--幻灯片 结束-->
 </div>
-{echo:Ad::show("【首页】中部通栏")}
+{echo:Ad::show("【平台】首页中部通栏")}
 <div class="wrapper clearfix">
 	<div class="sidebar f_r">
 
@@ -192,7 +192,7 @@
 
 		<!--首页推荐商品-->
 		{foreach:items=apple::go('getCategoryListTop')  item=$first }
-		{echo:Ad::show("【平台】楼层广告",$first['id'])}
+		{echo:Ad::show("【平台】首页楼层广告",$first['id'])}
 		<div class="box m_10" name="showGoods">
 			<div class="title title3">
 				<h2><a href="{url:/site/pro_list/cat/$first[id]}"><strong>{$first['name']}</strong></a></h2>

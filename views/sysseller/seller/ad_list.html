@@ -1,9 +1,9 @@
 <article class="module width_full">
 	<header>
-		<h3 class="tabs_involved">用户列表</h3>
+		<h3 class="tabs_involved">广告列表</h3>
 
 		<ul class="tabs">
-			<li><input type="button" class="alt_btn" onclick="selectAll('id[]');" value="全选" /></li>
+			<li><input type="button" class="alt_btn" onclick="window.location.href='{url:/seller/ad_edit}';" value="添加广告" /></li>
 			<!-- <li><input type="button" class="alt_btn" onclick="delModel();" value="批量删除" /></li> -->
 		</ul>
 	</header>
@@ -42,8 +42,8 @@
 					<td>{echo:$item['status']==1 ? '是':'否'}</td>
 					<td>{$item['start_time']} ～ {$item['end_time']} </td>
 					<td>
-						<a href='{url:/tools/ad_edit/id/$item[id]}'><img class="operator" src="{skin:images/main/icon_edit.gif}" alt="编辑" title="编辑" /></a>
-						<a href='javascript:void(0)' onclick="delModel({link:'{url:/tools/ad_del/id/$item[id]}'});"><img class="operator" src="{skin:images/main/icon_del.gif}" alt="删除" title="删除" /></a>
+						<a href='{url:/seller/ad_edit/id/$item[id]}'><img class="operator" src="{skin:images/main/icon_edit.gif}" alt="编辑" title="编辑" /></a>
+						<a href='javascript:void(0)' onclick="delModel({link:'{url:/seller/ad_del/id/$item[id]}'});"><img class="operator" src="{skin:images/main/icon_del.gif}" alt="删除" title="删除" /></a>
 					</td>
 				</tr>
 			{/query}

@@ -22,7 +22,9 @@
 			</li>
 			{/foreach}
 		</ul>
+	 	<a class="zoom blue" href="{url:/site/pic_show/id/$id}">点击看大图</a>
 	</div>
+
 
 	<div class="summary">
 		<h2>{$name}</h2>
@@ -172,10 +174,6 @@
 
 </div>
 
-<div class="t_l">
-	<a class="zoom blue" href="{url:/site/pic_show/id/$id}">点击看大图</a>
-</div>
-
 <div class="wrapper clearfix container_2">
 
 	<!--左边栏-->
@@ -236,7 +234,7 @@
 
 	<!--滑动面tab标签-->
 	<div class="main f_r" style="overflow:hidden">
- 		{echo:Ad::show("【商品】详情页中部",0,$seller_id)}
+ 		{echo:Ad::show("【商家】商品详情中部",0,$seller_id)}
 		<div class="uc_title" name="showButton">	
 			<label class="current"><span>商品详情</span></label>
 			<label><span>顾客评价({$comments})</span></label>

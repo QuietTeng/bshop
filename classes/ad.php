@@ -62,9 +62,6 @@ class Ad
 		$adArray        = array();
 
 		$positionObject = self::getPositionInfo($position);
-
-
-		 
 		if($positionObject)
 		{
 			$adList = self::getAdList($positionObject['id'],$goods_cat_id,$seller_id);
@@ -75,6 +72,7 @@ class Ad
 				$adArray[] = self::display($val);
 			}
 		}
+
 		//有广告内容数据
 		if($adArray)
 		{

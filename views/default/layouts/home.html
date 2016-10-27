@@ -19,12 +19,12 @@
 </head>
 <body class="index">
 <div class="container">
-	{echo:Ad::show("【商家】首页顶部通栏",0,$seller_id)}
+	{echo:Ad::show("【商家】首页顶端通栏",0,$seller_id)}
 	<div class="header">
-		<h1 class="logo"><a title="{$this->_siteConfig->name}" style="background:url({webroot:$this->_siteConfig->logo}) center no-repeat;background-size:contain;" href="{url:}">{echo:$this->_siteConfig->name}</a></h1>
+		<h1 class="logo"><a title="{$sellerRow['shop_name']}" style="background:url({webroot:$sellerRow['logo']}) center no-repeat;background-size:contain;" href="{url:}">{echo:$this->_siteConfig->name}</a></h1>
 
 		<ul class="shortcut">
-			<li class="first"><a href="{url:/ucenter/index}">我的账户(店铺)</a></li>
+			<li class="first"><a href="{url:/ucenter/index}">我的账户</a></li>
 			<li><a href="{url:/ucenter/order}">我的订单</a></li>
 			<li><a href="{url:/simple/seller}">申请开店</a></li>
 			<li class='last'><a href="{url:/site/help_list}">使用帮助</a></li>

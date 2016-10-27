@@ -4,7 +4,7 @@
 			<div class="gtitle"><h2>往期团购</h2><a class="return" href="{url:/site/groupon}">返回团购首页</a></div>
 			<ul class="glist m_10 clearfix">
 				{set:$page = IReq::get('page') ? IFilter::act(IReq::get('page'),'int') : 1}
-				{set:$query=Api::run("getEverRegimentList",array('page',$page))}
+				{set:$query=apple::go("getEverRegimentList",array('page',$page))}
 				{foreach:items = $query->find()}
 				<li>
 					<h2><a class="f14 bold" href="{url:/site/products/id/$item[goods_id]}">{$item['title']}</a></h2>

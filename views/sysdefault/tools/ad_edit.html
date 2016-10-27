@@ -38,7 +38,7 @@
 					<td>
 						<select name='position_id' class='normal' pattern='required' alt='广告位不能为空'>
 							<option value=''>请选择</option>
-							{query:name=ad_position}
+							{query:name=ad_position where=type}
 							<option value='{$item['id']}'>{$item['name']}</option>
 							{/query}
 						</select>

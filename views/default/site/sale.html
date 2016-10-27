@@ -1,6 +1,6 @@
 <div class="wrapper clearfix">
 	<!--首页推荐商品-->
-	{foreach:items=Api::run('getSaleList') item=$promRow}
+	{foreach:items=apple::go('getSaleList') item=$promRow}
 	<div class="box m_10" name="showGoods">
 		<div class="title title3">
 			<h2><strong>{$promRow['name']}</strong></h2>

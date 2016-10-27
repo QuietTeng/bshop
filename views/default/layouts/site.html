@@ -19,7 +19,7 @@
 </head>
 <body class="index">
 <div class="container">
-	{echo:Ad::show("【首页】顶部通栏广告条")}
+	{echo:Ad::show("【平台】首页顶部通栏")}
 	<div class="header">
 		<h1 class="logo"><a title="{$this->_siteConfig->name}" style="background:url({webroot:$this->_siteConfig->logo}) center no-repeat;background-size:contain;" href="{url:}">{echo:$this->_siteConfig->name}</a></h1>
 
@@ -28,6 +28,8 @@
 			<li><a href="{url:/ucenter/order}">我的订单</a></li>
 			<li><a href="{url:/simple/seller}">申请开店</a></li>
 			<li><a href="{url:/seller/index}">商家管理</a></li>
+			<li><a href="{url:/site/sitemap}">网站地图</a></li>
+			<li><a href="{url:/site/seller}">商家列表</a></li>
 			<li class='last'><a href="{url:/site/help_list}">使用帮助</a></li>
 		</ul>
 		<p class="loginfo">

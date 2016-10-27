@@ -1753,5 +1753,96 @@ class Seller extends IController implements sellerAuthorization
 	}
 	/*********************************** 订单模块 end*******************************/
 
+	//[广告] 添加修改 (单页)
+	function ad_edit()
+	{
+		$id = IFilter::act( IReq::get('id'),'int' );
+		if($id)
+		{
+			$obj = new IModel('ad_manage');
+			$where = 'id = '.$id;
+			$this->adRow = $obj->getObj($where);
+		}
+		$this->redirect('ad_edit',false);
+	}
 
+	//[广告] 删除
+	function ad_del()
+	{
+		$id = IFilter::act( IReq::get('id') , 'int' );
+		if(!empty($id))
+		{
+			$obj = new IModel('ad_manage');
+			if(is_array($id) && isset($id[0]) && $id[0]!='')
+			{
+				$id_str = join(',',$id);
+				$where = ' id in ('.$id_str.')';
+			}
+			else
+			{
+				$where = 'id = '.$id;
+			}
+			$obj->del($where);
+			$this->redirect('ad_list');
+		}
+		else
+		{
+			$this->redirect('ad_list',false);
+			Util::showMessage('请选择要删除的广告');
+		}
+	}
+	//[广告] 添加和修改动作
+	function ad_edit_act()
+	{
+		$id      = IFilter::act( IReq::get('id'),'int' );
+		$content = IReq::get('content');
+
+		//附件上传
+		if(isset($_FILES) && $_FILES)
+		{
+			$upType = isset($_FILES['img']) ? array("gif","png","jpg") : array('flv','swf');
+			$upObj  = new IUpload("5000",$upType);
+			$dir    = IWeb::$app->config['upload'].'/'.date('Y')."/".date('m')."/".date('d');
+			$upObj->setDir($dir);
+			$upState = $upObj->execute();
+			$result = $upState ? current($upState) : "";
+			if($result && isset($result[0]['flag']) && $result[0]['flag'] == 1)
+			{
+				//最终附件路径
+				$content = $dir.'/'.$result[0]['name'];
+			}
+			else if(!$content)
+			{
+				IError::show(403,"请上传正确的附件数据");
+			}
+		}
+
+		$adObj = new IModel('ad_manage');
+		$dataArray = array(
+			'content'     => IFilter::addSlash($content),
+			'name'        => IFilter::act(IReq::get('name')),
+			'position_id' => IFilter::act(IReq::get('position_id')),
+			'type'        => IFilter::act(IReq::get('type')),
+			'link'        => IFilter::addSlash(IReq::get('link')),
+			'start_time'  => IFilter::act(IReq::get('start_time')),
+			'end_time'    => IFilter::act(IReq::get('end_time')),
+			'description' => IFilter::act(IReq::get('description'),'text'),
+			'order'       => IFilter::act(IReq::get('order'),'int'),
+			'goods_cat_id'=> IFilter::act(IReq::get('goods_cat_id'),'int'),
+			'status'=> IFilter::act(IReq::get('status'),'int'),
+			'seller_id'=>$this->seller['seller_id'],
+		);
+
+		$adObj->setData($dataArray);
+		if($id)
+		{
+			$where = 'id = '.$id;
+			$adObj->update($where);
+		}
+		else
+		{
+			$adObj->add();
+		}
+		$this->redirect("ad_list");
+	}
 }

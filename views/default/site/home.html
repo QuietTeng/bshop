@@ -62,7 +62,7 @@
 		$resultData = $goodsObj->find();}
 		<!--商品条件筛选-->
 		{include:_goods_list_filter}
-		{echo:Ad::show("【商家】banner下方广告",0,$seller_id)}
+		{echo:Ad::show("【商家】首页横栏下方",0,$seller_id)}
 		{if:$resultData}
 		<ul class="display_list clearfix m_10">
 			{foreach:items=$resultData}
