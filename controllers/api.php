@@ -441,7 +441,6 @@ class Api extends IController {
 				$this->seller_app_echo($result);
 			}
 		}
-		
 		//结果数据
 		$result = array(
 			'total_count'=>0,
@@ -593,6 +592,7 @@ class Api extends IController {
 			'message' => '',
 			'error_num' => 0,
 		);
+
 		if (!$camera_no) {
 			$sult['message'] = "未指定摄像机编号";
 			$sult['error_num'] = -100;
@@ -609,15 +609,21 @@ class Api extends IController {
 			$sult['error_num'] = -98;
 			$this->seller_app_echo($sult);
 		}
-
 		//$_FILES[0]=array('name'=>'图片1.jpg','type'=>'image/jpeg','tmp_name'=>'C:\Users\09001153\AppData\Local\Temp\php5D0.tmp','error'=>0,'size'=>7940);
 		//$_FILES[1]=array('name'=>'图片1.jpg','type'=>'image/jpeg','tmp_name'=>'C:\Users\09001153\AppData\Local\Temp\php5D0.tmp','error'=>0,'size'=>7940);
-
 		if (!$sult['error_num'] && !($_FILES)) {
 			$sult['message'] = "未传递文件信息";
 			$sult['error_num'] = -97;
 			$this->seller_app_echo($sult);
 		}
+
+
+		// $data  = $people_info;
+		// $people_info = array();
+  //       $people_info[0] = $people_info;
+		//$this->seller_app_echo(array('1',$_POST,$_FILES,count($_FILES),count($people_info)));
+		
+
 		if (!$sult['error_num'] && count($_FILES) !== count($people_info)) {
 			$sult['message'] = "指定的文件与人脸信息数量不匹配";
 			$sult['error_num'] = -96;
@@ -625,7 +631,7 @@ class Api extends IController {
 		}
 		if (!$sult['error_num']) {//对人脸信息和文件信息的下载进行对比，只要有一个错误，就出错
 			foreach ($people_info as $key => $a_info) {
-				if (!isset($_FILES[$key])) {
+				if (!isset($_FILES['file'.$key])) {
 					$sult['message'] = "上传的文件信息与人脸信息的下标不匹配";
 					$sult['error_num'] = -95;
 					$this->seller_app_echo($sult);
@@ -638,7 +644,7 @@ class Api extends IController {
 			$sult['error_num'] = -94;
 			$this->seller_app_echo($sult);
 		}
-
+		
 		$db_info = $stranger = $user = array();
 		foreach ($people_info as $key => $a_info) { 
 			if (!isset($a_info['people_sex']) || !isset($a_info['people_glass']) || !isset($a_info['people_class']) || !isset($a_info['recognition_rate'])) {//如果指定的人脸信息不重要参数未指定的时候
@@ -647,7 +653,6 @@ class Api extends IController {
 				$member_card = empty($a_info['member_card']) ? '' : $a_info['member_card'];
 				$member_mobile = empty($a_info['member_mobile']) ? '' : $a_info['member_mobile'];
 				$member_phone = empty($a_info['member_phone']) ? '' : $a_info['member_phone'];
-
 				//上传图片信息
 				$upload_info = $this->seller_app_upload_file($key);
 				$is_stranger = false;
@@ -656,7 +661,7 @@ class Api extends IController {
 					'people_sex' => is_numeric($a_info['people_sex']) ? $a_info['people_sex'] : 1,
 					'people_glass' => is_numeric($a_info['people_glass']) ? $a_info['people_glass'] : 1,
 					'people_class' => is_numeric($a_info['people_class']) ? $a_info['people_class'] : 10,
-					'recognition_rate' => is_numeric($a_info['recognition_rate']) ? ($a_info['recognition_rate'] > 100 ? 100 : $a_info['recognition_rate']) : 100,
+					'recognition_rate' => $a_info['recognition_rate'],
 					'member_card' => $member_card,
 					'member_mobile' => $member_mobile,
 					'member_phone' => $member_phone,
@@ -678,13 +683,10 @@ class Api extends IController {
 				} else {
 					$user[$key] = $db_info[$key] + $tmp_user_info;
 				}
-
 //-----------------整理出陌生人还理会员，为下一步的消息推送做准备E--------------------------------------------------
-
 				$db_info[$key]+=$this->app_base_params;
-
 			}//参数大致正确的时候E
-		}//For循环E
+		}//For循环
 		if ($db_info) {//保存相关到数据库
 			$this->seller_app_save_post_info($db_info);
 		} else {
@@ -699,7 +701,13 @@ class Api extends IController {
 			$sult['error_num'] = -92;
 			$this->seller_app_echo($sult);			
 		}
-		$this->seller_app_echo($sult);
+		if($sult['sult'] <>'fail'){
+			$data = $_POST;
+			$data['url'] = $upload_info['url'];
+			$this->seller_app_echo($data);
+		}
+		else
+			$this->seller_app_echo($sult);
 	}
 
 //----------------------------------------------------------1大堆基本的商家APP有关的API方法开始-------------------------------------------------------------------------
@@ -811,11 +819,11 @@ class Api extends IController {
 	 */
 	private function seller_app_upload_file($file_key) {
 	//	$tmp_info = '/upload/' . date('YmdHi') . '/' . $file_key . 'jpg';
-		$upObj = new IUpload(10000,array(),$file_key);
+		$upObj = new IUpload(10000,array(),'file0');
 		$dir  = IWeb::$app->config['upload'].'/'.date('Y/m/d');
 		$upObj->setDir($dir);
-		$upState = $upObj->execute();
-		$photoInfo = $upState[$file_key][0];
+		$upState = $upObj->execute2();
+		$photoInfo = $upState['file0'][0];
 		return array(
 			'error_num' => 0, //错误代码
 			'message' => '', //错误文本
@@ -863,7 +871,7 @@ class Api extends IController {
 	 */
 	private function seller_app_push_camera_message($stranger = array(), $user = array()) {
 		$sult = array(
-			"sult" => "success---此处成功不代表最终成功",
+			"sult" => "success",
 			"message" => "",
 			"error_num" => 0
 		);
@@ -882,12 +890,27 @@ class Api extends IController {
 				"error_num" => -99
 			);
 		}
+
+
 		/**
 		 * 有关与APP消息推送的代码集成，在这里实现，但由于APP开发还没有确定。这一块就不能完成。
 		 * edit by songsang  
 		 * 极光推送 1对1 定点推送
 		 */
-		// $jiguang_callback = Jpush::send($mobile,$stranger);
+		// $content = empty($stranger)?$user:$stranger;
+		// $classFile = IWeb::$app->getBasePath().'plugins/jpush2/src/JPush/ob.php';
+		// include_once($classFile);
+		// $client = new ob('fec286c74024826099d0fa6c','cf256710c1a13f2eac0d539f');
+		// $jiguang_callback = $client->push()
+	 //    ->setPlatform('all')
+	 //    ->addAllAudience()
+	 //    ->setNotificationAlert('有客啦')
+	 //    ->message('有客啦啦', array(
+		//     'title' => '有个',
+		//     'content_type' => 'text',
+		//     'extras' =>$content,
+		// ))
+	 //    ->send();
 		// if(!$jiguang_callback){
 		// 	$sult = array(
 		// 		"sult" => "fail",
@@ -896,7 +919,7 @@ class Api extends IController {
 		// 	);
 		// }
 		//保持推送消息
-		return $sult;
+		//return $sult;
 	}
 
 	/**
@@ -905,7 +928,8 @@ class Api extends IController {
 	 * @return type array()
 	 */
 	private function seller_app_save_post_info($info){
-		$camera_userDB = new IModel('camera_user');
+		$query_DB = new IQuery('camera_user');
+		$model_DB = new IModel('camera_user');
 		foreach ($info as $key => $value) {
 			$data = array(
 				'people_sex'=>$value['people_sex'],
@@ -918,8 +942,19 @@ class Api extends IController {
 				'record_url'=>$value['record_url'],
 				'ctime'=>ITime::getDateTime()
 			);
-			$camera_userDB->setData($data);
-			$ros = $camera_userDB->add();
+			$model_DB->setData($data);
+			$is_member = false;
+			//会员检测
+			if($data['member_mobile']){
+				$query_DB->where = 'member_mobile ='.$data['member_mobile'];
+				$row = $query_DB->find();
+				if($row) $is_member = true;
+			}
+			if($is_member){
+				$model_DB->update('id='.$row['id']);
+			}else{
+				$model_DB->add();
+			}
 		}
 	}
 

@@ -666,11 +666,12 @@ class Seller extends IController implements sellerAuthorization
 	function camera_user_list()
 	{
 	 	$page   = IReq::get('page') ? IFilter::act(IReq::get('page'),'int') : 1;
+		$mb   = IReq::get('mb') ? " and member_mobile <>'' ":'' ;
 		$orderHandle = new IQuery('camera_user as o');
 		$orderHandle->page = $page;
 		$orderHandle->order  = "o.id desc";
 		$orderHandle->pagesize = 10;
-		$orderHandle->where  = 'seller_id ='.$this->seller['seller_id'];
+		$orderHandle->where  = 'seller_id ='.$this->seller['seller_id'].$mb;
 		$this->seller_messageHandle  =  $orderHandle;
 		$this->redirect('camera_user_list');
 	}

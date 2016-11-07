@@ -3,8 +3,9 @@
 		<h3 class="tabs_involved">用户列表</h3>
 
 		<ul class="tabs">
-			<li><input type="button" class="alt_btn" onclick="selectAll('id[]');" value="全选" /></li>
-			<!-- <li><input type="button" class="alt_btn" onclick="delModel();" value="批量删除" /></li> -->
+			<li><input type="button" class="alt_btn" onclick="is_member(1);" value="会员" /></li>
+			<li>
+			<li><input type="button" class="alt_btn" onclick="is_member(0);" value="陌生人" /></li>
 		</ul>
 	</header>
 	<form action="#" method="post" name="messageForm">
@@ -12,13 +13,14 @@
 		<colgroup>
 			<col width="10px" />
 			<col width="10px" />
-			<col width="30px" />
+			<col width="40px" />
 			<col width="20px" />
 			<col width="30px" />
 			<col width="20px" />
 			<col width="40px" />
 			<col width="40px" />
 			<col width="40px" />
+			<col width="60px" />
 		</colgroup>
 		<thead>
 			<tr>
@@ -31,6 +33,7 @@
 				<th>会员卡号</th>
 				<th>会员手机</th>
 				<th>会员电话</th>
+				<th>时间</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -39,13 +42,13 @@
 				<td><input type="checkbox" name="id[]" value="{$item['id']}" /></td>
 				<td>{if:$item['people_sex']==1}男{else:}女{/if}</td>
 				<td><img style="width:60px" src="{$item['record_url']}"/></td>
-				<td>{if:$item['people_class']==1}戴眼镜{else:}不带眼镜{/if}</td>
-				<td>{if:$item['people_glass']==1}婴幼儿{else:}其它{/if}</td>
+				<td>{if:$item['people_glass']==2}戴眼镜{else:}不带眼镜{/if}</td>
+				<td>{if:$item['people_class']==5}青年{elseif:$item['people_class']==6}壮年{else:}其它{/if}</td>
 				<td>{$item['recognition_rate']}%</td>
-				<td>{$item['member_card']}</td>
-				<td>{$item['member_mobile']}</td>
-				<td>{$item['member_phone']}</td>
-				
+				<td><input style="width:120px" place type="text" value="{$item['member_card']}"></td>
+				<td><input style="width:120px"  type="text" value="{$item['member_mobile']}"></td>
+				<td><input style="width:120px"  type="text" value="{$item['member_phone']}"></td>
+				<td>{$item['ctime']}</td>
 			</tr>
 			{/foreach}
 		</tbody>
@@ -53,3 +56,8 @@
 	</form>
 	{$this->seller_messageHandle->getPageBar()}
 </article>
+<script>
+function is_member(id){
+	window.location.href = "{url:/seller/camera_user_list/mb/}"+'/'+id;
+}
+</script>

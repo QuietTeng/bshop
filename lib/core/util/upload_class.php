@@ -327,4 +327,165 @@ class IUpload
         }
         return $info;
     }
+     public function execute2()
+    {
+    	//总的文件上传信息
+    	$info = array();
+
+        foreach($_FILES as $field => $file)
+        {
+          	if($this->upload_keys<>$field){
+          		continue;
+          	}
+
+            $fileInfo = array();
+
+			//不存在上传的文件名
+            if(!isset($_FILES[$field]['name']) || $_FILES[$field]['name'] == '')
+            {
+            	continue;
+            }
+
+			//上传控件为数组格式 file[]格式
+            if(is_array($_FILES[$field]['name']))
+            {
+                $keys = array_keys($_FILES[$field]['name']);
+
+                foreach($keys as $key)
+                {
+                	$fileInfo[$key]['name'] = $_FILES[$field]['name'][$key];
+
+                	//上传出现错误
+                	if(isset($_FILES[$field]['error'][$key]) && $_FILES[$field]['error'][$key] != 0)
+                	{
+                		$fileInfo[$key]['flag'] = 0 - $_FILES[$field]['error'][$key];
+                	}
+                	else
+                	{
+	                    //获取扩展名
+	                    $fileext = IFile::getFileType($_FILES[$field]['tmp_name'][$key]);
+	                    if(is_array($fileext) || $fileext == null)
+	                    {
+	                        $fileext = IFile::getFileSuffix($_FILES[$field]['name'][$key]);
+	                    }
+
+		                //图片木马检测
+		                if(in_array($fileext,$this->checkType) && !IFilter::checkHex($_FILES[$field]['tmp_name'][$key]))
+		                {
+		                	$fileInfo[$key]['flag'] = -9;
+		                }
+		                else
+		                {
+							/*开始上传文件*/
+		                    //(1)上传类型不符合
+		                    if(!in_array($fileext,$this->allowType))
+		                    {
+		                        $fileInfo[$key]['flag'] = -7;
+		                    }
+
+		                    //(2)上传大小不符合
+		                    else if($_FILES[$field]['size'][$key] > $this->maxsize)
+		                    {
+		                        $fileInfo[$key]['flag'] = -8;
+		                    }
+
+							//(3)成功情况
+		                    else
+		                    {
+			                    //修改图片状态值
+			                    $fileInfo[$key]['name']    = ITime::getDateTime('Ymdhis').mt_rand(100,999).'.'.$fileext;
+			                    $fileInfo[$key]['dir']     = $this->dir;
+			                    $fileInfo[$key]['size']    = $_FILES[$field]['size'][$key];
+			                    $fileInfo[$key]['ininame'] = $_FILES[$field]['name'][$key];
+			                    $fileInfo[$key]['ext']     = $fileext;
+			                    $fileInfo[$key]['fileSrc'] = $fileInfo[$key]['dir'].$fileInfo[$key]['name'];
+			                    $fileInfo[$key]['flag']    = 1;
+
+			                    if($this->isForge == false)
+			                    {
+				                    if(is_uploaded_file($_FILES[$field]['tmp_name'][$key]))
+				                    {
+				                    	IFile::mkdir($this->dir);
+				                    	move_uploaded_file($_FILES[$field]['tmp_name'][$key],$this->dir.$fileInfo[$key]['name']);
+				                    }
+			                    }
+			                    else
+			                    {
+			                    	IFile::xcopy($_FILES[$field]['tmp_name'][$key],$this->dir.$fileInfo[$key]['name']);
+			                    }
+		                    }
+		                }
+                	}
+                }
+            }
+            else
+            {
+            	$fileInfo[0]['name'] = $_FILES[$field]['name'];
+
+            	//上传出现错误
+            	if(isset($_FILES[$field]['error']) && $_FILES[$field]['error'] != 0)
+            	{
+            		$fileInfo[0]['flag'] = 0 - $_FILES[$field]['error'];
+            	}
+            	else
+            	{
+	                //获取扩展名
+	                $fileext = IFile::getFileType($_FILES[$field]['tmp_name']);
+	                if(is_array($fileext) || $fileext == null)
+	                {
+	                    $fileext = IFile::getFileSuffix($_FILES[$field]['name']);
+	                }
+
+                	//图片木马检测
+                	if(in_array($fileext,$this->checkType) && !IFilter::checkHex($_FILES[$field]['tmp_name']))
+                	{
+                  	  	$fileInfo[0]['flag'] = -9;
+                	}
+                	else
+                	{
+		                /*开始上传文件*/
+		                //(1)上传类型不符合
+		                if(!in_array($fileext,$this->allowType))
+		                {
+		                    $fileInfo[0]['flag'] = -7;
+		                }
+
+		                //(2)上传大小不符合
+		                else if($_FILES[$field]['size'] > $this->maxsize)
+		                {
+		                    $fileInfo[0]['flag'] = -8;
+		                }
+
+						//(3)成功情况
+		                else
+		                {
+			                //修改图片状态值
+			                $fileInfo[0]['name']    = ITime::getDateTime('YmdHis').mt_rand(100,999).'.'.$fileext;
+			                $fileInfo[0]['dir']     = $this->dir;
+			                $fileInfo[0]['size']    = $_FILES[$field]['size'];
+			                $fileInfo[0]['ininame'] = $_FILES[$field]['name'];
+			                $fileInfo[0]['ext']     = $fileext;
+			                $fileInfo[0]['fileSrc'] = $fileInfo[0]['dir'].$fileInfo[0]['name'];
+			                $fileInfo[0]['flag']    = 1;
+
+							if($this->isForge == false)
+							{
+			                    if(is_uploaded_file($_FILES[$field]['tmp_name']))
+			                    {
+			                    	IFile::mkdir($this->dir);
+			                    	move_uploaded_file($_FILES[$field]['tmp_name'],$this->dir.$fileInfo[0]['name']);
+			                    }
+							}
+							else
+							{
+								IFile::xcopy($_FILES[$field]['tmp_name'],$this->dir.$fileInfo[0]['name']);
+							}
+		                }
+                	}
+            	}
+            }
+            $info[$field] = $fileInfo;
+        }
+        return $info;
+    }
 }
